@@ -170,13 +170,18 @@ func main() {
 
 	fmt.Println("transfering has been done. Run parsing")
 
-	parsing := exec.Command("ssh", sshID, "go run ~/parse/*.go")
+	parsing := exec.Command("ssh", sshID, "cd parse; go run *.go")
 	parsing.Run()
 
 	fmt.Println("save data to DB")
 
 	saveToDB := exec.Command("ssh", sshID, "mongorestore --drop -d smithy -c sugangInfo ~/parse/outputs/bson.bson")
 	saveToDB.Run()
+
+	fmt.Println("remove sources in local")
+	removeSourcesInLocal := exec.Command("rm", "-rf", sourceSaveDirectory)
+	removeSourcesInLocal.Run()
+
 	fmt.Println("Done.")
 }
 
