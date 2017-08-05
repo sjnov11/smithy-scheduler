@@ -15,7 +15,7 @@ import (
 )
 
 func main() {
-	chromeDriver := webdriver.NewChromeDriver("/Users/Mjae/Downloads/chromedriver")
+	chromeDriver := webdriver.NewChromeDriver("./chromedriver_mac")
 	htmlPages := 233
 
 	err := chromeDriver.Start()
