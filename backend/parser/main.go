@@ -50,7 +50,7 @@ func main() {
 	filepaths := make([]string, htmlFileNumber)
 
 	for i := 0; i < htmlFileNumber; i++ {
-		filepaths[i] = "~/html_sources/latest/" + strconv.Itoa(i+1) + ".html"
+		filepaths[i] = "../html_sources/latest/" + strconv.Itoa(i+1) + ".html"
 	}
 
 	// Channels

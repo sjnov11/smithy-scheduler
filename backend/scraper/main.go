@@ -22,7 +22,7 @@ func main() {
 	}
 
 	chromeDriver := webdriver.NewChromeDriver("./chromedriver_mac")
-	htmlPages := 233
+	htmlPages := 2
 
 	err := chromeDriver.Start()
 	if err != nil {
@@ -172,7 +172,7 @@ func main() {
 	removeLatest := exec.Command("ssh", sshID, "rm -rf "+serverBackendFolder+latestDirectory)
 	removeLatest.Run()
 
-	copyLatestSourcesToServer := exec.Command("scp", "-r", latestDirectory, sshID+":"+latestDirectory)
+	copyLatestSourcesToServer := exec.Command("scp", "-r", latestDirectory, sshID+":"+serverBackendFolder+latestDirectory)
 	copyLatestSourcesToServer.Run()
 
 	fmt.Println("transfering has been done. Run parsing")
