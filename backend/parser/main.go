@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"os/exec"
 	"sort"
 	"strconv"
 )
@@ -49,8 +50,9 @@ func main() {
 
 	filepaths := make([]string, htmlFileNumber)
 
+	html_sources := "../html_sources/"
 	for i := 0; i < htmlFileNumber; i++ {
-		filepaths[i] = "../html_sources/latest/" + strconv.Itoa(i+1) + ".html"
+		filepaths[i] = html_sources + "latest/" + strconv.Itoa(i+1) + ".html"
 	}
 
 	// Channels
@@ -83,6 +85,17 @@ func main() {
 	PrintSubjectsToTextFile(foundSubjects, "outputs/text")
 	PrintSubjectsToJsonFile(foundSubjects, "outputs/json")
 	PrintSubjectsToBsonFile(foundSubjects, "outputs/bson.bson")
+
+	// Move source to home directory
+	makeSourceDirectoryAtHome := exec.Command("mkdir", "~/html_sources")
+	makeSourceDirectoryAtHome.Run()
+
+	moveSourcesToHomeDirectory := exec.Command("cp", "-r", html_sources, "~")
+	moveSourcesToHomeDirectory.Run()
+
+	// Remove sources
+	removeHtmlSources := exec.Command("rm", "-rf", html_sources)
+	removeHtmlSources.Run()
 
 	close(chSubjects)
 }
