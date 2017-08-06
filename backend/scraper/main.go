@@ -62,7 +62,7 @@ func main() {
 	time.Sleep(2 * time.Second)
 
 	// make saving directory
-	sourceSaveDirectory := "sources/"
+	sourceSaveDirectory := "html_sources/"
 
 	_, err = os.Stat(sourceSaveDirectory)
 	if err != nil {
@@ -142,7 +142,7 @@ func main() {
 	}
 
 	// copy html sources to latest directory
-	latestDirectory := "sources/latest/"
+	latestDirectory := sourceSaveDirectory + "latest/"
 
 	os.RemoveAll(latestDirectory)
 
@@ -164,24 +164,26 @@ func main() {
 	fmt.Println("transfering saved html sources to server...")
 
 	sshID := os.Args[1] + "@118.32.156.218"
+	serverBackendFolder := "smithy-scheduler/backend/"
 
-	copySourcesToServer := exec.Command("scp", "-r", currentSourceSavePath, sshID+":"+currentSourceSavePath)
+	copySourcesToServer := exec.Command("scp", "-r", currentSourceSavePath, sshID+":"+serverBackendFolder+currentSourceSavePath)
 	copySourcesToServer.Run()
 
-	removeLatest := exec.Command("ssh", sshID, "rm -rf sources/latest")
+	removeLatest := exec.Command("ssh", sshID, "rm -rf "+serverBackendFolder+latestDirectory)
 	removeLatest.Run()
 
-	copyLatestSourcesToServer := exec.Command("scp", "-r", latestDirectory, sshID+":"+latestDirectory)
+	copyLatestSourcesToServer := exec.Command("scp", "-r", latestDirectory, sshID+":"+serverBackendFolder+latestDirectory)
 	copyLatestSourcesToServer.Run()
 
 	fmt.Println("transfering has been done. Run parsing")
 
-	parsing := exec.Command("ssh", sshID, "cd parse; go run *.go")
+	htmlPagesNumberString := strconv.Itoa(htmlPages)
+	parsing := exec.Command("ssh", sshID, "cd "+serverBackendFolder+"parser; go run *.go "+htmlPagesNumberString)
 	parsing.Run()
 
 	fmt.Println("save data to DB")
 
-	saveToDB := exec.Command("ssh", sshID, "mongorestore --drop -d smithy -c sugangInfo ~/parse/outputs/bson.bson")
+	saveToDB := exec.Command("ssh", sshID, "mongorestore --drop -d smithy -c sugangInfo "+serverBackendFolder+"/parser/outputs/bson.bson")
 	saveToDB.Run()
 
 	fmt.Println("remove sources in local")
