@@ -22,7 +22,7 @@ func main() {
 	}
 
 	chromeDriver := webdriver.NewChromeDriver("./chromedriver_mac")
-	htmlPages := 2
+	htmlPages := 233
 
 	err := chromeDriver.Start()
 	if err != nil {
