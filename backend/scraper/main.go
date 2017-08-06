@@ -199,7 +199,7 @@ func main() {
 	fmt.Println("save data to DB")
 
 	// save bson file to database
-	saveToDB := exec.Command("ssh", sshID, "mongorestore --drop -d smithy -c sugangInfo "+serverBackendFolder+"/parser/outputs/bson.bson")
+	saveToDB := exec.Command("ssh", sshID, "mongorestore --drop -d smithy -c courseInfo "+serverBackendFolder+"/parser/outputs/bson.bson")
 	saveToDB.Run()
 
 	// remove sources in local
