@@ -166,6 +166,9 @@ func main() {
 	sshID := os.Args[1] + "@118.32.156.218"
 	serverBackendFolder := "smithy-scheduler/backend/"
 
+	makeServerHtmlSourceDirectory := exec.Command("ssh", sshID, "mkdir "+"~/"+serverBackendFolder+sourceSaveDirectory)
+	makeServerHtmlSourceDirectory.Run()
+
 	copySourcesToServer := exec.Command("scp", "-r", currentSourceSavePath, sshID+":"+serverBackendFolder+currentSourceSavePath)
 	copySourcesToServer.Run()
 
