@@ -172,7 +172,7 @@ func main() {
 	removeLatest := exec.Command("ssh", sshID, "rm -rf "+serverBackendFolder+latestDirectory)
 	removeLatest.Run()
 
-	copyLatestSourcesToServer := exec.Command("scp", "-r", latestDirectory, sshID+":"+serverBackendFolder+latestDirectory)
+	copyLatestSourcesToServer := exec.Command("scp", "-r", latestDirectory, sshID+":"+latestDirectory)
 	copyLatestSourcesToServer.Run()
 
 	fmt.Println("transfering has been done. Run parsing")
