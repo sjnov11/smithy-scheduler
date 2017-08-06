@@ -15,6 +15,12 @@ import (
 )
 
 func main() {
+
+	if len(os.Args) != 2 {
+		fmt.Println("Usage: go run *.go sshLoginID")
+		return
+	}
+
 	chromeDriver := webdriver.NewChromeDriver("./chromedriver_mac")
 	htmlPages := 233
 
@@ -157,7 +163,7 @@ func main() {
 
 	fmt.Println("transfering saved html sources to server...")
 
-	sshID := "mjae@118.32.156.218"
+	sshID := os.Args[1] + "@118.32.156.218"
 
 	copySourcesToServer := exec.Command("scp", "-r", currentSourceSavePath, sshID+":"+currentSourceSavePath)
 	copySourcesToServer.Run()
