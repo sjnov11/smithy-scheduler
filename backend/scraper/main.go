@@ -15,14 +15,13 @@ import (
 )
 
 func main() {
-
 	if len(os.Args) != 2 {
 		fmt.Println("Usage: go run *.go sshLoginID")
 		return
 	}
 
 	chromeDriver := webdriver.NewChromeDriver("./chromedriver_mac")
-	htmlPages := 233
+	htmlPages := 233 // It means the last number of html page
 
 	err := chromeDriver.Start()
 	if err != nil {
@@ -32,6 +31,7 @@ func main() {
 	required := webdriver.Capabilities{}
 	session, err := chromeDriver.NewSession(desired, required)
 
+	// Go to target page
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -51,6 +51,7 @@ func main() {
 	fmt.Println("Waiting for login")
 	time.Sleep(10 * time.Second)
 
+	// click to get data
 	sugangpyunram, err := session.FindElement(webdriver.LinkText, "수강편람")
 	sugangpyunram.Click()
 
@@ -70,8 +71,10 @@ func main() {
 		os.Mkdir(sourceSaveDirectory, 0777)
 	}
 
+	// time without space bar
 	crawlingMoment := fmt.Sprint(time.Now())
 
+	// replace space bars with under bar for convenience
 	removeSpaces := []byte(crawlingMoment)
 	for i := 0; i < len(removeSpaces); i++ {
 		if removeSpaces[i] == ' ' {
@@ -152,43 +155,54 @@ func main() {
 		os.Mkdir(latestDirectory, 0777)
 	}
 
+	// copy html sources to lastest folder
 	srcFolder := currentSourceSavePath
 	destFolder := latestDirectory
 	cpCmd := exec.Command("cp", "-rf", srcFolder, destFolder)
 	err = cpCmd.Run()
 
+	// stop the chromedriver
 	time.Sleep(3 * time.Second)
 	session.Delete()
 	chromeDriver.Stop()
 
+	// start transfering
 	fmt.Println("transfering saved html sources to server...")
 
 	sshID := os.Args[1] + "@118.32.156.218"
 	serverBackendFolder := "smithy-scheduler/backend/"
 
+	// make directory at server
 	makeServerHtmlSourceDirectory := exec.Command("ssh", sshID, "mkdir "+"~/"+serverBackendFolder+sourceSaveDirectory)
 	makeServerHtmlSourceDirectory.Run()
 
+	// copy sources to server
 	copySourcesToServer := exec.Command("scp", "-r", currentSourceSavePath, sshID+":"+serverBackendFolder+currentSourceSavePath)
 	copySourcesToServer.Run()
 
+	// remove old sources at server
 	removeLatest := exec.Command("ssh", sshID, "rm -rf "+serverBackendFolder+latestDirectory)
 	removeLatest.Run()
 
+	// copy latest sources to server
 	copyLatestSourcesToServer := exec.Command("scp", "-r", latestDirectory, sshID+":"+serverBackendFolder+latestDirectory)
 	copyLatestSourcesToServer.Run()
 
 	fmt.Println("transfering has been done. Run parsing")
 
+	// Run parsing program in server
 	htmlPagesNumberString := strconv.Itoa(htmlPages)
 	parsing := exec.Command("ssh", sshID, "cd "+serverBackendFolder+"parser; go run *.go "+htmlPagesNumberString)
 	parsing.Run()
 
+	// Parsing has been done.
 	fmt.Println("save data to DB")
 
+	// save bson file to database
 	saveToDB := exec.Command("ssh", sshID, "mongorestore --drop -d smithy -c sugangInfo "+serverBackendFolder+"/parser/outputs/bson.bson")
 	saveToDB.Run()
 
+	// remove sources in local
 	fmt.Println("remove sources in local")
 	removeSourcesInLocal := exec.Command("rm", "-rf", sourceSaveDirectory)
 	removeSourcesInLocal.Run()
