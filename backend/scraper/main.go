@@ -8,15 +8,17 @@ import (
 	"io"
 	"os"
 	"os/exec"
+	"runtime"
 	"strconv"
 	"time"
 
 	"github.com/fedesog/webdriver"
+	"github.com/hrzon/keybd_event"
 )
 
 func main() {
-	if len(os.Args) != 2 {
-		fmt.Println("Usage: go run *.go sshLoginID")
+	if len(os.Args) != 4 {
+		fmt.Println("Usage: go run *.go sshLoginID HY_IN_ID HY_IN_PASSWORD")
 		return
 	}
 
@@ -47,9 +49,16 @@ func main() {
 	login_popup, err := session.FindElement(webdriver.ID, "btn-user2")
 	login_popup.Click()
 
-	// manual login
 	fmt.Println("Waiting for login")
-	time.Sleep(10 * time.Second)
+	time.Sleep(3 * time.Second)
+
+	fmt.Println("trying to login")
+
+	//              ID      PASSWORD
+	HY_IN_LOGIN(os.Args[2], os.Args[3])
+	time.Sleep(3 * time.Second)
+
+	fmt.Println("login successful")
 
 	// click to get data
 	sugangpyunram, err := session.FindElement(webdriver.LinkText, "수강편람")
@@ -215,4 +224,37 @@ func WriteTo(w io.Writer, line string) error {
 		return err
 	}
 	return nil
+}
+
+func HY_IN_LOGIN(ID, PASSWORD string) {
+	// input ID and passwords
+	kb, err := keybd_event.NewKeyBonding()
+	if err != nil {
+		panic(err)
+	}
+	// For linux, it is very important wait 2 seconds
+	if runtime.GOOS == "linux" {
+		time.Sleep(2 * time.Second)
+	}
+
+	// input ID
+	kb.LaunchString(ID)
+
+	// tab key
+	kb.SetKeys(keybd_event.VK_TAB)
+	err = kb.Launching()
+	if err != nil {
+		panic(err)
+	}
+
+	// input password
+	kb.LaunchString(PASSWORD)
+
+	// tab and enter
+	kb.SetKeys(keybd_event.VK_TAB, keybd_event.VK_ENTER)
+	kb.HasSHIFT(false)
+	err = kb.Launching()
+	if err != nil {
+		panic(err)
+	}
 }
