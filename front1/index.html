@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+    <title>Prototype</title>
+  </head>
+
+  <body>
+    <div id="mainHeaderContainer" class="main-header-container">
+      <div id="mainHeaderContents" class="main-header-contents">
+        <div id="mainHeaderLogo" class="main-header-logo">
+          <a href="/"><img id="logoImage" src="http://kiworkshop.org/resources/assets/logo.png" alt="kiworkshop"/></a>
+        </div>
+        <div id="mainHeaderMenu" class="main-header-menu">
+          <div id="menuButtons" class="menu-buttons ui large buttons">
+            <!-- <button id="btn_login" class="ui button" onclick="$('.page').dimmer('show');">로그인</button> -->
+            <button id="btn_login" class="ui hanyang basic transparent button">로그인</button>
+          </div>
+        </div>
+      </div>
+      <hr id="mainHeaderShadow" class="main-header-shadow">
+    </div>
+
+
+    <div id="mainContentsContainer" class="main-contents-container">
+      <div id="mainContents" class="main-contents">
+
+        <div id="whiteSpaceBetweenHeaderAndContent">
+        </div>
+
+        <div id="mainIntro" class="main-intro main-center">
+          <p class="main-intro-text">Lorem ipsum dolor sit amet, consect- etur adipisicing elit.</p>
+        </div>
+
+
+        <div id="chooseMajorOrCultural" class="choose-major-or-cultural">
+          <div id="searchForm" class="search-form main-center">
+
+            <div id="majorOrCultural" class="major-or-cultural">
+              <button id="btn_major" class="huge ui hanyang button">전공</button> &nbsp;
+              <button id="btn_cultural" class="huge ui hanyang basic button">교양</button>
+            </div>
+
+            <div id='majorSearchForm' class='major-search-form'>
+              <h4 class="ui dividing header">(전공)다람쥐 헌 쳇바퀴에 타고파</h4>
+              <div class="field">
+                <!-- major -->
+                <div class="ui fluid search selection major dropdown">
+                  <input type="hidden" name="receipt_major">
+                  <i class="dropdown icon"></i>
+                  <div class="default text">전공을 검색하세요</div>
+                  <div id="majorList" class="menu">
+                    <!-- below codes should be controlled by VueJS (iteration) -->
+                    <div class="item" v-for="major in majors" v-bind:data-value="major" v-bind:data-text="major">
+                      {{ major }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id='culturalSearchForm' class='cultural-search-form' style="display:none">
+              <h4 class="ui dividing header">(교양)다람쥐 헌 쳇바퀴에 타고파</h4>
+              <div class="field">
+                <!-- cultural -->
+                <div class="ui fluid search multiple selection cultural dropdown">
+                  <input type="hidden" name="receipt_cultural">
+                  <i class="dropdown icon"></i>
+                  <div class="default text">교양 검색조건을 선택해주세요</div>
+
+                  <!-- 2차원 for loop으로 해야겠다-->
+                  <div id="culturalList" class="menu">
+                    <!-- below codes should be controlled by VueJS (iteration) -->
+                    <div class="item" v-for="cultural in culturals" v-bind:data-value="cultural" v-bind:data-text="cultural">
+                      {{ cultural }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div id="searchResult" class="search-result">
+            <table class="ui fixed single line celled table search-result-table unstackable" style="display:none">
+              <thead>
+                <tr>
+                  <th>1학년</th>
+                  <th>2학년</th>
+                  <th>3학년</th>
+                  <th>4학년</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- below data should be controlled by Vue-->
+                <tr>
+                  <td class="selectable"><a></a></td>
+                  <td lecture-name="시스템프로그래밍" class="selectable"><a>시스템프로그래밍</a>
+                    <div lecture-name="시스템프로그래밍" class="ui lecture-info flowing popup top left transition hidden">
+                      <div class="ui three column divided center aligned grid">
+                        <div class="column">
+                          <p>시스템프로그래밍 <br/>강의 정보1</p>
+                          <button lecture-name="시스템프로그래밍" nth-lecture="1" class="ui hanyang basic mini lecture-select button">선택</button>
+                        </div>
+                        <div class="column">
+                          <p>시스템프로그래밍<br /> 강의 정보2</p>
+                          <button lecture-name="시스템프로그래밍" nth-lecture="2" class="ui hanyang basic mini lecture-select button">선택</button>
+                        </div>
+
+                        <div class="column">
+                          <p>시스템프로그래밍<br /> 강의 정보3</p>
+                          <button lecture-name="시스템프로그래밍" nth-lecture="3" class="ui hanyang basic mini lecture-select button">선택</button>
+                        </div>
+
+                      </div>
+                    </div>
+                  </td>
+                  <td lecture-name="소프트웨어공학" class="selectable"><a>소프트웨어공학</a>
+                    <div lecture-name="소프트웨어공학" class="ui lecture-info popup top left transition hidden">
+                      <p>소프트웨어공학 강의 정보</p>
+                    </div>
+                  </td>
+                  <td lecture-name="전공멘토링" class="selectable"><a>전공멘토링</a>
+                    <div lecture-name="전공멘토링" class="ui lecture-info popup top left transition hidden">
+                      <p>전공멘토링 강의 정보</p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="selectable"><a></a></td>
+                  <td lecture-name="컴퓨터네트워크" class="selectable"><a>컴퓨터네트워크</a>
+                    <div lecture-name="컴퓨터네트워크" class="ui lecture-info popup top left transition hidden">
+                      <p>컴퓨터네트워크 강의 정보</p>
+                    </div>
+                  </td>
+                  <td lecture-name="컴파일러설계" class="selectable"><a>컴파일러설계</a>
+                    <div lecture-name="컴파일러설계" class="ui lecture-info popup top left transition hidden">
+                      <p>컴파일러설계 강의 정보</p>
+                    </div>
+                  </td>
+                  <td lecture-name="소프트웨어인턴쉽2" class="selectable"><a>소프트웨어인턴쉽2</a>
+                    <div lecture-name="소프트웨어인턴쉽2" class="ui lecture-info popup top left transition hidden">
+                      <p>소프트웨어인턴쉽2 강의 정보</p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="selectable"><a></a>
+                  </td>
+                  <td lecture-name="마이크로프로세서응용" class="selectable"><a>마이크로프로세서응용</a>
+                    <div lecture-name="마이크로프로세서응용" class="ui lecture-info popup top left transition hidden">
+                      <p>마이크로프로세서응용 강의 정보</p>
+                    </div>
+                  </td>
+                  <td lecture-name="특허법의이해" class="selectable"><a>특허법의이해</a>
+                    <div lecture-name="특허법의이해" class="ui lecture-info popup top left transition hidden">
+                      <p>특허법의이해 강의 정보</p>
+                    </div>
+                  </td>
+                  <td lecture-name="인터넷보안" class="selectable"><a>인터넷보안</a>
+                    <div lecture-name="인터넷보안" class="ui lecture-info popup top left transition hidden">
+                      <p>인터넷보안 강의 정보</p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="selectable"><a></a></td>
+                  <td lecture-name="데이터베이스시스템및응용" class="selectable"><a>데이터베이스시스템및응용</a>
+                    <div lecture-name="데이터베이스시스템및응용" class="ui lecture-info popup top left transition hidden">
+                      <p>데이터베이스시스템및응용 강의 정보</p>
+                    </div>
+                  </td>
+                  <td lecture-name="병렬프로그래밍" class="selectable"><a>병렬프로그래밍</a>
+                    <div lecture-name="병렬프로그래밍" class="ui lecture-info popup top left transition hidden">
+                      <p>병렬프로그래밍 강의 정보</p>
+                    </div>
+                  </td>
+                  <td lecture-name="컴퓨터비전" class="selectable"><a>컴퓨터비전</a>
+                    <div lecture-name="컴퓨터비전" class="ui lecture-info popup top left transition hidden">
+                      <p>컴퓨터비전 강의 정보</p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="selectable"><a></a></td>
+                  <td lecture-name="소프트웨어실무영어" class="selectable"><a>소프트웨어실무영어</a>
+                    <div lecture-name="소프트웨어실무영어" class="ui lecture-info popup top left transition hidden">
+                      <p>소프트웨어실무영어 강의 정보</p>
+                    </div>
+                  </td>
+                  <td lecture-name="수치해석" class="selectable"><a>수치해석</a>
+                    <div lecture-name="수치해석" class="ui lecture-info popup top left transition hidden">
+                      <p>수치해석 강의 정보</p>
+                    </div>
+                  </td>
+                  <td lecture-name="지능형생물정보학" class="selectable"><a>지능형생물정보학</a>
+                    <div lecture-name="지능형생물정보학" class="ui lecture-info popup top left transition hidden">
+                      <p>지능형생물정보학 강의 정보</p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="selectable"><a></a></td>
+                  <td class="selectable"><a></a></td>
+                  <td lecture-name="소프트웨어스튜디오2" class="selectable"><a>소프트웨어스튜디오2</a>
+                    <div lecture-name="소프트웨어스튜디오2" class="ui lecture-info popup top left transition hidden">
+                      <p>소프트웨어스튜디오2 강의 정보</p>
+                    </div>
+                  </td>
+                  <td class="selectable"><a></a></td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+
+            <div class="center" style="width:100%; margin:50 auto 0 auto">
+              <p> <span style="font-weight:600">(dev)Selected Value:</span> <span id="echoInputValue"></span> </p>
+            </div>
+
+
+
+
+
+
+          </div>
+        </div>
+
+
+
+        <div class="center" style="width:100px; margin:500 auto 0 auto">
+          <button id="btn_request_post" class="ui button"> Ajax call<br /> POST</button>
+          <button id="btn_major_selected" class="ui button"> 선택 결과<br /> 임시 버튼</button>
+        </div>
+
+
+
+
+        <!-- login dimmer -->
+        <div class="ui page dimmer login">
+          <div class="content">
+            <div class="center">
+              <div class="ui segment login-box">
+                <p class="login-box-text">닭 잡아서 치킨파티 함</p>
+
+
+                <button class="ui hanyang login button">
+                  <i class="university icon"></i>
+                  한양대학교
+                </button>
+
+
+                <button class="ui facebook login button">
+                  <i class="facebook icon"></i>
+                  페이스북
+                </button>
+
+                <button class="ui google plus login button">
+                  <i class="google icon"></i>
+                  구글
+                </button>
+
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+                                                              crossorigin="anonymous" type="text/javascript">
+
+    </script>
+    <script src="semantic/semantic.min.js" type="text/javascript">
+
+    </script>
+    <script src="js/majorList.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+  </body>
+
+</html>

@@ -1,0 +1,265 @@
+/* spoqa han sans */
+@import  "../fonts/spoqa-han-sans/SpoqaHanSans-kr.css";
+
+* {
+  font-family: "Spoqa Han Sans", "Apple SD Gothic Neo", "Malgun Gothic", "MalgunGothic";
+	/* font-family: "Apple SD Gothic Neo", "Malgun Gothic", "MalgunGothic"; */
+	font-weight: 300;
+}
+
+/* for windows user */
+html {
+	-webkit-text-size-adjust: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+div.entry {
+	transform: rotate(-0.0000000001deg);
+	text-shadow: 0 0 1px rgba(0,0,0,0.3);
+}
+/* for windows user end */
+
+/* css variable */
+:root {
+    --main-color:#004483; /* Hanyang blue */
+}
+
+/* variable usage */
+#foo {
+    color: var(--main-color);
+}
+
+.main-header-container{
+  width:100%;
+  min-width:1200px;
+  height:70px;
+  background-color:#fff;
+  position:fixed;
+  z-index:100;
+  top:0
+}
+
+.main-contents-container{
+  width:100%;
+  top:80;
+  margin:0 auto;
+  position:relative
+}
+
+.main-contents{
+  max-width:1200px;
+  margin: 0 auto
+}
+
+.main-header-contents {
+  height:90%; /* 10% for shadow */
+  max-width:1200px;
+  margin: 0 auto
+}
+
+.main-header-logo {
+  float: left;
+  width: 50%;
+}
+
+.main-header-menu {
+  float: left;
+  width: 50%;
+}
+
+.menu-buttons {
+  padding: 10px 10px 10px 10px;
+  float: right;
+}
+
+
+hr.main-header-shadow {
+	height: 10px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+#logoImage {
+  height: 60px
+}
+
+.main-center{
+  margin-left: calc(1200px * 0.2);
+  margin-right: calc(1200px * 0.2);
+  width:calc(1200px * 0.6);
+}
+
+#whiteSpaceBetweenHeaderAndContent {
+  margin-top:20px;
+}
+
+.main-intro{
+  height: 250px;
+  padding-top: 60px;
+  text-align:justify
+}
+
+.main-intro-text{
+  font-size: 3em;
+  font-weight:100;
+  text-indent: 15px;
+  /* text-align: justify */
+}
+
+
+.major-or-cultural {
+  text-align: center;
+}
+
+
+.login-box {
+  width: calc(1200px * 0.4);
+  margin: auto !important;
+  color: #000;
+  /* background-color: #eee !important; */
+}
+
+.login-box-text {
+  font-size: 2.5em;
+  font-weight: 100;
+}
+
+.ui.hanyang.button {
+  background-color: var(--main-color);
+  color: #fff;
+  text-shadow: none;
+  background-image: none;
+  box-shadow: 0 0 0 0 rgba(34, 36, 38, .15) inset
+}
+
+
+.ui.hanyang.basic.button {
+  box-shadow: 0 0 0 1px var(--main-color) inset !important;
+  color: var(--main-color) !important
+}
+
+
+.ui.hanyang.basic.transparent.button {
+  box-shadow: 0 0 0 0px var(--main-color) inset !important;
+  color: var(--main-color) !important;
+  font-weight:600;
+}
+
+
+
+.login.button {
+  width: 130px;
+}
+
+table.search-result-table > thead > tr > th {
+  background-color: var(--main-color) !important;
+  color: #fff !important;
+  border-left: 1px solid rgba(255, 255, 255, .2) !important;
+}
+
+table.search-result-table > thead > tr > th:nth-child(1) {
+  border-left: 1px solid rgba(35, 35, 35, .1) !important;
+}
+
+td.positive > a{
+  /* background-color: #F7FFE6 !important; */
+  background-color: #f4ffdd !important;
+}
+
+td.positive > a:hover{
+  background-color: #eefecd !important;
+}
+
+td > a:hover{
+  cursor: pointer;
+}
+
+
+.subject-selected {
+  margin-left: calc(1200px * 0.04) !important;
+  float: left;
+}
+
+
+.basket{
+  width: calc(1200px * 0.34);
+  float: right;
+  margin-top:30px;
+  margin-left: calc(1200px * 0.66);
+  position: fixed
+}
+
+.time-table-thumbnail{
+  width: calc(1200px * 0.3);
+  height: 300px;
+  
+  border-style: solid;
+  border-width:3px;
+  background-color: var(--main-color);
+  color:#fff;
+
+  text-align:center;
+
+  cursor: pointer;
+}
+.time-table-thumbnail > p{
+  font-weight:100;
+  font-size:3em;
+  margin-top: 85px;
+}
+
+.selected-subject-list{
+  margin-top:30px;
+  width: calc(1200px * 0.3);
+  height: 300px;
+  border-style: solid;
+  border-width:3px;
+  border-color: var(--main-color);
+
+  text-align:center;
+}
+
+
+.selected-subject-list > p {
+  font-weight:300;
+  font-size:1.5em;
+  margin-top: 15px;
+}
+
+
+.selected-subject-list > ol {
+  padding-left: 25%;
+  padding-right: 20%;
+  margin:0;
+  position:absolute;
+}
+
+.c-condition {
+  margin: 170px auto auto 75px;
+  float: left;
+}
+
+.c-start {
+  margin: 170px auto;
+  float: left;
+}
+
+
+.time-table {
+  width: 100%;
+  height: 500px;
+  background-color: var(--main-color) !important;
+  text-align:center;
+  cursor: pointer;
+}
+
+
+.time-table > p{
+  font-weight:100;
+  font-size:5em;
+  margin-top: 190px;
+}
+
+.search-result {
+  margin: 14px 0 0 14px;
+}

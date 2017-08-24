@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+  <title>Prototype - major-selected.html</title>
+</head>
+
+<body>
+  <div id="mainHeaderContainer" class="main-header-container">
+    <div id="mainHeaderContents" class="main-header-contents">
+      <div id="mainHeaderLogo" class="main-header-logo"> 
+          <a href="./index.html"><img id="logoImage" src="http://kiworkshop.org/resources/assets/logo.png" alt="kiworkshop"/></a>
+      </div>
+      <div id="mainHeaderMenu" class="main-header-menu"> 
+        <div id="menuButtons" class="menu-buttons ui large buttons">
+            <!-- <button id="btn_login" class="ui button" onclick="$('.page').dimmer('show');">로그인</button> -->
+            <button id="btn_login" class="ui hanyang basic transparent button">로그인</button>
+        </div>
+      </div>
+    </div>
+
+    <hr id="mainHeaderShadow" class="main-header-shadow">
+  </div>
+
+
+  <div id="mainContentsContainer" class="main-contents-container">
+    <div id="mainContents" class="main-contents">
+
+
+      <div id="mainIntro" class="main-intro main-center" style="display:none;"> 
+        <p class="main-intro-text">Lorem ipsum dolor sit amet, consect- etur adipisicing elit.</p>
+      </div>
+      <div id="searchForm" class="search-form main-center subject-selected">
+
+        <div style="height:30px;">
+
+        </div>
+
+        <div id="majorOrCultural" class="major-or-cultural">
+          <button id="btn_major" class="huge ui hanyang button">전공</button>
+          &nbsp;
+          <button id="btn_cultural" class="huge ui hanyang basic button">교양</button>
+        </div>
+
+        <h4 class="ui dividing header">다람쥐 헌 쳇바퀴에 타고파</h4>
+        <div class="field">
+          <div class="ui fluid  search selection dropdown">
+            <input type="hidden" name="receipt">
+            <i class="dropdown icon"></i>
+            <div class="default text">컴퓨터전공</div>
+            <div id="majorList" class="menu">
+              <!-- below codes should be controlled by VueJS (iteration) -->
+              <div class="item" v-for="major in majors" v-bind:data-value="major" v-bind:data-text="major">
+                {{ major }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div style="height: 20px">
+
+        </div>
+
+
+        <table class="ui fixed single line celled table search-result-table">
+          <thead>
+            <tr><th>1학년</th>
+              <th>2학년</th>
+              <th>3학년</th>
+              <th>4학년</th>
+            </tr></thead>
+            <tbody>
+              <!-- below data should be controlled by Vue-->
+              <tr>
+                <td class="selectable"><a></a></td>
+                <td class="selectable"><a>시스템프로그래밍</a>
+                </td>
+                <td class="selectable positive"><a>소프트웨어공학</a></td>
+                <td class="selectable"><a>전공멘토링</a></td>
+              </tr>
+              <tr>
+                <td class="selectable"><a></a></td>
+                <td class="selectable"><a>컴퓨터네트워크</a></td>
+                <td class="selectable negative"><a>컴파일러설계</a></td>
+                <td class="selectable"><a>소프트웨어인턴쉽2</a></td>
+              </tr>
+              <tr>
+                <td class="selectable"><a></a></td>
+                <td class="selectable"><a>마이크로프로세서응용</a></td>
+                <td class="selectable"><a>특허법의이해</a></td>
+                <td class="selectable"><a>인터넷보안</a></td>
+              </tr>
+              <tr>
+                <td class="selectable"><a></a></td>
+                <td class="selectable positive"><a>데이터베이스시스템및응용</a></td>
+                <td class="selectable positive"><a>병렬프로그래밍</a></td>
+                <td class="selectable"><a>컴퓨터비전</a></td>
+              </tr>
+              <tr>
+                <td class="selectable"><a></a></td>
+                <td class="selectable"><a>소프트웨어실무영어</a></td>
+                <td class="selectable"><a>수치해석</a></td>
+                <td class="selectable"><a>지능형생물정보학</a></td>
+              </tr>
+              <tr>
+                <td class="selectable"><a></a></td>
+                <td class="selectable"><a></a></td>
+                <td class="selectable"><a>소프트웨어스튜디오2</a></td>
+                <td class="selectable"><a></a></td>
+              </tr>
+            </tbody>
+        </table>
+
+      </div>
+
+
+      <div id="basket" class="basket">
+        <div id="timeTableThumbnail" class="time-table-thumbnail">
+          <!-- 조합된 시간표가 없으면 Thumbnail이 없다. Thumbnail을 클릭하면 모든 경우의 수의 시간표를 볼 수 있다. -->
+          <!-- 시간표 선택하면 선택한 Thumbnail로 바뀜 -->
+          <p>Time Table<br/>Thumbnail</p>
+
+
+        <div class="ui small modal combination-result">
+          <div class="header">시간표 조합 결과</div>
+          <div class="content">
+            <div class="ui inverted segment time-table">
+              <p>시간표 1</p>
+            </div>
+            <div class="ui inverted segment time-table">
+              <p>시간표 2</p>
+            </div>
+            <div class="ui inverted segment time-table">
+              <p>시간표 3</p>
+            </div>
+            <div class="ui inverted segment time-table">
+              <p>시간표 4</p>
+            </div>
+            <div class="ui inverted segment time-table">
+              <p>시간표 5</p>
+            </div>
+            <div class="ui inverted segment time-table">
+              <p>시간표 6</p>
+            </div>
+            <div class="ui inverted segment time-table">
+              <p>시간표 7</p>
+            </div>
+          </div>
+        </div>
+
+
+
+        </div>
+        <div id="selectedSubjectList" class="selected-subject-list">
+          <p>선택한 과목</p>
+          <ol>
+            <li>데이터베이스시스템및응용</li>
+            <li>병렬프로그래밍</li>
+            <li>소프트웨어공학</li>
+          </ol>
+
+          <div id="cCondition" class="c-condition">
+            <button class="ui button"> 조합 조건 설정</button>
+          </div>
+
+
+          <div id="cStart" class="c-start">
+            <button class="ui button combiation-start"> 조합!</button>
+
+            <div class="ui combiation-complete popup transition hidden top left">
+              <p>조합을 완료했습니다.</p>
+            </div>
+
+
+          </div>
+
+
+
+
+
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+
+
+      <!-- dimmers -->
+      <div class="ui page dimmer login">
+        <div class="content">
+          <div class="center">
+            <div class="ui segment login-box">
+              <p class="login-box-text">닭 잡아서 치킨파티 함</p>
+
+
+              <button class="ui hanyang login button">
+                <i class="university icon"></i>
+                한양대학교
+              </button>
+
+
+              <button class="ui facebook login button">
+                <i class="facebook icon"></i>
+                페이스북
+              </button>
+
+              <button class="ui google plus login button">
+                <i class="google icon"></i>
+                구글
+              </button>
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="ui page dimmer config-c-condition">
+      <div class="content">
+        <div class="center">
+          <div class="ui segment login-box">
+            <p class="login-box-text">조합 조건 설정</p>
+            <div style="height:450px"></div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous" type="text/javascript"> </script>
+  <script src="semantic/semantic.min.js" type="text/javascript"> </script>
+  <script src="js/majorList.js" type="text/javascript"></script>
+  <script src="js/main.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+결국은 원페이지 디자인으로 갈 것이다. 처음 접속 이후에는 html을 로딩하지 않는다.
+
+
+아래는 프로토타입.
+
+index.html : 메인 페이지. 기본 검색은 전공이다.
+major-searched.html : 전공을 선택했을 때, 장바구니
+
+cultural.html : 교양 검색 페이지
+cultural-searched.html : 검색조건으로 교양 검색했을 때
+
+subject-selected.html : 장바구니 페이지
+
+
+* VS Code로 개발환경 통합하기
+
+구현해야 할 기능
+
+1. go로 전공 이름 db에서 가져와서 js code생성. -> 명재
+
+2. Back에서 front로 데이터 전송해주는 api 만들기 -> 명재
+
+3. 전공 선택했을 때 ajax call로 과목 정보 받아오기 (ajax api) -> 승준
+
+4. 로그인 api 연동 -> 현길
+
+5. 시간표 조합 알고리즘 
+  5-1. js로 back에 요청하기. or
+  5-2. back 안 가고 js로 처리하기.
+
+
+
+
+
+
+
+
+1. 검색창 옆에 Filter 기능 (filter에 P/F, 꿀교양 등등. 시간대별로 큼직하게 나누기)
+
+2. 인기 검색어 hash tag
+
+3. 로그인 했을 때 가장 최근 시간표 보여주기.
+
+4. Filter가 변경될 때마다 자동으로 검색하기
+
+5. 교양 검색 자동완성은 검색창에 텍스트가 들어갔을 때 띄운다 (마우스 클릭 말고)
+
+
+8/22
+
+page templating. 일단 server side에서 작업하자.
+
+issue: table은 1,2,3,4학년까지만 있음. 5학년까지 있는 과는 어떻게 그려주냐.
