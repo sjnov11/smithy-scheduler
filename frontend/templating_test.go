@@ -1,8 +1,62 @@
 package main
 
 import (
+	"bufio"
+	"bytes"
 	"fmt"
 )
+
+func ExampleDrawSubjectTable() {
+	sampleDataNumber := 9
+	sampleData := make([]Subject, sampleDataNumber)
+
+	sampleData[0] = Subject{
+		IsuGrade: "3",
+		GwamokNm: "3학년과목1",
+	}
+	sampleData[1] = Subject{
+		IsuGrade: "3",
+		GwamokNm: "3학년과목2",
+	}
+	sampleData[2] = Subject{
+		IsuGrade: "4",
+		GwamokNm: "4학년과목1",
+	}
+	sampleData[3] = Subject{
+		IsuGrade: "4",
+		GwamokNm: "4학년과목2",
+	}
+	sampleData[4] = Subject{
+		IsuGrade: "3",
+		GwamokNm: "3학년과목3",
+	}
+	sampleData[5] = Subject{
+		IsuGrade: "1",
+		GwamokNm: "1학년과목1",
+	}
+	sampleData[6] = Subject{
+		IsuGrade: "1",
+		GwamokNm: "1학년과목2",
+	}
+	sampleData[7] = Subject{
+		IsuGrade: "2",
+		GwamokNm: "2학년과목1",
+	}
+	sampleData[8] = Subject{
+		IsuGrade: "2",
+		GwamokNm: "2학년과목2",
+	}
+
+	result, err := drawSubjectTable(sampleData)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println(result)
+
+	// Output:
+	// developing
+}
 
 func ExampleDivideSubjectsByGrade() {
 	sampleDataNumber := 9
@@ -72,4 +126,20 @@ func ExampleDivideSubjectsByGrade() {
 	// 4학년:
 	// 4학년과목1
 	// 4학년과목2
+}
+
+func ExampleMainHTML() {
+	var bwrite bytes.Buffer
+	w := bufio.NewWriter(&bwrite)
+	err := writeMainPageHTML(w)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	fmt.Println("dummy")
+	// fmt.Println(bwrite.String())
+
+	// Output:
+	// dummy
 }

@@ -8,25 +8,27 @@ import (
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	filename := r.URL.Path[len("/"):]
-
-	var source []byte
-	var err error
 
 	// when request is root, send index.html
 	// otherwise, send the file
 	if r.URL.Path == "/" {
-		source, err = ioutil.ReadFile("./index.html")
+		// send index.html
+		// TODO: 사용자가 루트에 접속할 때마다 main page를 새로 그린다. 서버 main함수가 실행될 때 한 번만 그리고 요청은 그냥 html코드 보내줘도 될듯.
+		err := writeMainPageHTML(w)
+		if err != nil {
+			fmt.Fprint(w, err)
+			return
+		}
 	} else {
-		source, err = ioutil.ReadFile("./" + filename)
+		// send requested file
+		filename := r.URL.Path[len("/"):]
+		source, err := ioutil.ReadFile("./" + filename)
+		if err != nil {
+			fmt.Fprint(w, err)
+			return
+		}
+		fmt.Fprint(w, string(source))
 	}
-
-	if err != nil {
-		fmt.Fprint(w, err)
-		return
-	}
-
-	fmt.Fprint(w, string(source))
 }
 
 func dbHandler(w http.ResponseWriter, r *http.Request) {
@@ -69,4 +71,35 @@ func sendDataByMajorHandler(w http.ResponseWriter, r *http.Request) {
 
 	b, _ := json.Marshal(subjects)
 	fmt.Fprint(w, string(b))
+}
+
+func sendSubjectTableHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method != "POST" {
+		http.NotFound(w, r)
+	}
+
+	// case is only "POST"
+	decoder := json.NewDecoder(r.Body)
+	var t struct {
+		Major string `json:major`
+	}
+	err := decoder.Decode(&t)
+	if err != nil {
+		panic(err)
+	}
+	defer r.Body.Close()
+
+	// get subject data by major name
+	subjects, err := getDataFromDBByMajor(t.Major)
+	if err != nil {
+		http.Error(w, err.Error(), 500)
+		return
+	}
+
+	// get html source of table
+	tableSource, err := drawSubjectTable(subjects)
+	if err != nil {
+		http.Error(w, err.Error(), 500)
+	}
+	fmt.Fprint(w, tableSource)
 }

@@ -115,7 +115,7 @@ function addTooltip() {
     }
   }
 }
-addTooltip();
+// addTooltip();
 
 
 $('.combiation-start.button').popup({
@@ -138,26 +138,24 @@ $("input[name='receipt_major']").change(function(event){
 
     $('#echoInputValue').text(event.target.value);
 
-  //ajax call to get data from db
-  var x = new XMLHttpRequest();
-  x.open("POST", "/db/getDataByMajor");
-  x.setRequestHeader("Content-Type", "application/json");
+  // draw table
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "/db/getSubjectTable");
+  xhr.setRequestHeader("Content-Type", "application/json");
 
-  x.onreadystatechange = function() {
-    if(x.readyState === 4 && x.status === 200) {
-      // console.log(x.response);
-      subjects = JSON.parse(x.response);
-      console.log("var subjects has got subject data");
-
-      // fill the inner html
-      // Mustache.js is needed for creating HTML code
-      // document.getElementById('searchResult').innerHTML = generateSearchResultHTML(subjects);
+  xhr.onreadystatechange = function() {
+    if(xhr.readyState === 4 && xhr.status === 200) {
+      console.log(xhr.response);
+      //fill the inner html
+      document.getElementById('searchResult').innerHTML = xhr.response;
+      addTooltip();
     }
   };
 
-  x.send(JSON.stringify({
+  xhr.send(JSON.stringify({
     major: event.target.value
   }));
+
 
 });
 
@@ -196,5 +194,6 @@ $('#btn_request_post').click(function(event) {
       alert(x.response)
     }
   }
+
   x.send();
 });
