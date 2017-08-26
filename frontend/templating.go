@@ -2,20 +2,29 @@ package main
 
 import (
 	"bytes"
-	"fmt"
 	"html/template"
 	"io"
 	"sort"
 	"strconv"
 )
 
-func writeMainPageHTML(w io.Writer) error {
-	// just send main page html source code to writer
-	// mainPageHTMLBuffer is global variable. It is initialized when server is starting.
-	// mainPageHTMLBuffer is in main.go
+func generateMainPageHTML(w io.Writer) error {
+	var MajorList struct {
+		Majors []string
+	}
+	var err error
 
-	_, err := fmt.Fprint(w, mainPageHTMLBuffer.String())
-	return err
+	MajorList.Majors, err = getMajorListFromDB()
+	if err != nil {
+		panic(err)
+	}
+
+	tmpl, err := template.ParseFiles("./template/index.html")
+	if err != nil {
+		panic(err)
+	}
+
+	return tmpl.Execute(w, MajorList)
 }
 
 // This function returns HTML code of subjects table. HTML template package is used.

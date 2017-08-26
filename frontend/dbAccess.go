@@ -1,7 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"log"
+	"sort"
 
 	mgo "gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
@@ -74,4 +76,51 @@ func getDataFromDBByMajor(major string) ([]Subject, error) {
 	}
 
 	return result, nil
+}
+
+func getMajorListFromDB() ([]string, error) {
+	session, err := mgo.Dial("localhost")
+	if err != nil {
+		return nil, err
+	}
+	defer session.Close()
+
+	// get query from db
+	sugangInfo := session.DB("smithy").C("sugangInfo")
+	query := sugangInfo.Find(bson.M{})
+
+	count, err := query.Count()
+	if err != nil {
+		return nil, err
+	}
+	// fmt.Println(count)
+
+	// get data from query
+	var result []map[string]interface{}
+	err = query.All(&result)
+	if err != nil {
+		return nil, err
+	}
+
+	// extract majors from data
+	var majorList map[string]struct{}
+	majorList = make(map[string]struct{}, count)
+
+	// use map to remove duplication
+	for _, data := range result {
+		major := data["bansosoknm"]
+		majorList[fmt.Sprint(major)] = struct{}{}
+	}
+
+	// transform non-duplicated-major-names to string type
+	var majorList_string []string
+	for major := range majorList {
+		majorList_string = append(majorList_string, major)
+	}
+
+	// sorted major list
+	sort.Strings(majorList_string)
+
+	log.Println("(getMajorListFromDB) The subjects list has been generated.")
+	return majorList_string, nil
 }

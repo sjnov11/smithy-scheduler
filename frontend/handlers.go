@@ -8,17 +8,17 @@ import (
 	"net/http"
 )
 
-func handler(w http.ResponseWriter, r *http.Request) {
-
+func rootHandler(w http.ResponseWriter, r *http.Request) {
 	// when request is root, send index.html
 	// otherwise, send the file
+
 	if r.URL.Path == "/" {
+		log.Println("(rootHandler) Main page access has been occurred.")
 		// send index.html
-		// TODO: 사용자가 루트에 접속할 때마다 main page를 새로 그린다. 서버 main함수가 실행될 때 한 번만 그리고 요청은 그냥 html코드 보내줘도 될듯.
-		err := writeMainPageHTML(w)
+		_, err := fmt.Fprint(w, mainPageHTMLBuffer.String())
 		if err != nil {
 			http.Error(w, err.Error(), 500)
-			log.Println("(handler) ", err)
+			log.Println("(rootHandler) ", err)
 			return
 		}
 	} else {
@@ -27,10 +27,11 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		source, err := ioutil.ReadFile("./" + filename)
 		if err != nil {
 			http.Error(w, err.Error(), 500)
-			log.Println("(handler) ", err)
+			log.Println("(rootHandler) ", err)
 			return
 		}
 		fmt.Fprint(w, string(source))
+		// log.Println("(handler) The requested file has been sent: ", filename)
 	}
 }
 
@@ -75,6 +76,7 @@ func sendDataByMajorHandler(w http.ResponseWriter, r *http.Request) {
 
 	b, _ := json.Marshal(subjects)
 	fmt.Fprint(w, string(b))
+	log.Println("(sendDataByMajorHandler) The subject data have been sent.")
 }
 
 func sendSubjectTableHandler(w http.ResponseWriter, r *http.Request) {
@@ -108,4 +110,5 @@ func sendSubjectTableHandler(w http.ResponseWriter, r *http.Request) {
 		log.Println("(sendSubjectTableHandler) ", err)
 	}
 	fmt.Fprint(w, tableSource)
+	log.Println("(sendSubjectTableHandler) The subject table html code has been sent to browser.")
 }
