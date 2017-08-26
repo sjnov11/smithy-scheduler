@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"log"
 
 	mgo "gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
@@ -63,7 +63,7 @@ func getDataFromDBByMajor(major string) ([]Subject, error) {
 	if err != nil {
 		return nil, err
 	}
-	fmt.Println(count)
+	log.Printf("(getDataFromDBByMajor) Request Major: %s, Subjects Count: %d\n", major, count)
 
 	// get data from query
 	// var result []map[string]interface{}

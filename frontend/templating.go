@@ -2,7 +2,6 @@ package main
 
 import (
 	"bytes"
-	"fmt"
 	"html/template"
 	"io"
 	"sort"
@@ -125,7 +124,6 @@ func drawSubjectTable(subjects []Subject) (string, error) {
 	var err error
 	data.SubjectsDividedByGrade, err = divideSubjectsByGrade(subjects)
 	if err != nil {
-		fmt.Println("(drawSubjectTable) Error: ", err)
 		return "", err
 	}
 
@@ -219,7 +217,6 @@ func drawSubjectTable(subjects []Subject) (string, error) {
 	// templating to draw the table
 	tmpl, err := template.ParseFiles("./template/subjectTable.html")
 	if err != nil {
-		fmt.Println("(drawSubjectTable) Error: ", err)
 		return "", err
 	}
 
@@ -227,7 +224,6 @@ func drawSubjectTable(subjects []Subject) (string, error) {
 	var source bytes.Buffer
 	err = tmpl.Execute(&source, data)
 	if err != nil {
-		fmt.Println("(drawSubjectTable) Error: ", err)
 		return "", err
 	}
 
