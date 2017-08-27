@@ -174,7 +174,7 @@ func ExampleBindSubjects() {
 	}
 
 	for _, bindedSubject := range bindedSubjects {
-		fmt.Printf("SubjectName: %s, Count: %d\n", bindedSubject.Name, len(bindedSubject.Subjects))
+		fmt.Printf(bindedSubject.String())
 	}
 
 	// Output:

@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"errors"
+	"fmt"
 	"html/template"
 	"io"
 	"sort"
@@ -32,8 +33,9 @@ func generateMainPageHTML(w io.Writer) error {
 // This function returns HTML code of subjects table. HTML template package is used.
 func drawSubjectTable(subjects []Subject) (string, error) {
 	var data struct {
-		GradeNames             []string
-		SubjectsDividedByGrade map[int][]Subject
+		GradeNames                   []string
+		SubjectsDividedByGrade       map[int][]Subject
+		BindedSubjectsDividedByGrade map[int][]BindedSubject
 
 		SubjectsOrderedForTable [][]Subject
 		IsGradeEmpty            []bool
@@ -46,10 +48,15 @@ func drawSubjectTable(subjects []Subject) (string, error) {
 		return "", err
 	}
 
-	// sort subjects which are divided by grade
-	/* for grade := range data.SubjectsDividedByGrade {
-	 *   sort.Sort(BySubjectName(data.SubjectsDividedByGrade[grade]))
-	 * } */
+	// bind subjects by subject name
+	data.BindedSubjectsDividedByGrade = make(map[int][]BindedSubject)
+	for grade, subjects := range data.SubjectsDividedByGrade {
+		bindedSubject, err := bindSameSubject(subjects) // bindSameSubject sorts subjects
+		if err != nil {
+			return "", err
+		}
+		data.BindedSubjectsDividedByGrade[grade] = bindedSubject
+	}
 
 	// check which grade has no subjects
 	for i := 0; i <= 5; i++ {
@@ -85,7 +92,6 @@ func drawSubjectTable(subjects []Subject) (string, error) {
 	maximumSubjectCount := subjectCounts[0]
 
 	// fill the blank data
-	// 일단 꽉채워놓자 여긴 map이라서 괜찮다
 	for idx := 0; idx <= 5; idx++ {
 		for len(data.SubjectsDividedByGrade[idx]) < maximumSubjectCount {
 			data.SubjectsDividedByGrade[idx] = append(data.SubjectsDividedByGrade[idx], Subject{
@@ -178,6 +184,10 @@ func divideSubjectsByGrade(subjects []Subject) (map[int][]Subject, error) {
 type BindedSubject struct {
 	Name     string
 	Subjects []Subject
+}
+
+func (bindedSubject BindedSubject) String() string {
+	return fmt.Sprintf("SubjectName: %s, Count: %d\n", bindedSubject.Name, len(bindedSubject.Subjects))
 }
 
 // This function receives a slice of subjects and return a slice of subjects binded by subject name
