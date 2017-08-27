@@ -12,13 +12,21 @@
     {{range .SubjectsOrderedForTable}}
     <tr>
       {{range .}}
-        {{if .GwamokNm}} <!-- dummy subject has a space bar. If .GwamokNm is empty, entire column(grade) has no data -->
-        <td lecture-name="{{.GwamokNm}}" class="selectable"><a>{{.GwamokNm}}</a>
-          {{if .SuupNo2}}<!-- when SuupNo2 is empty, there should be no popup information -->
-          <div lecture-name="{{.GwamokNm}}" class="ui lecture-info flowing popup top left transition hidden">
-            <p>{{.GwamokNm}} 강의 정보</p>
+        {{if .Name}} <!-- dummy subject has a space bar. If .Name is empty, entire column(grade) has no data -->
+        <td lecture-name="{{.Name}}" class="selectable"><a>{{.Name}}</a>
+
+          {{if .SuupNo2}} <!-- If there is no SuupNo2 data, tooltip is disabled. -->
+          <div lecture-name="{{.Name}}" class="ui lecture-info flowing popup top left transition hidden">
+            <div class="ui {{.ColumnNumber}} column divided center aligned grid">
+            {{range .Subjects}}
+              <div class="column">
+                <p>{{.GwamokNm}}<br/>교수: {{.DaepyoGangsaNm}}</p>
+              </div>
+            {{end}}
+            </div>
           </div>
           {{end}}
+
         </td>
         {{end}}
       {{end}}

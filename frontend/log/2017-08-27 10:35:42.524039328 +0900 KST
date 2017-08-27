@@ -1,7 +1,0 @@
-2017/08/27 10:35:42 (main) The Logger has been initialized.
-2017/08/27 10:35:42 (getMajorListFromDB) The subjects list has been generated.
-2017/08/27 10:35:42 (main) The main page source code has been generated.
-2017/08/27 10:35:42 (main) Waiting request... 
-2017/08/27 10:35:44 (rootHandler) Main page access has been occurred.
-2017/08/27 10:35:46 (getDataFromDBByMajor) Request Major: 건축공학부, Subjects Count: 56
-2017/08/27 10:35:46 (sendSubjectTableHandler) The subject table html code has been sent to browser.

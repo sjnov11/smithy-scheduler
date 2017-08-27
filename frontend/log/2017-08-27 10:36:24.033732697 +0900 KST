@@ -1,7 +1,0 @@
-2017/08/27 10:36:24 (main) The Logger has been initialized.
-2017/08/27 10:36:24 (getMajorListFromDB) The subjects list has been generated.
-2017/08/27 10:36:24 (main) The main page source code has been generated.
-2017/08/27 10:36:24 (main) Waiting request... 
-2017/08/27 10:36:25 (rootHandler) Main page access has been occurred.
-2017/08/27 10:36:29 (getDataFromDBByMajor) Request Major: 교육학과, Subjects Count: 33
-2017/08/27 10:36:29 (sendSubjectTableHandler) The subject table html code has been sent to browser.

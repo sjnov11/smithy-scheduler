@@ -9,6 +9,8 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+
+	"github.com/divan/num2words"
 )
 
 func generateMainPageHTML(w io.Writer) error {
@@ -37,7 +39,7 @@ func drawSubjectTable(subjects []Subject) (string, error) {
 		SubjectsDividedByGrade       map[int][]Subject
 		BindedSubjectsDividedByGrade map[int][]BindedSubject
 
-		SubjectsOrderedForTable [][]Subject
+		SubjectsOrderedForTable [][]BindedSubject
 		IsGradeEmpty            []bool
 	}
 	// divide subjects by grade
@@ -83,7 +85,7 @@ func drawSubjectTable(subjects []Subject) (string, error) {
 	// make each grade's subject count same to fill blank data.
 	// get maximum count
 	var subjectCounts []int
-	for _, subjects := range data.SubjectsDividedByGrade {
+	for _, subjects := range data.BindedSubjectsDividedByGrade {
 		subjectCounts = append(subjectCounts, len(subjects))
 	}
 	// sort to find maximum count
@@ -93,9 +95,9 @@ func drawSubjectTable(subjects []Subject) (string, error) {
 
 	// fill the blank data
 	for idx := 0; idx <= 5; idx++ {
-		for len(data.SubjectsDividedByGrade[idx]) < maximumSubjectCount {
-			data.SubjectsDividedByGrade[idx] = append(data.SubjectsDividedByGrade[idx], Subject{
-				GwamokNm: " ",
+		for len(data.BindedSubjectsDividedByGrade[idx]) < maximumSubjectCount {
+			data.BindedSubjectsDividedByGrade[idx] = append(data.BindedSubjectsDividedByGrade[idx], BindedSubject{
+				Name: " ",
 			})
 		}
 	}
@@ -120,15 +122,15 @@ func drawSubjectTable(subjects []Subject) (string, error) {
 	 *   data.SubjectsOrderedForTable = append(data.SubjectsOrderedForTable, row)
 	 * } */
 
-	// fill the last data
+	// fill table data
 	for rowNumber := 0; rowNumber < maximumSubjectCount; rowNumber++ {
-		var row []Subject
+		var row []BindedSubject
 		for grade := 0; grade <= 5; grade++ {
 			// for debugging
-			if len(data.SubjectsDividedByGrade[grade]) == 0 {
-				row = append(row, Subject{})
+			if len(data.BindedSubjectsDividedByGrade[grade]) == 0 {
+				row = append(row, BindedSubject{})
 			} else {
-				row = append(row, data.SubjectsDividedByGrade[grade][rowNumber])
+				row = append(row, data.BindedSubjectsDividedByGrade[grade][rowNumber])
 			}
 		}
 		data.SubjectsOrderedForTable = append(data.SubjectsOrderedForTable, row)
@@ -139,7 +141,7 @@ func drawSubjectTable(subjects []Subject) (string, error) {
 		if gradeIsEmpty {
 			data.GradeNames[grade] = ""
 			for row := 0; row < maximumSubjectCount; row++ {
-				data.SubjectsOrderedForTable[row][grade] = Subject{}
+				data.SubjectsOrderedForTable[row][grade] = BindedSubject{}
 			}
 		}
 	}
@@ -182,8 +184,10 @@ func divideSubjectsByGrade(subjects []Subject) (map[int][]Subject, error) {
 }
 
 type BindedSubject struct {
-	Name     string
-	Subjects []Subject
+	Name         string
+	Subjects     []Subject
+	ColumnNumber string
+	SuupNo2      string
 }
 
 func (bindedSubject BindedSubject) String() string {
@@ -212,6 +216,8 @@ func bindSameSubject(subjects []Subject) ([]BindedSubject, error) {
 			// when current subject is not same with former
 
 			// append to result
+			buffer.ColumnNumber = num2words.Convert(len(buffer.Subjects))
+			buffer.SuupNo2 = buffer.Subjects[0].SuupNo2
 			result = append(result, buffer)
 
 			// reinitialize buffer
@@ -224,6 +230,11 @@ func bindSameSubject(subjects []Subject) ([]BindedSubject, error) {
 			buffer.Subjects = append(buffer.Subjects, subject)
 		}
 	}
+
+	// for last one
+	buffer.ColumnNumber = num2words.Convert(len(buffer.Subjects))
+	buffer.SuupNo2 = buffer.Subjects[0].SuupNo2
+	result = append(result, buffer)
 
 	return result, nil
 }
