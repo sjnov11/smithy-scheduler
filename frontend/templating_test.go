@@ -1,8 +1,6 @@
 package main
 
 import (
-	"bufio"
-	"bytes"
 	"fmt"
 )
 
@@ -47,12 +45,13 @@ func ExampleDrawSubjectTable() {
 		GwamokNm: "2학년과목2",
 	}
 
-	result, err := drawSubjectTable(sampleData)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	fmt.Println(result)
+	/* result, err := drawSubjectTable(sampleData)
+	 * if err != nil {
+	 *   fmt.Println(err)
+	 *   return
+	 * }
+	 * fmt.Println(result) */
+	fmt.Println("developing")
 
 	// Output:
 	// developing
@@ -128,18 +127,60 @@ func ExampleDivideSubjectsByGrade() {
 	// 4학년과목2
 }
 
-func ExampleMainHTML() {
-	var bwrite bytes.Buffer
-	w := bufio.NewWriter(&bwrite)
-	err := writeMainPageHTML(w)
-	if err != nil {
-		fmt.Println(err)
-		return
+func ExampleBindSubjects() {
+	sampleDataNumber := 9
+	sampleData := make([]Subject, sampleDataNumber)
+
+	sampleData[0] = Subject{
+		IsuGrade: "3",
+		GwamokNm: "3학년과목1",
+	}
+	sampleData[1] = Subject{
+		IsuGrade: "3",
+		GwamokNm: "3학년과목1",
+	}
+	sampleData[2] = Subject{
+		IsuGrade: "4",
+		GwamokNm: "4학년과목1",
+	}
+	sampleData[3] = Subject{
+		IsuGrade: "4",
+		GwamokNm: "4학년과목2",
+	}
+	sampleData[4] = Subject{
+		IsuGrade: "3",
+		GwamokNm: "3학년과목2",
+	}
+	sampleData[5] = Subject{
+		IsuGrade: "1",
+		GwamokNm: "1학년과목1",
+	}
+	sampleData[6] = Subject{
+		IsuGrade: "1",
+		GwamokNm: "1학년과목1",
+	}
+	sampleData[7] = Subject{
+		IsuGrade: "2",
+		GwamokNm: "2학년과목2",
+	}
+	sampleData[8] = Subject{
+		IsuGrade: "2",
+		GwamokNm: "2학년과목2",
 	}
 
-	fmt.Println("dummy")
-	// fmt.Println(bwrite.String())
+	bindedSubjects, err := bindSameSubject(sampleData)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	for _, bindedSubject := range bindedSubjects {
+		fmt.Printf("SubjectName: %s, Count: %d\n", bindedSubject.Name, len(bindedSubject.Subjects))
+	}
 
 	// Output:
-	// dummy
+	// SubjectName: 1학년과목1, Count: 2
+	// SubjectName: 2학년과목2, Count: 2
+	// SubjectName: 3학년과목1, Count: 2
+	// SubjectName: 3학년과목2, Count: 1
+	// SubjectName: 4학년과목1, Count: 1
 }

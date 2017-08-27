@@ -2,10 +2,12 @@ package main
 
 import (
 	"bytes"
+	"errors"
 	"html/template"
 	"io"
 	"sort"
 	"strconv"
+	"strings"
 )
 
 func generateMainPageHTML(w io.Writer) error {
@@ -43,6 +45,11 @@ func drawSubjectTable(subjects []Subject) (string, error) {
 	if err != nil {
 		return "", err
 	}
+
+	// sort subjects which are divided by grade
+	/* for grade := range data.SubjectsDividedByGrade {
+	 *   sort.Sort(BySubjectName(data.SubjectsDividedByGrade[grade]))
+	 * } */
 
 	// check which grade has no subjects
 	for i := 0; i <= 5; i++ {
@@ -166,4 +173,47 @@ func divideSubjectsByGrade(subjects []Subject) (map[int][]Subject, error) {
 	}
 
 	return subjectsDividedByGrade, nil
+}
+
+type BindedSubject struct {
+	Name     string
+	Subjects []Subject
+}
+
+// This function receives a slice of subjects and return a slice of subjects binded by subject name
+func bindSameSubject(subjects []Subject) ([]BindedSubject, error) {
+	if len(subjects) == 0 {
+		return nil, errors.New("(bindSameSubject) Empty slice is received")
+	}
+
+	sort.Sort(BySubjectName(subjects))
+
+	// init binding
+	var result []BindedSubject
+	formerSubjectName := subjects[0].GwamokNm
+	var buffer BindedSubject = BindedSubject{}
+	buffer.Name = formerSubjectName
+
+	for _, subject := range subjects {
+		if strings.Compare(formerSubjectName, subject.GwamokNm) == 0 {
+			// when current subject is same with former
+			buffer.Subjects = append(buffer.Subjects, subject)
+		} else {
+			// when current subject is not same with former
+
+			// append to result
+			result = append(result, buffer)
+
+			// reinitialize buffer
+			buffer.Name = ""
+			buffer.Subjects = nil
+
+			// insert new subject to buffer
+			formerSubjectName = subject.GwamokNm
+			buffer.Name = formerSubjectName
+			buffer.Subjects = append(buffer.Subjects, subject)
+		}
+	}
+
+	return result, nil
 }

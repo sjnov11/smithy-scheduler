@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"sort"
+	"strings"
 
 	mgo "gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
@@ -48,6 +49,25 @@ type Subject struct {
 			End_minute   string `json:"end_minute"`
 		} `json:"timesandclass"`
 	} `json:"seconddata"`
+}
+
+// methods for sorting
+type BySubjectName []Subject
+
+func (s BySubjectName) Len() int {
+	return len(s)
+}
+
+func (s BySubjectName) Swap(i, j int) {
+	s[i], s[j] = s[j], s[i]
+}
+
+func (s BySubjectName) Less(i, j int) bool {
+	if strings.Compare(s[i].GwamokNm, s[j].GwamokNm) < 0 {
+		return true
+	} else {
+		return false
+	}
 }
 
 func getDataFromDBByMajor(major string) ([]Subject, error) {
