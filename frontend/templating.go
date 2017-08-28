@@ -12,9 +12,11 @@ import (
 )
 
 type BindedSubject struct {
-	Name     string
 	Subjects []Subject
-	SuupNo2  string
+
+	Name    string
+	HaksuNo string
+	IsuGbNm string
 }
 
 func (bindedSubject BindedSubject) String() string {
@@ -207,8 +209,9 @@ func bindSameSubject(subjects []Subject) ([]BindedSubject, error) {
 
 	// binding function
 	appendResult := func() {
-		buffer.SuupNo2 = buffer.Subjects[0].SuupNo2
-		sort.Sort(ByProfessorName(buffer.Subjects))
+		buffer.HaksuNo = buffer.Subjects[0].HaksuNo
+		buffer.IsuGbNm = buffer.Subjects[0].IsuGbNm
+		sort.Sort(BySuupNo2(buffer.Subjects))
 		result = append(result, buffer)
 	}
 

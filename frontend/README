@@ -51,3 +51,19 @@ subject-selected.html : 장바구니 페이지
 page templating. 일단 server side에서 작업하자.
 
 issue: table은 1,2,3,4학년까지만 있음. 5학년까지 있는 과는 어떻게 그려주냐.
+
+8/28
+과목 선택했을 때 테이블 렌더링 해주기.
+
+선택했을 때 javascript function 만들어야겠다. 선택한 과목 정보 저장하고, css 색깔 바꿔주기. 매번 렌더링해라.
+
+var selectedSubject = new Set();
+
+
+
+해야할 것: 변수 이름에서 lecture랑 subject를 혼용해서 썼다. lecture로 통일하기.
+
+자바스크립트 리팩터링. 코드 개복잡하넹.
+
+다른 과 선택했다 돌아와도 선택한 과목 selected class 붙여주기 -> 전공 선택할 때마다 selectedLecture 배열 돌면서 add함수 호출해줘야겠다.
+

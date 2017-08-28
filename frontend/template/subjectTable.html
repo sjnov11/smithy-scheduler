@@ -13,32 +13,30 @@
     <tr>
       {{range .}}
         {{if .Name}} <!-- dummy subject has a space bar. If .Name is empty, entire column(grade) has no data -->
-        <td lecture-name="{{.Name}}" class="selectable"><a>{{.Name}}</a>
+        <td lecture-name="{{.Name}}" class="selectable">
 
-          {{if .SuupNo2}} <!-- If there is no SuupNo2 data, tooltip is disabled. -->
+          {{if .HaksuNo}} <!-- If there is no HaksuNo data, tooltip is disabled. -->
+          <a>{{.Name}}</a>
+
           <div lecture-name="{{.Name}}"class="ui mini longer modal">
             <!-- <div class="header"></div> -->
             <div class="ui segment modal-subject-name">
 
               <div class="ui hanyang ribbon label modal-subject-name">
-                <i class="leanpub icon"></i> {{.Name}}
+                <i class="leanpub icon"></i> {{.Name}}:{{.IsuGbNm}}
               </div>
 
             </div>
             <div class="scrolling content modal-subject-name"> 
 
-            {{range .Subjects}}
-            <div style="float: left; width: 75%; margin: 5px 0 5px 0">
-              <p>{{.GwamokNm}}<br/>교수: {{.DaepyoGangsaNm}}</p>
-            </div>
+              {{range .Subjects}}
+              <div lecture-name="{{.GwamokNm}}" lecture-number="{{.SuupNo2}}" class="each-subject modal-subject-name">
+                <div style="margin: 5px 0 5px 0">
+                  <p>{{.GwamokNm}}<br/>교수: {{.DaepyoGangsaNm}}</p>
+                </div>
 
-            <div style="float: left; width: 25%; margin: 5px 0 5px 0">
-              <button lecture-name="{{.GwamokNm}}" class="ui hanyang basic modal-subject button">선택</button>
-            </div>
-
-
-            {{end}}
-
+              </div>
+              {{end}}
 
             </div>
           </div>

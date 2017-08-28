@@ -163,12 +163,12 @@ table.search-result-table > thead > tr > th:nth-child(1) {
   border-left: 1px solid rgba(35, 35, 35, .1) !important;
 }
 
-td.positive > a{
+td.selectable.selected > a{
   /* background-color: #F7FFE6 !important; */
   background-color: #f4ffdd !important;
 }
 
-td.positive > a:hover{
+td.selectable.selected > a:hover{
   background-color: #eefecd !important;
 }
 
@@ -293,3 +293,26 @@ td > a:hover{
   background-image: none !important;
   box-shadow: 0 0 0 0 rgba(34, 36, 38, .15) inset !important
 }
+
+.content.modal-subject-name{
+  padding: 0 !important
+}
+
+.each-subject.modal-subject-name{
+  padding: 0.75rem 1.5rem 0.75rem 1.5rem
+}
+
+.each-subject.modal-subject-name:hover{
+  background-color: #eee;
+  cursor: pointer;
+}
+
+.each-subject.modal-subject-name.selected{
+  background-color: #f4ffdc
+}
+
+
+.each-subject.modal-subject-name.selected:hover{
+  background-color: #eeffcb
+}
+

@@ -38,6 +38,8 @@ new Vue({
 var majorIsSelected = true;
 var subjects;
 
+var selectedLecture = new Set();
+
 $('.ui.dropdown')
   .dropdown()
 ;
@@ -97,6 +99,7 @@ $('button.lecture-select').click(function() {
   }
 });
 
+
 // add tooltips to the cells of the lecture tables.
 function addModal() {
   var lectureCells = $('td.selectable');
@@ -106,12 +109,57 @@ function addModal() {
     var lectureName = cell.getAttribute('lecture-name');
     if (lectureName != null) {
 
-      $(cell).find("div.modal[lecture-name='" + lectureName + "']")
-        .modal('attach events', "td.selectable[lecture-name='" + lectureName + "']", 'show')
-        .modal('attach events', "button[lecture-name='" + lectureName + "']", 'hide')
-      ;
+      var jqueryCell = $(cell).find("div.modal[lecture-name='" + lectureName + "']")
+        .modal('attach events', "td.selectable[lecture-name='" + lectureName + "']", 'show');
+        // .modal('attach events', "div.each-subject.modal-subject-name[lecture-name='" + lectureName + "']", 'hide')
 
+      jqueryCell.find("div.each-subject.modal-subject-name[lecture-name='" + lectureName + "']").click(function(){
 
+        var selectedLectureNumber = $(this).attr("lecture-number");
+
+        if (selectedLecture.has(selectedLectureNumber) == false) {
+          // add
+          function addLecture(lecture) {
+            selectedLecture.add(selectedLectureNumber);
+            $(lecture).addClass("selected");
+
+            var lectureName = $(lecture).attr("lecture-name");
+            $("td.selectable[lecture-name='" + lectureName + "']").addClass("selected");
+
+            console.log("lecture " +selectedLectureNumber+ " is added to var selectedLecture");
+          };
+          
+          sameLectures = $(this).parent().find("[lecture-number='"+ selectedLectureNumber +"']");
+          for (var i = 0, l = sameLectures.length; i < l; i++) {
+            addLecture(sameLectures[i]);
+          }
+
+          // addLecture(this);
+
+        } else {
+          // delete
+          function deleteLecture(lecture) {
+            selectedLecture.delete(selectedLectureNumber);
+            $(lecture).removeClass("selected");
+
+            // when GwamokNm is same
+            sameNameLectures = $(lecture).parent().find(".selected");
+            if (sameNameLectures.length == 0){
+              // when there is no selected subject
+              var lectureName = $(lecture).attr("lecture-name");
+              $("td.selectable[lecture-name='" + lectureName + "']").removeClass("selected");
+            }
+
+            console.log("lecture " +selectedLectureNumber+ " is removed from var selectedLecture");
+          };
+
+          // when SuupNo2 is same
+          sameLectures = $(this).parent().find("[lecture-number='"+ selectedLectureNumber +"']");
+          for (var i = 0, l = sameLectures.length; i < l; i++) {
+            deleteLecture(sameLectures[i]);
+          }
+        }
+      });
     } else {
       // No lecture-name. do nothing
     }
