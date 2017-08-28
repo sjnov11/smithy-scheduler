@@ -70,6 +70,24 @@ func (s BySubjectName) Less(i, j int) bool {
 	}
 }
 
+type ByProfessorName []Subject
+
+func (s ByProfessorName) Len() int {
+	return len(s)
+}
+
+func (s ByProfessorName) Swap(i, j int) {
+	s[i], s[j] = s[j], s[i]
+}
+
+func (s ByProfessorName) Less(i, j int) bool {
+	if strings.Compare(s[i].DaepyoGangsaNm, s[j].DaepyoGangsaNm) < 0 {
+		return true
+	} else {
+		return false
+	}
+}
+
 func getDataFromDBByMajor(major string) ([]Subject, error) {
 	session, err := mgo.Dial("localhost")
 	if err != nil {

@@ -9,9 +9,17 @@ import (
 	"sort"
 	"strconv"
 	"strings"
-
-	"github.com/divan/num2words"
 )
+
+type BindedSubject struct {
+	Name     string
+	Subjects []Subject
+	SuupNo2  string
+}
+
+func (bindedSubject BindedSubject) String() string {
+	return fmt.Sprintf("SubjectName: %s, Count: %d\n", bindedSubject.Name, len(bindedSubject.Subjects))
+}
 
 func generateMainPageHTML(w io.Writer) error {
 	var MajorList struct {
@@ -183,17 +191,6 @@ func divideSubjectsByGrade(subjects []Subject) (map[int][]Subject, error) {
 	return subjectsDividedByGrade, nil
 }
 
-type BindedSubject struct {
-	Name         string
-	Subjects     []Subject
-	ColumnNumber string
-	SuupNo2      string
-}
-
-func (bindedSubject BindedSubject) String() string {
-	return fmt.Sprintf("SubjectName: %s, Count: %d\n", bindedSubject.Name, len(bindedSubject.Subjects))
-}
-
 // This function receives a slice of subjects and return a slice of subjects binded by subject name
 func bindSameSubject(subjects []Subject) ([]BindedSubject, error) {
 	if len(subjects) == 0 {
@@ -208,6 +205,13 @@ func bindSameSubject(subjects []Subject) ([]BindedSubject, error) {
 	var buffer BindedSubject = BindedSubject{}
 	buffer.Name = formerSubjectName
 
+	// binding function
+	appendResult := func() {
+		buffer.SuupNo2 = buffer.Subjects[0].SuupNo2
+		sort.Sort(ByProfessorName(buffer.Subjects))
+		result = append(result, buffer)
+	}
+
 	for _, subject := range subjects {
 		if strings.Compare(formerSubjectName, subject.GwamokNm) == 0 {
 			// when current subject is same with former
@@ -216,9 +220,7 @@ func bindSameSubject(subjects []Subject) ([]BindedSubject, error) {
 			// when current subject is not same with former
 
 			// append to result
-			buffer.ColumnNumber = num2words.Convert(len(buffer.Subjects))
-			buffer.SuupNo2 = buffer.Subjects[0].SuupNo2
-			result = append(result, buffer)
+			appendResult()
 
 			// reinitialize buffer
 			buffer.Name = ""
@@ -231,10 +233,8 @@ func bindSameSubject(subjects []Subject) ([]BindedSubject, error) {
 		}
 	}
 
-	// for last one
-	buffer.ColumnNumber = num2words.Convert(len(buffer.Subjects))
-	buffer.SuupNo2 = buffer.Subjects[0].SuupNo2
-	result = append(result, buffer)
+	// for the last subject
+	appendResult()
 
 	return result, nil
 }

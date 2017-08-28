@@ -98,24 +98,26 @@ $('button.lecture-select').click(function() {
 });
 
 // add tooltips to the cells of the lecture tables.
-function addTooltip() {
+function addModal() {
   var lectureCells = $('td.selectable');
   for (var i = 0, l = lectureCells.length; i < l; i++) {
     var cell = lectureCells[i];
 
     var lectureName = cell.getAttribute('lecture-name');
     if (lectureName != null) {
-      $(cell).popup({
-        // Find div which has 'lecture-name' attribute to show tooltip
-        popup : $("div.lecture-info.popup[lecture-name='" + lectureName +"']"),
-        on    : 'click'
-      });
+
+      $(cell).find("div.modal[lecture-name='" + lectureName + "']")
+        .modal('attach events', "td.selectable[lecture-name='" + lectureName + "']", 'show')
+        .modal('attach events', "button[lecture-name='" + lectureName + "']", 'hide')
+      ;
+
+
     } else {
       // No lecture-name. do nothing
     }
   }
 }
-// addTooltip();
+// addModal();
 
 
 $('.combiation-start.button').popup({
@@ -145,10 +147,10 @@ $("input[name='receipt_major']").change(function(event){
 
   xhr.onreadystatechange = function() {
     if(xhr.readyState === 4 && xhr.status === 200) {
-      console.log(xhr.response);
+      // console.log(xhr.response);
       //fill the inner html
       document.getElementById('searchResult').innerHTML = xhr.response;
-      addTooltip();
+      addModal();
     }
   };
 
@@ -190,7 +192,7 @@ $('#btn_request_post').click(function(event) {
   x.open("POST", "/db/");
   x.onreadystatechange = function() {
     if(x.readyState === 4 && x.status === 200) {
-      console.log(x.response);
+      // console.log(x.response);
       alert(x.response)
     }
   }

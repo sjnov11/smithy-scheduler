@@ -16,13 +16,30 @@
         <td lecture-name="{{.Name}}" class="selectable"><a>{{.Name}}</a>
 
           {{if .SuupNo2}} <!-- If there is no SuupNo2 data, tooltip is disabled. -->
-          <div lecture-name="{{.Name}}" class="ui lecture-info flowing popup top left transition hidden">
-            <div class="ui {{.ColumnNumber}} column divided center aligned grid">
-            {{range .Subjects}}
-              <div class="column">
-                <p>{{.GwamokNm}}<br/>교수: {{.DaepyoGangsaNm}}</p>
+          <div lecture-name="{{.Name}}"class="ui mini longer modal">
+            <!-- <div class="header"></div> -->
+            <div class="ui segment modal-subject-name">
+
+              <div class="ui hanyang ribbon label modal-subject-name">
+                <i class="leanpub icon"></i> {{.Name}}
               </div>
+
+            </div>
+            <div class="scrolling content modal-subject-name"> 
+
+            {{range .Subjects}}
+            <div style="float: left; width: 75%; margin: 5px 0 5px 0">
+              <p>{{.GwamokNm}}<br/>교수: {{.DaepyoGangsaNm}}</p>
+            </div>
+
+            <div style="float: left; width: 25%; margin: 5px 0 5px 0">
+              <button lecture-name="{{.GwamokNm}}" class="ui hanyang basic modal-subject button">선택</button>
+            </div>
+
+
             {{end}}
+
+
             </div>
           </div>
           {{end}}

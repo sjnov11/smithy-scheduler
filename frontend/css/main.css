@@ -21,7 +21,9 @@ div.entry {
 
 /* css variable */
 :root {
+    --main-bright-color:#005fb7;
     --main-color:#004483; /* Hanyang blue */
+    --main-dark-color:#003c73;
 }
 
 /* variable usage */
@@ -124,7 +126,7 @@ hr.main-header-shadow {
   font-weight: 100;
 }
 
-.ui.hanyang.button {
+.ui.hanyang.button{
   background-color: var(--main-color);
   color: #fff;
   text-shadow: none;
@@ -262,4 +264,32 @@ td > a:hover{
 
 .search-result {
   margin: 14px 0 14px 0;
+}
+
+.ui.hanyang.ribbon.label {
+  border-color: var(--main-dark-color);
+}
+
+.ui.hanyang.label, .ui.hanyang.labels .label {
+    background-color: var(--main-bright-color);
+    border-color: var(--main-bright-color);
+    color: #fff!important;
+}
+
+.ui.modal-subject-name.label{
+  font-weight: 100;
+  font-size: 1.5em;
+}
+
+
+.ui.modal-subject-name.segment{
+  margin-bottom: 0;
+}
+
+.hanyang.basic.modal-subject.button:hover{
+  background-color: var(--main-bright-color) !important;
+  color: #fff !important;
+  text-shadow: none !important;
+  background-image: none !important;
+  box-shadow: 0 0 0 0 rgba(34, 36, 38, .15) inset !important
 }
