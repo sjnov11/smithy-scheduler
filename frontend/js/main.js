@@ -182,11 +182,40 @@ $('.combination-result.modal')
   .modal('attach events', '.time-table', 'hide')
 ;
 
-$("input[name='receipt_major']").change(function(event){
-    // alert(event.target.value + " has been selected.");
-    displayMajorTable();
+// This function gives 'selected' class to  already selected lectures 
+function alreadySelectedLecture() {
+  selectedLecture.forEach(function(lectureNumber){
+    console.log(lectureNumber);
 
-    $('#echoInputValue').text(event.target.value);
+    var eachLecture = $("div.each-subject.modal-subject-name[lecture-number='"+lectureNumber+"']");
+    var lectureName = eachLecture.attr("lecture-name");
+
+    eachLecture.addClass("selected");
+    $("td.selectable[lecture-name='" + lectureName + "']").addClass("selected");
+  });
+}
+
+
+function showSearchResultLoader() {
+  var loaderHTML = `
+    <div class="ui active inverted dimmer">
+      <div class="ui large loader"></div>
+    </div>`;
+  $("#searchResultLoader")[0].innerHTML = loaderHTML;
+};
+
+function hideSearchResultLoader() {
+  $("#searchResultLoader")[0].innerHTML = "";
+}
+
+$("input[name='receipt_major']").change(function(event){
+  displayMajorTable();
+  showSearchResultLoader();
+
+  // show loader
+  // showSearchResultLoader();
+
+  $('#echoInputValue').text(event.target.value);
 
   // draw table
   var xhr = new XMLHttpRequest();
@@ -199,14 +228,14 @@ $("input[name='receipt_major']").change(function(event){
       //fill the inner html
       document.getElementById('searchResult').innerHTML = xhr.response;
       addModal();
+      alreadySelectedLecture();
+      hideSearchResultLoader();
     }
   };
 
   xhr.send(JSON.stringify({
     major: event.target.value
   }));
-
-
 });
 
 function displayMajorTable() {

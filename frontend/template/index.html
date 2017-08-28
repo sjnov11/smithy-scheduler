@@ -91,54 +91,60 @@
             </div>
 
 
-            <div id="searchResult" class="search-result">
-            <table class="ui fixed single line celled table search-result-table unstackable" style="display:none">
-              <thead>
-                <tr>
-                  <th>1학년</th>
-                  <th>2학년</th>
-                  <th>3학년</th>
-                  <th>4학년</th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- below data should be controlled by Vue-->
-                <tr>
-                  <td class="selectable"><a></a></td>
-                  <td lecture-name="시스템프로그래밍" class="selectable"><a>시스템프로그래밍</a>
-                    <div lecture-name="시스템프로그래밍" class="ui lecture-info flowing popup top left transition hidden">
-                      <div class="ui three column divided center aligned grid">
-                        <div class="column">
-                          <p>시스템프로그래밍 <br/>강의 정보1</p>
-                          <button lecture-name="시스템프로그래밍" nth-lecture="1" class="ui hanyang basic mini lecture-select button">선택</button>
-                        </div>
-                        <div class="column">
-                          <p>시스템프로그래밍<br /> 강의 정보2</p>
-                          <button lecture-name="시스템프로그래밍" nth-lecture="2" class="ui hanyang basic mini lecture-select button">선택</button>
-                        </div>
+            <div id="searchResultSegment" class="search-result-segment ui basic segment">
+              
+              <div id="searchResultLoader" class="search-result-loader">
+              </div>
 
-                        <div class="column">
-                          <p>시스템프로그래밍<br /> 강의 정보3</p>
-                          <button lecture-name="시스템프로그래밍" nth-lecture="3" class="ui hanyang basic mini lecture-select button">선택</button>
-                        </div>
+              <div id="searchResult" class="search-result">
+              <table class="ui fixed single line celled table search-result-table unstackable" style="display:none">
+                <thead>
+                  <tr>
+                    <th>1학년</th>
+                    <th>2학년</th>
+                    <th>3학년</th>
+                    <th>4학년</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- below data should be controlled by Vue-->
+                  <tr>
+                    <td class="selectable"><a></a></td>
+                    <td lecture-name="시스템프로그래밍" class="selectable"><a>시스템프로그래밍</a>
+                      <div lecture-name="시스템프로그래밍" class="ui lecture-info flowing popup top left transition hidden">
+                        <div class="ui three column divided center aligned grid">
+                          <div class="column">
+                            <p>시스템프로그래밍 <br/>강의 정보1</p>
+                            <button lecture-name="시스템프로그래밍" nth-lecture="1" class="ui hanyang basic mini lecture-select button">선택</button>
+                          </div>
+                          <div class="column">
+                            <p>시스템프로그래밍<br /> 강의 정보2</p>
+                            <button lecture-name="시스템프로그래밍" nth-lecture="2" class="ui hanyang basic mini lecture-select button">선택</button>
+                          </div>
 
+                          <div class="column">
+                            <p>시스템프로그래밍<br /> 강의 정보3</p>
+                            <button lecture-name="시스템프로그래밍" nth-lecture="3" class="ui hanyang basic mini lecture-select button">선택</button>
+                          </div>
+
+                        </div>
                       </div>
-                    </div>
-                  </td>
-                  <td lecture-name="소프트웨어공학" class="selectable"><a>소프트웨어공학</a>
-                    <div lecture-name="소프트웨어공학" class="ui lecture-info popup top left transition hidden">
-                      <p>소프트웨어공학 강의 정보</p>
-                    </div>
-                  </td>
-                  <td lecture-name="전공멘토링" class="selectable"><a>전공멘토링</a>
-                    <div lecture-name="전공멘토링" class="ui lecture-info popup top left transition hidden">
-                      <p>전공멘토링 강의 정보</p>
-                    </div>
-                  </td>
-                </tr>
-                
-              </tbody>
-            </table>
+                    </td>
+                    <td lecture-name="소프트웨어공학" class="selectable"><a>소프트웨어공학</a>
+                      <div lecture-name="소프트웨어공학" class="ui lecture-info popup top left transition hidden">
+                        <p>소프트웨어공학 강의 정보</p>
+                      </div>
+                    </td>
+                    <td lecture-name="전공멘토링" class="selectable"><a>전공멘토링</a>
+                      <div lecture-name="전공멘토링" class="ui lecture-info popup top left transition hidden">
+                        <p>전공멘토링 강의 정보</p>
+                      </div>
+                    </td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+              </div>
             </div>
 
             <div class="center" style="width:100%; margin:50 auto 0 auto">

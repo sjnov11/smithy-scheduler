@@ -163,6 +163,11 @@ table.search-result-table > thead > tr > th:nth-child(1) {
   border-left: 1px solid rgba(35, 35, 35, .1) !important;
 }
 
+
+.search-result-segment.ui.basic.segment{
+  padding:0 !important;
+}
+
 td.selectable.selected > a{
   /* background-color: #F7FFE6 !important; */
   background-color: #f4ffdd !important;
@@ -315,4 +320,5 @@ td > a:hover{
 .each-subject.modal-subject-name.selected:hover{
   background-color: #eeffcb
 }
+
 
