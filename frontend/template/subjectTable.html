@@ -23,7 +23,16 @@
             <div class="ui segment modal-subject-name">
 
               <div class="ui hanyang ribbon label modal-subject-name">
-                <i class="leanpub icon"></i> {{.Name}}:{{.IsuGbNm}}
+                <i class="leanpub icon"></i> {{.Name}} ({{.HaksuNo}})
+              </div>
+
+                <div class="ui basic segment" style="padding:0">
+                <a class="ui tag label" style="font-weight:400">{{.IsuGbNm}}</a>
+                {{if .IsuJehanYn}}
+                <a class="ui tag label isu-jehan-yes" style="font-weight:400" data-position="bottom left">이수제한있음</a>
+                {{else}}
+                <a class="ui tag label" style="font-weight:400">이수제한없음</a>
+                {{end}}
               </div>
 
             </div>
@@ -31,9 +40,39 @@
 
               {{range .Subjects}}
               <div lecture-name="{{.GwamokNm}}" lecture-number="{{.SuupNo2}}" class="each-subject modal-subject-name">
-                <div style="margin: 5px 0 5px 0">
-                  <p>{{.GwamokNm}}<br/>교수: {{.DaepyoGangsaNm}}</p>
-                </div>
+                 <div lecture-number="{{.SuupNo2}}" class="ui horizontal basic segments each-subject-info">
+                    <div class="ui center aligned basic segment" style="width:50%">
+                      <p>
+                      {{range .SuupTimes}}
+                        {{.}}<br>
+                      {{end}}
+                      </p>
+                    </div>
+
+                    <div class="ui center aligned basic segment" style="width:50%">
+                      <p>{{.DaepyoGangsaNm}} 교수</p>
+                    </div>
+                 </div>
+              </div>
+
+               <!-- popup -->
+              <div lecture-number="{{.SuupNo2}}" class="ui each-subject popup" style="width: 100%">
+                <p>{{.GwamokNm}}<br/>{{.DaepyoGangsaNm}} 교수</p>
+                <p>수업번호: {{.SuupNo2}}<br>학수번호: {{.HaksuNo}}</p>
+                {{if .SuupTypeGb}}
+                <p>상세정보: {{.SuupTypeGb}}</p>
+                {{end}}
+
+                {{if .SecondData.TimesAndClass}}
+                  <p>
+                  {{range .SecondData.TimesAndClass}}
+                    {{.Day}}({{.Start_time}}:{{.Start_minute}}-{{.End_time}}:{{.End_minute}})
+                    <br/>
+                    &nbsp;&nbsp;{{.Classroom}}
+                    <br/>
+                  {{end}}
+                  </p>
+                {{end}}
 
               </div>
               {{end}}
@@ -49,5 +88,3 @@
     {{end}}
   </tbody>
 </table>
-
-

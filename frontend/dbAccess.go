@@ -131,7 +131,26 @@ func getDataFromDBByMajor(major string) ([]Subject, error) {
 		return nil, err
 	}
 
-	return result, nil
+	// remove same lecture (same SuupNo2)
+	sort.Sort(BySuupNo2(result))
+	var nonDuplicatedResult []Subject
+	formerSuupNo2 := result[0].SuupNo2
+	nonDuplicatedResult = append(nonDuplicatedResult, result[0])
+
+	for _, subject := range result {
+		if formerSuupNo2 == subject.SuupNo2 {
+			// skip when number is same
+			continue
+		} else {
+			//number is not same
+			formerSuupNo2 = subject.SuupNo2
+			nonDuplicatedResult = append(nonDuplicatedResult, subject)
+		}
+	}
+
+	log.Printf("(getDataFromDBByMajor) Subjects Count after duplication is removed: %d\n", major, count)
+
+	return nonDuplicatedResult, nil
 }
 
 func getMajorListFromDB() ([]string, error) {

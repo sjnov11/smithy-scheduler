@@ -14,9 +14,10 @@ import (
 type BindedSubject struct {
 	Subjects []Subject
 
-	Name    string
-	HaksuNo string
-	IsuGbNm string
+	Name       string
+	HaksuNo    string
+	IsuGbNm    string
+	IsuJehanYn string
 }
 
 func (bindedSubject BindedSubject) String() string {
@@ -211,7 +212,8 @@ func bindSameSubject(subjects []Subject) ([]BindedSubject, error) {
 	appendResult := func() {
 		buffer.HaksuNo = buffer.Subjects[0].HaksuNo
 		buffer.IsuGbNm = buffer.Subjects[0].IsuGbNm
-		sort.Sort(BySuupNo2(buffer.Subjects))
+		buffer.IsuJehanYn = buffer.Subjects[0].IsuJehanYn
+		sort.Sort(ByProfessorName(buffer.Subjects))
 		result = append(result, buffer)
 	}
 

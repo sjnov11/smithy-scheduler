@@ -304,7 +304,7 @@ td > a:hover{
 }
 
 .each-subject.modal-subject-name{
-  padding: 0.75rem 1.5rem 0.75rem 1.5rem
+  padding: 0.1rem 1rem 0.1rem 1rem
 }
 
 .each-subject.modal-subject-name:hover{
@@ -322,3 +322,8 @@ td > a:hover{
 }
 
 
+
+.isu-jehan-yn.popup{
+  font-weight:300;
+  font-size:0.9em;
+}

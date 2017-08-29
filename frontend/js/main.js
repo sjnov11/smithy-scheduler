@@ -112,8 +112,12 @@ function addModal() {
       var jqueryCell = $(cell).find("div.modal[lecture-name='" + lectureName + "']")
         .modal('attach events', "td.selectable[lecture-name='" + lectureName + "']", 'show');
         // .modal('attach events', "div.each-subject.modal-subject-name[lecture-name='" + lectureName + "']", 'hide')
+      addIsuJehanPopup(jqueryCell);
 
-      jqueryCell.find("div.each-subject.modal-subject-name[lecture-name='" + lectureName + "']").click(function(){
+      var eachSubject = jqueryCell.find("div.each-subject.modal-subject-name[lecture-name='" + lectureName + "']");
+      addEachSubjectPopup(eachSubject);
+
+      eachSubject.click(function(){
 
         var selectedLectureNumber = $(this).attr("lecture-number");
 
@@ -129,7 +133,8 @@ function addModal() {
             console.log("lecture " +selectedLectureNumber+ " is added to var selectedLecture");
           };
           
-          sameLectures = $(this).parent().find("[lecture-number='"+ selectedLectureNumber +"']");
+          sameLectures = $(this).parent().find(".each-subject.modal-subject-name[lecture-number='"+ selectedLectureNumber +"']");
+          
           for (var i = 0, l = sameLectures.length; i < l; i++) {
             addLecture(sameLectures[i]);
           }
@@ -154,7 +159,7 @@ function addModal() {
           };
 
           // when SuupNo2 is same
-          sameLectures = $(this).parent().find("[lecture-number='"+ selectedLectureNumber +"']");
+          sameLectures = $(this).parent().find(".each-subject.modal-subject-name[lecture-number='"+ selectedLectureNumber +"']");
           for (var i = 0, l = sameLectures.length; i < l; i++) {
             deleteLecture(sameLectures[i]);
           }
@@ -206,6 +211,23 @@ function showSearchResultLoader() {
 
 function hideSearchResultLoader() {
   $("#searchResultLoader")[0].innerHTML = "";
+}
+
+function addIsuJehanPopup(modal) {
+  modal.find('.isu-jehan-yes')
+    .popup({
+      popup : $('.isu-jehan-yn.popup'),
+  })
+  ;
+}
+
+
+function addEachSubjectPopup(eachSubject) {
+  eachSubject
+    .popup({
+      popup : eachSubject.parent().find(".each-subject.popup[lecture-number='"+ $(this).attr("lecture-number") +"']"),
+      position : "left center",
+    });
 }
 
 $("input[name='receipt_major']").change(function(event){

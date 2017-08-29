@@ -82,6 +82,7 @@ func sendDataByMajorHandler(w http.ResponseWriter, r *http.Request) {
 func sendSubjectTableHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "POST" {
 		http.NotFound(w, r)
+		return
 	}
 
 	// case is only "POST"
@@ -108,6 +109,7 @@ func sendSubjectTableHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		http.Error(w, err.Error(), 500)
 		log.Println("(sendSubjectTableHandler) ", err)
+		return
 	}
 	fmt.Fprint(w, tableSource)
 	log.Println("(sendSubjectTableHandler) The subject table html code has been sent to browser.")
