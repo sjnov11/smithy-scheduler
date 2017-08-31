@@ -99,6 +99,11 @@ $('button.lecture-select').click(function() {
   }
 });
 
+function showBasket() {
+  $("#basket").css("display","");
+  $("#searchForm").addClass("subject-selected");
+};
+
 
 // add tooltips to the cells of the lecture tables.
 function addModal() {
@@ -138,6 +143,8 @@ function addModal() {
           for (var i = 0, l = sameLectures.length; i < l; i++) {
             addLecture(sameLectures[i]);
           }
+
+          showBasket();
 
           // addLecture(this);
 

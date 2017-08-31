@@ -160,11 +160,69 @@
         </div>
 
 
+        <div id="basket" class="basket" style="display:none">
+          <div id="timeTableThumbnail" class="time-table-thumbnail">
+            <!-- 조합된 시간표가 없으면 Thumbnail이 없다. Thumbnail을 클릭하면 모든 경우의 수의 시간표를 볼 수 있다. -->
+            <!-- 시간표 선택하면 선택한 Thumbnail로 바뀜 -->
+            <p>Time Table<br/>Thumbnail</p>
 
-        <div class="center" style="width:100px; margin:500 auto 0 auto">
-          <button id="btn_request_post" class="ui button"> Ajax call<br /> POST</button>
-          <button id="btn_major_selected" class="ui button"> 선택 결과<br /> 임시 버튼</button>
+
+            <div class="ui small modal combination-result">
+              <div class="header">시간표 조합 결과</div>
+              <div class="scrolling content">
+                <div class="ui inverted segment time-table">
+                  <p>시간표 1</p>
+                </div>
+                <div class="ui inverted segment time-table">
+                  <p>시간표 2</p>
+                </div>
+                <div class="ui inverted segment time-table">
+                  <p>시간표 3</p>
+                </div>
+                <div class="ui inverted segment time-table">
+                  <p>시간표 4</p>
+                </div>
+                <div class="ui inverted segment time-table">
+                  <p>시간표 5</p>
+                </div>
+                <div class="ui inverted segment time-table">
+                  <p>시간표 6</p>
+                </div>
+                <div class="ui inverted segment time-table">
+                  <p>시간표 7</p>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+          <div id="selectedSubjectList" class="selected-subject-list">
+            <p>선택한 과목</p>
+            <ol>
+              <li>데이터베이스시스템및응용</li>
+              <li>병렬프로그래밍</li>
+              <li>소프트웨어공학</li>
+            </ol>
+            <div id="cCondition" class="c-condition">
+              <button class="ui button"> 조합 조건 설정</button>
+            </div>
+            <div id="cStart" class="c-start">
+              <button class="ui button combiation-start"> 조합!</button>
+              <div class="ui combiation-complete popup transition hidden top left">
+                <p>조합을 완료했습니다.</p>
+              </div>
+            </div>
+          </div>
         </div>
+
+
+
+
+        <!-- <div class="center" style="width:100px; margin:500 auto 0 auto">
+           -   <button id="btn_request_post" class="ui button"> Ajax call<br /> POST</button>
+           -   <button id="btn_major_selected" class="ui button"> 선택 결과<br /> 임시 버튼</button>
+           - </div> -->
 
 
 

@@ -11,44 +11,45 @@ import (
 )
 
 type Subject struct {
-	id             bson.ObjectId `json:"_id"`
-	IsuGrade       string        `json:"isugrade"`
-	BanNo          string        `json:"banno"`
-	IsuGbNm        string        `json:"isugbnm"`
-	YungyukNm      string        `json:"yungyuknm"`
-	SuupNo2        string        `json:"suupno2"`
-	HaksuNo        string        `json:"haksuno"`
-	GwamokNm       string        `json:"gwamoknm"`
-	SuupMsg        string        `json:"suupmsg"`
-	AbekGb         string        `json:"abekgb"`
-	HakwiNm        string        `json:"hakwinm"`
-	DaepyoGangsaNm string        `json:"daepyogangsanm"`
-	Hakjeom        string        `json:"hakjeom"`
-	IronSigan      string        `json:"ironsigan"`
-	SilsSigan      string        `json:"silssigan"`
-	SuupTypeNm     string        `json:"suuptypenm"`
-	JehanInwon     string        `json:"jehaninwon"`
+	id             bson.ObjectId `bson:"_id"`
+	IsuGrade       string        `bson:"isugrade"`
+	BanNo          string        `bson:"banno"`
+	IsuGbNm        string        `bson:"isugbnm"`
+	YungyukNm      string        `bson:"yungyuknm"`
+	SuupNo2        string        `bson:"suupno2"`
+	HaksuNo        string        `bson:"haksuno"`
+	GwamokNm       string        `bson:"gwamoknm"`
+	SuupMsg        string        `bson:"suupmsg"`
+	AbekGb         string        `bson:"abekgb"`
+	HakwiNm        string        `bson:"hakwinm"`
+	DaepyoGangsaNm string        `bson:"daepyogangsanm"`
+	Hakjeom        string        `bson:"hakjeom"`
+	IronSigan      string        `bson:"ironsigan"`
+	SilsSigan      string        `bson:"silssigan"`
+	SuupTypeNm     string        `bson:"suuptypenm"`
+	JehanInwon     string        `bson:"jehaninwon"`
 
-	SuupTimes   []string `json:"suuptimes"`
-	SuupRoomNms []string `json:"suuproomnms"`
+	SuupTimes   []string `bson:"suuptimes"`
+	SuupRoomNms []string `bson:"suuproomnms"`
 
-	IsuJehanYn   string `json:"isujehanyn"`
-	SuupTypeGb   string `json:"suuptypegb"`
-	BanSosokNm   string `json:"bansosoknm"`
-	GnjSosokNm   string `json:"gnjsosoknm"`
-	Best_teacher string `json:"best_teacher"`
+	IsuJehanYn          string `bson:"isujehanyn"`
+	SuupTypeGb          string `bson:"suuptypegb"`
+	BanSosokNm          string `bson:"bansosoknm"`
+	GnjSosokNm          string `bson:"gnjsosoknm"`
+	Best_teacher_string string `bson:"best_teacher"`
+	Best_teacher        bool   `bson:"-"`
 
 	SecondData struct {
-		Times_number  string `json:"times_number"`
+		Times_number  string `bson:"times_number"`
 		TimesAndClass []struct {
-			Classroom    string `json:"classroom"`
-			Day          string `json:"day"`
-			Start_time   string `json:"start_time"`
-			Start_minute string `json:"start_minute"`
-			End_time     string `json:"end_time"`
-			End_minute   string `json:"end_minute"`
-		} `json:"timesandclass"`
-	} `json:"seconddata"`
+			Classroom    string `bson:"classroom"`
+			Day          string `bson:"day"`
+			Start_time   string `bson:"start_time"`
+			Start_minute string `bson:"start_minute"`
+			End_time     string `bson:"end_time"`
+			End_minute   string `bson:"end_minute"`
+		} `bson:"timesandclass"`
+	} `bson:"seconddata"`
 }
 
 // methods for sorting
@@ -117,11 +118,11 @@ func getDataFromDBByMajor(major string) ([]Subject, error) {
 	sugangInfo := session.DB("smithy").C("sugangInfo")
 	query := sugangInfo.Find(bson.M{"bansosoknm": major})
 
-	count, err := query.Count()
-	if err != nil {
-		return nil, err
-	}
-	log.Printf("(getDataFromDBByMajor) Request Major: %s, Subjects Count: %d\n", major, count)
+	/* count, err := query.Count()
+	 * if err != nil {
+	 *   return nil, err
+	 * }
+	 * log.Printf("(getDataFromDBByMajor) Request Major: %s, Subjects Count: %d\n", major, count) */
 
 	// get data from query
 	// var result []map[string]interface{}
@@ -148,7 +149,17 @@ func getDataFromDBByMajor(major string) ([]Subject, error) {
 		}
 	}
 
-	log.Printf("(getDataFromDBByMajor) Subjects Count after duplication is removed: %d\n", major, count)
+	// check Best_teacher
+	for idx := range nonDuplicatedResult {
+		if nonDuplicatedResult[idx].Best_teacher_string[0] == 't' {
+			nonDuplicatedResult[idx].Best_teacher = true
+		} else {
+			nonDuplicatedResult[idx].Best_teacher = false
+		}
+	}
+
+	// log.Printf("(getDataFromDBByMajor) Subjects Count after duplication is removed: %d\n", len(nonDuplicatedResult))
+	log.Printf("(getDataFromDBByMajor) Request Major: %s, Subjects Count: %d\n", major, len(nonDuplicatedResult))
 
 	return nonDuplicatedResult, nil
 }

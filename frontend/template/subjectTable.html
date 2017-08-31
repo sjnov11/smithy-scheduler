@@ -50,15 +50,26 @@
                     </div>
 
                     <div class="ui center aligned basic segment" style="width:50%">
-                      <p>{{.DaepyoGangsaNm}} 교수</p>
+                      {{if .DaepyoGangsaNm}}
+                      <p>{{.DaepyoGangsaNm}} 교수 {{if .Best_teacher}}🏅{{end}}</p>
+                      {{else}}
+                      <p>교수 정보 없음</p>
+                      {{end}}
                     </div>
                  </div>
               </div>
 
-               <!-- popup -->
+              <!-- popup -->
               <div lecture-number="{{.SuupNo2}}" class="ui each-subject popup" style="width: 100%">
-                <p>{{.GwamokNm}}<br/>{{.DaepyoGangsaNm}} 교수</p>
-                <p>수업번호: {{.SuupNo2}}<br>학수번호: {{.HaksuNo}}</p>
+                <p>{{.GwamokNm}}<br/>
+                {{if .DaepyoGangsaNm}}
+                  <p>{{.DaepyoGangsaNm}} 교수 {{if .Best_teacher}}🏅{{end}}</p>
+                {{else}}
+                  교수 정보 없음
+                {{end}}
+                </p>
+
+                <p>수업번호: {{.SuupNo2}}</p>
                 {{if .SuupTypeGb}}
                 <p>상세정보: {{.SuupTypeGb}}</p>
                 {{end}}
@@ -72,6 +83,10 @@
                     <br/>
                   {{end}}
                   </p>
+                {{end}}
+
+                {{if .SuupMsg}}
+                <p>{{.SuupMsg}}</p>
                 {{end}}
 
               </div>
