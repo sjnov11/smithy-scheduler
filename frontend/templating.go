@@ -35,7 +35,7 @@ func generateMainPageHTML(w io.Writer) error {
 		panic(err)
 	}
 
-	tmpl, err := template.ParseFiles("./template/index.html")
+	tmpl, err := template.ParseFiles("./webRoot/resources/template/index.html")
 	if err != nil {
 		panic(err)
 	}
@@ -158,7 +158,7 @@ func drawSubjectTable(subjects []Subject) (string, error) {
 	}
 
 	// templating to draw the table
-	tmpl, err := template.ParseFiles("./template/subjectTable.html")
+	tmpl, err := template.ParseFiles("./webRoot/resources/template/subjectTable.html")
 	if err != nil {
 		return "", err
 	}

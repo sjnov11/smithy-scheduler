@@ -24,7 +24,7 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 	} else {
 		// send requested file
 		filename := r.URL.Path[len("/"):]
-		source, err := ioutil.ReadFile("./" + filename)
+		source, err := ioutil.ReadFile("./webRoot/" + filename)
 		if err != nil {
 			http.Error(w, err.Error(), 500)
 			log.Println("(rootHandler) ", err)
