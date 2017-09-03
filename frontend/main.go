@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"fmt"
 	"io"
 	"log"
 	"net/http"
@@ -53,7 +54,10 @@ func logInit() *os.File {
 		}
 	}
 
-	logFile, err := os.Create(currentPath + "/log/" + time.Now().String())
+	t := time.Now()
+	currentTimeString := fmt.Sprintf("%d-%02d-%02dT%02dh_%02dm_%02ds", t.Year(), t.Month(), t.Day(), t.Hour(), t.Minute(), t.Second())
+
+	logFile, err := os.Create(currentPath + "/log/" + currentTimeString)
 	if err != nil {
 		panic(err)
 	}
