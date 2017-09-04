@@ -30,6 +30,7 @@ div.entry {
     --selected-text:#29672a;
 }
 
+
 /* variable usage */
 #foo {
     color: var(--main-color);

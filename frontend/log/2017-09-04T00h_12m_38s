@@ -1,0 +1,14 @@
+2017/09/04 00:12:38 (main) The Logger has been initialized.
+2017/09/04 00:12:38 (getMajorListFromDB) The subjects list has been generated.
+2017/09/04 00:12:38 (main) The main page source code has been generated.
+2017/09/04 00:12:38 (main) Waiting request... 
+2017/09/04 00:12:44 (rootHandler) Main page access has been occurred.
+2017/09/04 00:13:01 (rootHandler) Main page access has been occurred.
+2017/09/04 00:13:03 (rootHandler) Main page access has been occurred.
+2017/09/04 00:13:49 (rootHandler) Main page access has been occurred.
+2017/09/04 00:13:51 (rootHandler) Main page access has been occurred.
+2017/09/04 00:13:56 (rootHandler) Main page access has been occurred.
+2017/09/04 00:18:44 (rootHandler) Main page access has been occurred.
+2017/09/04 00:18:48 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/04 00:18:56 (getDataFromDBByMajor) Request Major: 경영학부, Subjects Count: 178
+2017/09/04 00:18:56 (sendSubjectTableHandler) The subject table html code has been sent to browser.
