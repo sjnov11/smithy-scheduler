@@ -1,0 +1,86 @@
+2017/09/05 11:56:08 (main) The Logger has been initialized.
+2017/09/05 11:56:08 (getMajorListFromDB) The subjects list has been generated.
+2017/09/05 11:56:08 (main) The main page source code has been generated.
+2017/09/05 11:56:09 (getMajorListFromDB) The subjects list has been generated.
+2017/09/05 11:56:09 (main) The majorNameListJSON has been generated.
+2017/09/05 11:56:09 (main) Waiting request... 
+2017/09/05 11:56:10 (rootHandler) Main page access has been occurred.
+2017/09/05 11:56:10 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:56:11 (getDataFromDBByMajor) Request Major: 간호학과, Subjects Count: 37
+2017/09/05 11:56:11 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:14 (getDataFromDBByMajor) Request Major: 경영학부, Subjects Count: 178
+2017/09/05 11:56:14 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:16 (getDataFromDBByMajor) Request Major: 경제금융학부, Subjects Count: 61
+2017/09/05 11:56:16 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:17 (getDataFromDBByMajor) Request Major: 관광학부, Subjects Count: 34
+2017/09/05 11:56:17 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:18 (getDataFromDBByMajor) Request Major: 국악과, Subjects Count: 54
+2017/09/05 11:56:18 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:20 (getDataFromDBByMajor) Request Major: 물리학과, Subjects Count: 35
+2017/09/05 11:56:20 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:22 (getDataFromDBByMajor) Request Major: 미디어문화전공, Subjects Count: 14
+2017/09/05 11:56:22 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:22 (getDataFromDBByMajor) Request Major: 미디어커뮤니케이션학과, Subjects Count: 40
+2017/09/05 11:56:22 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:22 (getDataFromDBByMajor) Request Major: 미래인문학융합전공, Subjects Count: 14
+2017/09/05 11:56:22 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:22 (getDataFromDBByMajor) Request Major: 미래자동차공학과, Subjects Count: 34
+2017/09/05 11:56:22 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:22 (getDataFromDBByMajor) Request Major: 사학과, Subjects Count: 31
+2017/09/05 11:56:22 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:23 (getDataFromDBByMajor) Request Major: 사회학과, Subjects Count: 29
+2017/09/05 11:56:23 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:23 (getDataFromDBByMajor) Request Major: 산업공학과, Subjects Count: 35
+2017/09/05 11:56:23 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:23 (getDataFromDBByMajor) Request Major: 산업융합학부, Subjects Count: 19
+2017/09/05 11:56:23 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:23 (getDataFromDBByMajor) Request Major: 생명공학과, Subjects Count: 30
+2017/09/05 11:56:23 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:23 (getDataFromDBByMajor) Request Major: 생명공학전공, Subjects Count: 5
+2017/09/05 11:56:23 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:23 (getDataFromDBByMajor) Request Major: 생명과학과, Subjects Count: 42
+2017/09/05 11:56:23 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:23 (getDataFromDBByMajor) Request Major: 생체공학전공, Subjects Count: 29
+2017/09/05 11:56:23 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:23 (getDataFromDBByMajor) Request Major: 서울 대학, Subjects Count: 472
+2017/09/05 11:56:23 (getDataFromDBByMajor) Request Major: 성악과, Subjects Count: 43
+2017/09/05 11:56:23 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:23 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:23 (getDataFromDBByMajor) Request Major: 소프트웨어전공, Subjects Count: 28
+2017/09/05 11:56:23 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:23 (getDataFromDBByMajor) Request Major: 수학과, Subjects Count: 39
+2017/09/05 11:56:23 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:23 (getDataFromDBByMajor) Request Major: 수학교육과, Subjects Count: 31
+2017/09/05 11:56:23 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:23 (getDataFromDBByMajor) Request Major: 스포츠산업학과, Subjects Count: 33
+2017/09/05 11:56:23 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:23 (getDataFromDBByMajor) Request Major: 식품영양학과, Subjects Count: 38
+2017/09/05 11:56:23 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:23 (getDataFromDBByMajor) Request Major: 신소재공학부, Subjects Count: 79
+2017/09/05 11:56:23 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:23 (getDataFromDBByMajor) Request Major: 실내건축디자인학과, Subjects Count: 47
+2017/09/05 11:56:23 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:24 (getDataFromDBByMajor) Request Major: 에너지공학과, Subjects Count: 34
+2017/09/05 11:56:24 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:24 (getDataFromDBByMajor) Request Major: 연극영화학과, Subjects Count: 60
+2017/09/05 11:56:24 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:24 (getDataFromDBByMajor) Request Major: 영어교육과, Subjects Count: 31
+2017/09/05 11:56:24 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:24 (getDataFromDBByMajor) Request Major: 영어영문학과, Subjects Count: 45
+2017/09/05 11:56:24 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:24 (getDataFromDBByMajor) Request Major: 영어커뮤니케이션전공, Subjects Count: 14
+2017/09/05 11:56:24 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:24 (getDataFromDBByMajor) Request Major: 원자력공학과, Subjects Count: 38
+2017/09/05 11:56:24 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:24 (getDataFromDBByMajor) Request Major: 유기나노공학과, Subjects Count: 34
+2017/09/05 11:56:24 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:56:24 (getDataFromDBByMajor) Request Major: 융합전자공학부, Subjects Count: 91
+2017/09/05 11:56:24 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:57:16 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:57:16 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:57:20 (getDataFromDBByMajor) Request Major: 컴퓨터전공, Subjects Count: 70
+2017/09/05 11:57:20 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/05 11:57:20 (getDataFromDBByMajor) Request Major: 컴퓨터전공, Subjects Count: 70
+2017/09/05 11:57:20 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 12:34:59 (rootHandler) Main page access has been occurred.
+2017/09/05 12:34:59 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory

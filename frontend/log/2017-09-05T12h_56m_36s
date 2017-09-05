@@ -1,0 +1,16 @@
+2017/09/05 12:56:36 (main) The Logger has been initialized.
+2017/09/05 12:56:36 (getMajorListFromDB) The subjects list has been generated.
+2017/09/05 12:56:36 (main) The majorNameListJSON has been generated.
+2017/09/05 12:56:36 (main) Waiting request... 
+2017/09/05 12:56:38 (rootHandler) The Main page access has been occurred.
+2017/09/05 12:56:39 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 12:56:43 (getDataFromDBByMajor) Request Major: 건설환경공학과, Subjects Count: 39
+2017/09/05 12:56:43 (getDataFromDBByMajor) Request Major: 건설환경공학과, Subjects Count: 39
+2017/09/05 12:56:43 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/05 12:56:43 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 12:56:48 (rootHandler) The Main page access has been occurred.
+2017/09/05 12:56:48 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 12:56:50 (getDataFromDBByMajor) Request Major: 간호학과(야), Subjects Count: 15
+2017/09/05 12:56:50 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/05 12:56:50 (getDataFromDBByMajor) Request Major: 간호학과(야), Subjects Count: 15
+2017/09/05 12:56:50 (sendSubjectTableHandler) The subject table html code has been sent to browser.

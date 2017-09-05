@@ -1,0 +1,67 @@
+2017/09/05 12:59:19 (main) The Logger has been initialized.
+2017/09/05 12:59:20 (getMajorListFromDB) The subjects list has been generated.
+2017/09/05 12:59:20 (main) The majorNameListJSON has been generated.
+2017/09/05 12:59:20 (main) Waiting request... 
+2017/09/05 12:59:21 (rootHandler) The Main page access has been occurred.
+2017/09/05 12:59:22 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 12:59:24 (rootHandler)  open ./webRoot/index.html: no such file or directory
+2017/09/05 12:59:24 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 12:59:45 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 12:59:47 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 12:59:47 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/05 12:59:47 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 12:59:47 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 12:59:50 (rootHandler) The Main page access has been occurred.
+2017/09/05 12:59:50 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 12:59:55 (getDataFromDBByMajor) Request Major: 건설환경공학과, Subjects Count: 39
+2017/09/05 12:59:55 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/05 12:59:55 (getDataFromDBByMajor) Request Major: 건설환경공학과, Subjects Count: 39
+2017/09/05 12:59:55 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 12:59:58 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 12:59:58 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 12:59:58 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/05 12:59:58 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 12:59:59 (rootHandler) The Main page access has been occurred.
+2017/09/05 12:59:59 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 13:01:24 (rootHandler) The Main page access has been occurred.
+2017/09/05 13:01:25 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 13:01:26 (getDataFromDBByMajor) Request Major: 간호학과(야), Subjects Count: 15
+2017/09/05 13:01:26 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/05 13:01:26 (getDataFromDBByMajor) Request Major: 간호학과(야), Subjects Count: 15
+2017/09/05 13:01:26 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 13:01:28 (rootHandler) The Main page access has been occurred.
+2017/09/05 13:01:28 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 13:01:30 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 13:01:30 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 13:01:30 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/05 13:01:30 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 13:01:32 (rootHandler) The Main page access has been occurred.
+2017/09/05 13:01:33 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 13:02:57 (getDataFromDBByMajor) Request Major: 건축공학부, Subjects Count: 56
+2017/09/05 13:02:57 (getDataFromDBByMajor) Request Major: 건축공학부, Subjects Count: 56
+2017/09/05 13:02:57 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/05 13:02:57 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 13:08:32 (rootHandler) The Main page access has been occurred.
+2017/09/05 13:08:33 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 13:08:34 (getDataFromDBByMajor) Request Major: 간호학과, Subjects Count: 37
+2017/09/05 13:08:34 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/05 13:08:34 (getDataFromDBByMajor) Request Major: 간호학과, Subjects Count: 37
+2017/09/05 13:08:34 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 13:09:56 (rootHandler) The Main page access has been occurred.
+2017/09/05 13:09:57 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 13:09:59 (getDataFromDBByMajor) Request Major: 건축공학부, Subjects Count: 56
+2017/09/05 13:09:59 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/05 13:09:59 (getDataFromDBByMajor) Request Major: 건축공학부, Subjects Count: 56
+2017/09/05 13:09:59 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 13:12:46 (rootHandler) The Main page access has been occurred.
+2017/09/05 13:12:46 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 13:13:10 (rootHandler) The Main page access has been occurred.
+2017/09/05 13:13:11 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 13:13:23 (rootHandler) The Main page access has been occurred.
+2017/09/05 13:13:24 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 13:16:27 (rootHandler) The Main page access has been occurred.
+2017/09/05 13:16:28 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 13:16:29 (getDataFromDBByMajor) Request Major: 건설환경공학과, Subjects Count: 39
+2017/09/05 13:16:29 (getDataFromDBByMajor) Request Major: 건설환경공학과, Subjects Count: 39
+2017/09/05 13:16:29 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/05 13:16:29 (sendSubjectTableHandler) The subject table html code has been sent to browser.

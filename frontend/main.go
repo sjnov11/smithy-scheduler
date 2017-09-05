@@ -1,7 +1,7 @@
 package main
 
 import (
-	"bytes"
+	"encoding/json"
 	"fmt"
 	"io"
 	"log"
@@ -12,7 +12,7 @@ import (
 )
 
 var currentPath string
-var mainPageHTMLBuffer bytes.Buffer
+var majorNameListJSON string
 
 func main() {
 	log.Println("(main) The Server starts.")
@@ -22,18 +22,18 @@ func main() {
 
 	log.Println("(main) The Logger has been initialized.")
 
-	err := generateMainPageHTML(&mainPageHTMLBuffer)
-	if err != nil {
-		panic(err)
-	}
+	majorNameListJSON = majorNameListInit()
+	log.Println("(main) The majorNameListJSON has been generated.")
 
-	log.Println("(main) The main page source code has been generated.")
 	log.Println("(main) Waiting request... ")
 
 	http.HandleFunc("/", rootHandler)
 	http.HandleFunc("/db/", dbHandler)
 	http.HandleFunc("/db/getDataByMajor", sendDataByMajorHandler)
 	http.HandleFunc("/db/getSubjectTable", sendSubjectTableHandler)
+
+	http.HandleFunc("/getMajorNameList", sendMajorNameList)
+
 	http.ListenAndServe(":8080", nil)
 }
 
@@ -69,4 +69,17 @@ func logInit() *os.File {
 	log.SetOutput(multiWriter)
 
 	return logFile
+}
+
+func majorNameListInit() string {
+	majorNameList, err := getMajorListFromDB()
+	if err != nil {
+		panic(err)
+	}
+
+	b, err := json.Marshal(majorNameList)
+	if err != nil {
+		panic(err)
+	}
+	return string(b)
 }

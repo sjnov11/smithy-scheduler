@@ -1,0 +1,8 @@
+2017/09/05 12:55:55 (main) The Logger has been initialized.
+2017/09/05 12:55:55 (getMajorListFromDB) The subjects list has been generated.
+2017/09/05 12:55:55 (main) The majorNameListJSON has been generated.
+2017/09/05 12:55:55 (main) Waiting request... 
+2017/09/05 12:55:58 (rootHandler)  read ./webRoot/: is a directory
+2017/09/05 12:55:58 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 12:56:02 (rootHandler)  read ./webRoot/: is a directory
+2017/09/05 12:56:02 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory

@@ -12,19 +12,22 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 	// when request is root, send index.html
 	// otherwise, send the file
 
-	if r.URL.Path == "/" {
-		log.Println("(rootHandler) Main page access has been occurred.")
-		// send index.html
-		_, err := fmt.Fprint(w, mainPageHTMLBuffer.String())
+	path := r.URL.Path[len("/"):]
+
+	if path == "" {
+		log.Println("(rootHandler) The Main page access has been occurred.")
+
+		source, err := ioutil.ReadFile("./webRoot/resources/index.html")
 		if err != nil {
 			http.Error(w, err.Error(), 500)
 			log.Println("(rootHandler) ", err)
 			return
 		}
+		fmt.Fprint(w, string(source))
+
 	} else {
 		// send requested file
-		filename := r.URL.Path[len("/"):]
-		source, err := ioutil.ReadFile("./webRoot/" + filename)
+		source, err := ioutil.ReadFile("./webRoot/" + path)
 		if err != nil {
 			http.Error(w, err.Error(), 500)
 			log.Println("(rootHandler) ", err)
@@ -113,4 +116,8 @@ func sendSubjectTableHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	fmt.Fprint(w, tableSource)
 	log.Println("(sendSubjectTableHandler) The subject table html code has been sent to browser.")
+}
+
+func sendMajorNameList(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, majorNameListJSON)
 }

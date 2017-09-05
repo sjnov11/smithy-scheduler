@@ -1,0 +1,10 @@
+2017/09/05 11:46:52 (main) The Logger has been initialized.
+2017/09/05 11:46:52 (getMajorListFromDB) The subjects list has been generated.
+2017/09/05 11:46:52 (main) The main page source code has been generated.
+2017/09/05 11:46:53 (getMajorListFromDB) The subjects list has been generated.
+2017/09/05 11:46:53 (main) The majorNameListJSON has been generated.
+2017/09/05 11:46:53 (main) Waiting request... 
+2017/09/05 11:46:55 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:47:00 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:47:04 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:47:10 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory

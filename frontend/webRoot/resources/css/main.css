@@ -196,7 +196,6 @@ td > a:hover{
 .basket{
   width: calc(1200px * 0.34);
   float: right;
-  margin-top:30px;
   margin-left: calc(1200px * 0.66);
   position: fixed
 }
@@ -220,7 +219,7 @@ td > a:hover{
   margin-top: 85px;
 }
 
-.selected-subject-list{
+.selected-lecture-list{
   margin-top:30px;
   width: calc(1200px * 0.3);
   height: 300px;
@@ -232,14 +231,14 @@ td > a:hover{
 }
 
 
-.selected-subject-list > p {
+.selected-lecture-list > p {
   font-weight:300;
   font-size:1.5em;
   margin-top: 15px;
 }
 
 
-.selected-subject-list > ol {
+.selected-lecture-list > ol {
   padding-left: 25%;
   padding-right: 20%;
   margin:0;

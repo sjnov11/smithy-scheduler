@@ -1,0 +1,943 @@
+2017/09/05 11:26:42 (main) The Logger has been initialized.
+2017/09/05 11:26:42 (getMajorListFromDB) The subjects list has been generated.
+2017/09/05 11:26:42 (main) The main page source code has been generated.
+2017/09/05 11:26:42 (getMajorListFromDB) The subjects list has been generated.
+2017/09/05 11:26:42 (main) The majorNameListJSON has been generated.
+2017/09/05 11:26:42 (main) Waiting request... 
+2017/09/05 11:26:43 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:26:44 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:26:44 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:26:45 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:27:24 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:27:25 (dbHandler) DB Handler is called
+2017/09/05 11:27:25 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:27:59 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:27:59 (dbHandler) DB Handler is called
+2017/09/05 11:27:59 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:28:50 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:28:51 (dbHandler) DB Handler is called
+2017/09/05 11:28:51 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:29:24 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:29:25 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:29:53 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:29:53 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:30:29 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:30:30 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:30:53 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:30:54 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:31:06 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 11:31:06 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 11:31:06 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/05 11:31:06 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:31:34 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:31:34 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:31:37 (getDataFromDBByMajor) Request Major: 건설환경공학과, Subjects Count: 39
+2017/09/05 11:31:37 (getDataFromDBByMajor) Request Major: 건설환경공학과, Subjects Count: 39
+2017/09/05 11:31:37 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/05 11:31:37 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:32:13 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:32:13 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:32:39 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:32:39 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:32:41 http: panic serving 127.0.0.1:55033: runtime error: index out of range
+goroutine 27 [running]:
+net/http.(*conn).serve.func1(0xc4200eeb40)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc420188180, 0x6, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendDataByMajorHandler(0x15bfba0, 0xc42016e2a0, 0xc42000a500)
+	/Users/Mjae/frontend/handlers.go:83 +0x192
+net/http.HandlerFunc.ServeHTTP(0x142d228, 0x15bfba0, 0xc42016e2a0, 0xc42000a500)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc42016e2a0, 0xc42000a500)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc42016e2a0, 0xc42000a500)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc4200eeb40, 0x15c0460, 0xc420e14580)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:32:41 http: panic serving 127.0.0.1:55034: runtime error: index out of range
+goroutine 28 [running]:
+net/http.(*conn).serve.func1(0xc4200eebe0)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc421a200d0, 0x6, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendSubjectTableHandler(0x15bfba0, 0xc4202e6000, 0xc4200e8900)
+	/Users/Mjae/frontend/handlers.go:113 +0x1c1
+net/http.HandlerFunc.ServeHTTP(0x142d238, 0x15bfba0, 0xc4202e6000, 0xc4200e8900)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc4202e6000, 0xc4200e8900)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc4202e6000, 0xc4200e8900)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc4200eebe0, 0x15c0460, 0xc420126080)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:32:41 http: panic serving 127.0.0.1:55032: runtime error: index out of range
+goroutine 26 [running]:
+net/http.(*conn).serve.func1(0xc4200ee640)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc421a20a90, 0x6, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendSubjectTableHandler(0x15bfba0, 0xc4202e6380, 0xc4200e8700)
+	/Users/Mjae/frontend/handlers.go:113 +0x1c1
+net/http.HandlerFunc.ServeHTTP(0x142d238, 0x15bfba0, 0xc4202e6380, 0xc4200e8700)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc4202e6380, 0xc4200e8700)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc4202e6380, 0xc4200e8700)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc4200ee640, 0x15c0460, 0xc420e14380)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:32:41 http: panic serving 127.0.0.1:55035: runtime error: index out of range
+goroutine 29 [running]:
+net/http.(*conn).serve.func1(0xc4200eec80)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc420188340, 0x6, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendDataByMajorHandler(0x15bfba0, 0xc42016e700, 0xc42000ab00)
+	/Users/Mjae/frontend/handlers.go:83 +0x192
+net/http.HandlerFunc.ServeHTTP(0x142d228, 0x15bfba0, 0xc42016e700, 0xc42000ab00)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc42016e700, 0xc42000ab00)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc42016e700, 0xc42000ab00)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc4200eec80, 0x15c0460, 0xc420e14780)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:32:41 http: panic serving 127.0.0.1:55036: runtime error: index out of range
+goroutine 30 [running]:
+net/http.(*conn).serve.func1(0xc4200eed20)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc421a20080, 0x6, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendSubjectTableHandler(0x15bfba0, 0xc42018a000, 0xc4200e8500)
+	/Users/Mjae/frontend/handlers.go:113 +0x1c1
+net/http.HandlerFunc.ServeHTTP(0x142d238, 0x15bfba0, 0xc42018a000, 0xc4200e8500)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc42018a000, 0xc4200e8500)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc42018a000, 0xc4200e8500)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc4200eed20, 0x15c0460, 0xc420e14300)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:32:41 http: panic serving 127.0.0.1:55031: runtime error: index out of range
+goroutine 16 [running]:
+net/http.(*conn).serve.func1(0xc4200ee5a0)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc420070670, 0x6, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendDataByMajorHandler(0x15bfba0, 0xc4202e6000, 0xc4200e8400)
+	/Users/Mjae/frontend/handlers.go:83 +0x192
+net/http.HandlerFunc.ServeHTTP(0x142d228, 0x15bfba0, 0xc4202e6000, 0xc4200e8400)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc4202e6000, 0xc4200e8400)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc4202e6000, 0xc4200e8400)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc4200ee5a0, 0x15c0460, 0xc420910f00)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:32:41 http: panic serving 127.0.0.1:56529: runtime error: index out of range
+goroutine 322 [running]:
+net/http.(*conn).serve.func1(0xc420120140)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc421a20968, 0x6, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendDataByMajorHandler(0x15bfba0, 0xc42018a540, 0xc420144400)
+	/Users/Mjae/frontend/handlers.go:83 +0x192
+net/http.HandlerFunc.ServeHTTP(0x142d228, 0x15bfba0, 0xc42018a540, 0xc420144400)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc42018a540, 0xc420144400)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc42018a540, 0xc420144400)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc420120140, 0x15c0460, 0xc420126800)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:32:41 http: panic serving 127.0.0.1:56528: runtime error: index out of range
+goroutine 306 [running]:
+net/http.(*conn).serve.func1(0xc4202f20a0)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc421a12970, 0x6, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendSubjectTableHandler(0x15bfba0, 0xc420e12d20, 0xc4200e8e00)
+	/Users/Mjae/frontend/handlers.go:113 +0x1c1
+net/http.HandlerFunc.ServeHTTP(0x142d238, 0x15bfba0, 0xc420e12d20, 0xc4200e8e00)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc420e12d20, 0xc4200e8e00)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc420e12d20, 0xc4200e8e00)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc4202f20a0, 0x15c0460, 0xc420910800)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:32:42 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:32:43 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:32:55 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:32:55 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:32:58 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 11:32:58 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 11:32:58 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/05 11:32:58 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:33:00 (rootHandler) Main page access has been occurred.
+2017/09/05 11:33:00 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:33:03 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 11:33:03 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/05 11:33:03 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 11:33:03 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:35:03 (rootHandler) Main page access has been occurred.
+2017/09/05 11:35:04 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:35:06 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 11:35:06 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/05 11:35:06 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 11:35:06 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:38:37 (rootHandler) Main page access has been occurred.
+2017/09/05 11:38:38 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:38:40 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 11:38:40 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 11:38:40 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/05 11:38:40 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:38:48 (rootHandler) Main page access has been occurred.
+2017/09/05 11:38:49 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:38:51 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 11:38:51 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/05 11:38:51 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 11:38:51 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:39:02 (rootHandler) Main page access has been occurred.
+2017/09/05 11:39:03 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:39:05 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 11:39:05 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 11:39:05 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:39:05 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/05 11:39:07 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:39:08 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:39:10 http: panic serving 127.0.0.1:56541: runtime error: index out of range
+goroutine 320 [running]:
+net/http.(*conn).serve.func1(0xc4202f2500)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc420188110, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendDataByMajorHandler(0x15bfba0, 0xc42016e000, 0xc420144200)
+	/Users/Mjae/frontend/handlers.go:83 +0x192
+net/http.HandlerFunc.ServeHTTP(0x142d228, 0x15bfba0, 0xc42016e000, 0xc420144200)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc42016e000, 0xc420144200)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc42016e000, 0xc420144200)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc4202f2500, 0x15c0460, 0xc420911080)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:39:10 http: panic serving 127.0.0.1:58321: runtime error: index out of range
+goroutine 547 [running]:
+net/http.(*conn).serve.func1(0xc420120320)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc421a6c090, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendSubjectTableHandler(0x15bfba0, 0xc420e12000, 0xc420144400)
+	/Users/Mjae/frontend/handlers.go:113 +0x1c1
+net/http.HandlerFunc.ServeHTTP(0x142d238, 0x15bfba0, 0xc420e12000, 0xc420144400)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc420e12000, 0xc420144400)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc420e12000, 0xc420144400)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc420120320, 0x15c0460, 0xc42008b580)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:39:10 http: panic serving 127.0.0.1:56537: runtime error: index out of range
+goroutine 316 [running]:
+net/http.(*conn).serve.func1(0xc4202f2280)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc421a6c810, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendDataByMajorHandler(0x15bfba0, 0xc420e12540, 0xc420068300)
+	/Users/Mjae/frontend/handlers.go:83 +0x192
+net/http.HandlerFunc.ServeHTTP(0x142d228, 0x15bfba0, 0xc420e12540, 0xc420068300)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc420e12540, 0xc420068300)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc420e12540, 0xc420068300)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc4202f2280, 0x15c0460, 0xc420911140)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:39:10 http: panic serving 127.0.0.1:56538: runtime error: index out of range
+goroutine 317 [running]:
+net/http.(*conn).serve.func1(0xc4202f2320)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc420df27f0, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendSubjectTableHandler(0x15bfba0, 0xc4201609a0, 0xc42000aa00)
+	/Users/Mjae/frontend/handlers.go:113 +0x1c1
+net/http.HandlerFunc.ServeHTTP(0x142d238, 0x15bfba0, 0xc4201609a0, 0xc42000aa00)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc4201609a0, 0xc42000aa00)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc4201609a0, 0xc42000aa00)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc4202f2320, 0x15c0460, 0xc4209112c0)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:39:10 http: panic serving 127.0.0.1:56536: runtime error: index out of range
+goroutine 327 [running]:
+net/http.(*conn).serve.func1(0xc420120280)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc420df2de0, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendDataByMajorHandler(0x15bfba0, 0xc420160c40, 0xc42000a800)
+	/Users/Mjae/frontend/handlers.go:83 +0x192
+net/http.HandlerFunc.ServeHTTP(0x142d228, 0x15bfba0, 0xc420160c40, 0xc42000a800)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc420160c40, 0xc42000a800)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc420160c40, 0xc42000a800)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc420120280, 0x15c0460, 0xc420126cc0)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:39:10 http: panic serving 127.0.0.1:56540: runtime error: index out of range
+goroutine 319 [running]:
+net/http.(*conn).serve.func1(0xc4202f2460)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc42028c4f0, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendSubjectTableHandler(0x15bfba0, 0xc420de81c0, 0xc420068c00)
+	/Users/Mjae/frontend/handlers.go:113 +0x1c1
+net/http.HandlerFunc.ServeHTTP(0x142d238, 0x15bfba0, 0xc420de81c0, 0xc420068c00)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc420de81c0, 0xc420068c00)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc420de81c0, 0xc420068c00)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc4202f2460, 0x15c0460, 0xc4209115c0)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:39:10 http: panic serving 127.0.0.1:58340: runtime error: index out of range
+goroutine 596 [running]:
+net/http.(*conn).serve.func1(0xc4202f25a0)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc420189420, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendDataByMajorHandler(0x15bfba0, 0xc42016f5e0, 0xc42000b000)
+	/Users/Mjae/frontend/handlers.go:83 +0x192
+net/http.HandlerFunc.ServeHTTP(0x142d228, 0x15bfba0, 0xc42016f5e0, 0xc42000b000)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc42016f5e0, 0xc42000b000)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc42016f5e0, 0xc42000b000)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc4202f25a0, 0x15c0460, 0xc420126c00)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:39:10 http: panic serving 127.0.0.1:58342: runtime error: index out of range
+goroutine 598 [running]:
+net/http.(*conn).serve.func1(0xc4202f2640)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc421a6da80, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendSubjectTableHandler(0x15bfba0, 0xc420e12fc0, 0xc42000b400)
+	/Users/Mjae/frontend/handlers.go:113 +0x1c1
+net/http.HandlerFunc.ServeHTTP(0x142d238, 0x15bfba0, 0xc420e12fc0, 0xc42000b400)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc420e12fc0, 0xc42000b400)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc420e12fc0, 0xc42000b400)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc4202f2640, 0x15c0460, 0xc420126fc0)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:39:12 (rootHandler) Main page access has been occurred.
+2017/09/05 11:39:13 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:39:21 (rootHandler) Main page access has been occurred.
+2017/09/05 11:39:22 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:39:23 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 11:39:23 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/05 11:39:23 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 11:39:23 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:39:25 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:39:25 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:39:35 http: panic serving 127.0.0.1:58393: runtime error: index out of range
+goroutine 646 [running]:
+net/http.(*conn).serve.func1(0xc420120140)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc4200101a0, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendDataByMajorHandler(0x15bfba0, 0xc420e020e0, 0xc420144200)
+	/Users/Mjae/frontend/handlers.go:83 +0x192
+net/http.HandlerFunc.ServeHTTP(0x142d228, 0x15bfba0, 0xc420e020e0, 0xc420144200)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc420e020e0, 0xc420144200)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc420e020e0, 0xc420144200)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc420120140, 0x15c0460, 0xc420e14380)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:39:35 http: panic serving 127.0.0.1:58356: runtime error: index out of range
+goroutine 586 [running]:
+net/http.(*conn).serve.func1(0xc420120460)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc421a200d0, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendSubjectTableHandler(0x15bfba0, 0xc420e12000, 0xc420068200)
+	/Users/Mjae/frontend/handlers.go:113 +0x1c1
+net/http.HandlerFunc.ServeHTTP(0x142d238, 0x15bfba0, 0xc420e12000, 0xc420068200)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc420e12000, 0xc420068200)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc420e12000, 0xc420068200)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc420120460, 0x15c0460, 0xc420910f00)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:39:35 http: panic serving 127.0.0.1:58359: runtime error: index out of range
+goroutine 627 [running]:
+net/http.(*conn).serve.func1(0xc4201200a0)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc420dee650, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendSubjectTableHandler(0x15bfba0, 0xc42016e700, 0xc420144700)
+	/Users/Mjae/frontend/handlers.go:113 +0x1c1
+net/http.HandlerFunc.ServeHTTP(0x142d238, 0x15bfba0, 0xc42016e700, 0xc420144700)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc42016e700, 0xc420144700)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc42016e700, 0xc420144700)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc4201200a0, 0x15c0460, 0xc4209103c0)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:39:35 http: panic serving 127.0.0.1:58358: runtime error: index out of range
+goroutine 626 [running]:
+net/http.(*conn).serve.func1(0xc420120000)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc4200717a0, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendDataByMajorHandler(0x15bfba0, 0xc4201601c0, 0xc42000a700)
+	/Users/Mjae/frontend/handlers.go:83 +0x192
+net/http.HandlerFunc.ServeHTTP(0x142d228, 0x15bfba0, 0xc4201601c0, 0xc42000a700)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc4201601c0, 0xc42000a700)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc4201601c0, 0xc42000a700)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc420120000, 0x15c0460, 0xc420910780)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:39:35 http: panic serving 127.0.0.1:58357: runtime error: index out of range
+goroutine 608 [running]:
+net/http.(*conn).serve.func1(0xc4202f2820)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc420071fc0, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendDataByMajorHandler(0x15bfba0, 0xc4201609a0, 0xc420144500)
+	/Users/Mjae/frontend/handlers.go:83 +0x192
+net/http.HandlerFunc.ServeHTTP(0x142d228, 0x15bfba0, 0xc4201609a0, 0xc420144500)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc4201609a0, 0xc420144500)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc4201609a0, 0xc420144500)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc4202f2820, 0x15c0460, 0xc420127440)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:39:35 http: panic serving 127.0.0.1:58413: runtime error: index out of range
+goroutine 676 [running]:
+net/http.(*conn).serve.func1(0xc4200ee5a0)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc420071e10, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendSubjectTableHandler(0x15bfba0, 0xc4201607e0, 0xc420144100)
+	/Users/Mjae/frontend/handlers.go:113 +0x1c1
+net/http.HandlerFunc.ServeHTTP(0x142d238, 0x15bfba0, 0xc4201607e0, 0xc420144100)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc4201607e0, 0xc420144100)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc4201607e0, 0xc420144100)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc4200ee5a0, 0x15c0460, 0xc42008a300)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:39:35 http: panic serving 127.0.0.1:58460: runtime error: index out of range
+goroutine 734 [running]:
+net/http.(*conn).serve.func1(0xc42018c320)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc42028c940, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendDataByMajorHandler(0x15bfba0, 0xc420160e00, 0xc4200e8e00)
+	/Users/Mjae/frontend/handlers.go:83 +0x192
+net/http.HandlerFunc.ServeHTTP(0x142d228, 0x15bfba0, 0xc420160e00, 0xc4200e8e00)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc420160e00, 0xc4200e8e00)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc420160e00, 0xc4200e8e00)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc42018c320, 0x15c0460, 0xc42008ad00)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:39:35 http: panic serving 127.0.0.1:58461: runtime error: index out of range
+goroutine 740 [running]:
+net/http.(*conn).serve.func1(0xc4202f21e0)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc421a20ee0, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendSubjectTableHandler(0x15bfba0, 0xc420e13340, 0xc420069000)
+	/Users/Mjae/frontend/handlers.go:113 +0x1c1
+net/http.HandlerFunc.ServeHTTP(0x142d238, 0x15bfba0, 0xc420e13340, 0xc420069000)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc420e13340, 0xc420069000)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc420e13340, 0xc420069000)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc4202f21e0, 0x15c0460, 0xc420e14d00)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:39:37 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:39:38 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:39:40 http: panic serving 127.0.0.1:58475: runtime error: index out of range
+goroutine 741 [running]:
+net/http.(*conn).serve.func1(0xc4202f2280)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc421a200a0, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendSubjectTableHandler(0x15bfba0, 0xc420160000, 0xc4200e8800)
+	/Users/Mjae/frontend/handlers.go:113 +0x1c1
+net/http.HandlerFunc.ServeHTTP(0x142d238, 0x15bfba0, 0xc420160000, 0xc4200e8800)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc420160000, 0xc4200e8800)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc420160000, 0xc4200e8800)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc4202f2280, 0x15c0460, 0xc420e150c0)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:39:40 http: panic serving 127.0.0.1:58477: runtime error: index out of range
+goroutine 743 [running]:
+net/http.(*conn).serve.func1(0xc4202f23c0)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc42028c090, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendDataByMajorHandler(0x15bfba0, 0xc4201600e0, 0xc4200e8500)
+	/Users/Mjae/frontend/handlers.go:83 +0x192
+net/http.HandlerFunc.ServeHTTP(0x142d228, 0x15bfba0, 0xc4201600e0, 0xc4200e8500)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc4201600e0, 0xc4200e8500)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc4201600e0, 0xc4200e8500)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc4202f23c0, 0x15c0460, 0xc420e15700)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:39:40 http: panic serving 127.0.0.1:58474: runtime error: index out of range
+goroutine 720 [running]:
+net/http.(*conn).serve.func1(0xc4200eed20)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc4200714f0, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendSubjectTableHandler(0x15bfba0, 0xc420e020e0, 0xc420144100)
+	/Users/Mjae/frontend/handlers.go:113 +0x1c1
+net/http.HandlerFunc.ServeHTTP(0x142d238, 0x15bfba0, 0xc420e020e0, 0xc420144100)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc420e020e0, 0xc420144100)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc420e020e0, 0xc420144100)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc4200eed20, 0x15c0460, 0xc420126bc0)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:39:40 http: panic serving 127.0.0.1:58478: runtime error: index out of range
+goroutine 744 [running]:
+net/http.(*conn).serve.func1(0xc4202f2460)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc421a20d00, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendDataByMajorHandler(0x15bfba0, 0xc420e12c40, 0xc420144500)
+	/Users/Mjae/frontend/handlers.go:83 +0x192
+net/http.HandlerFunc.ServeHTTP(0x142d228, 0x15bfba0, 0xc420e12c40, 0xc420144500)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc420e12c40, 0xc420144500)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc420e12c40, 0xc420144500)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc4202f2460, 0x15c0460, 0xc420126140)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:39:40 http: panic serving 127.0.0.1:58479: runtime error: index out of range
+goroutine 745 [running]:
+net/http.(*conn).serve.func1(0xc4202f2500)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc420010660, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendSubjectTableHandler(0x15bfba0, 0xc42016e540, 0xc420069900)
+	/Users/Mjae/frontend/handlers.go:113 +0x1c1
+net/http.HandlerFunc.ServeHTTP(0x142d238, 0x15bfba0, 0xc42016e540, 0xc420069900)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc42016e540, 0xc420069900)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc42016e540, 0xc420069900)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc4202f2500, 0x15c0460, 0xc420e15380)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:39:40 http: panic serving 127.0.0.1:58476: runtime error: index out of range
+goroutine 742 [running]:
+net/http.(*conn).serve.func1(0xc4202f2320)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc420071aa0, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendDataByMajorHandler(0x15bfba0, 0xc420e02460, 0xc420069b00)
+	/Users/Mjae/frontend/handlers.go:83 +0x192
+net/http.HandlerFunc.ServeHTTP(0x142d228, 0x15bfba0, 0xc420e02460, 0xc420069b00)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc420e02460, 0xc420069b00)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc420e02460, 0xc420069b00)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc4202f2320, 0x15c0460, 0xc420e15580)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:39:40 http: panic serving 127.0.0.1:58500: runtime error: index out of range
+goroutine 827 [running]:
+net/http.(*conn).serve.func1(0xc421a64140)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc421a21ea0, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendDataByMajorHandler(0x15bfba0, 0xc420e13420, 0xc4200e8a00)
+	/Users/Mjae/frontend/handlers.go:83 +0x192
+net/http.HandlerFunc.ServeHTTP(0x142d228, 0x15bfba0, 0xc420e13420, 0xc4200e8a00)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc420e13420, 0xc4200e8a00)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc420e13420, 0xc4200e8a00)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc421a64140, 0x15c0460, 0xc420e14780)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:39:40 http: panic serving 127.0.0.1:58499: runtime error: index out of range
+goroutine 815 [running]:
+net/http.(*conn).serve.func1(0xc4202f25a0)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc421a21ce0, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendSubjectTableHandler(0x15bfba0, 0xc420e13260, 0xc420145000)
+	/Users/Mjae/frontend/handlers.go:113 +0x1c1
+net/http.HandlerFunc.ServeHTTP(0x142d238, 0x15bfba0, 0xc420e13260, 0xc420145000)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc420e13260, 0xc420145000)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc420e13260, 0xc420145000)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc4202f25a0, 0x15c0460, 0xc420127000)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:39:43 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:39:43 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:39:49 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:39:49 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:40:54 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:40:55 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:40:57 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:40:57 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:41:05 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:41:06 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:41:55 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:41:56 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:42:07 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:42:08 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:42:19 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:42:20 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:42:26 http: panic serving 127.0.0.1:58520: runtime error: index out of range
+goroutine 858 [running]:
+net/http.(*conn).serve.func1(0xc42006a5a0)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc421a12110, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendSubjectTableHandler(0x15bfba0, 0xc42015c1c0, 0xc420068200)
+	/Users/Mjae/frontend/handlers.go:113 +0x1c1
+net/http.HandlerFunc.ServeHTTP(0x142d238, 0x15bfba0, 0xc42015c1c0, 0xc420068200)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc42015c1c0, 0xc420068200)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc42015c1c0, 0xc420068200)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc42006a5a0, 0x15c0460, 0xc42008ae40)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:42:26 http: panic serving 127.0.0.1:58515: runtime error: index out of range
+goroutine 842 [running]:
+net/http.(*conn).serve.func1(0xc4202f2780)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc420071040, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendDataByMajorHandler(0x15bfba0, 0xc42016e0e0, 0xc4200e8600)
+	/Users/Mjae/frontend/handlers.go:83 +0x192
+net/http.HandlerFunc.ServeHTTP(0x142d228, 0x15bfba0, 0xc42016e0e0, 0xc4200e8600)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc42016e0e0, 0xc4200e8600)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc42016e0e0, 0xc4200e8600)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc4202f2780, 0x15c0460, 0xc420127540)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:42:26 http: panic serving 127.0.0.1:58518: runtime error: index out of range
+goroutine 856 [running]:
+net/http.(*conn).serve.func1(0xc42006a460)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc421a120f0, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendSubjectTableHandler(0x15bfba0, 0xc42015c000, 0xc4200e8500)
+	/Users/Mjae/frontend/handlers.go:113 +0x1c1
+net/http.HandlerFunc.ServeHTTP(0x142d238, 0x15bfba0, 0xc42015c000, 0xc4200e8500)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc42015c000, 0xc4200e8500)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc42015c000, 0xc4200e8500)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc42006a460, 0x15c0460, 0xc42008b180)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:42:26 http: panic serving 127.0.0.1:58519: runtime error: index out of range
+goroutine 857 [running]:
+net/http.(*conn).serve.func1(0xc42006a500)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc420070610, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendDataByMajorHandler(0x15bfba0, 0xc42016e000, 0xc420144700)
+	/Users/Mjae/frontend/handlers.go:83 +0x192
+net/http.HandlerFunc.ServeHTTP(0x142d228, 0x15bfba0, 0xc42016e000, 0xc420144700)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc42016e000, 0xc420144700)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc42016e000, 0xc420144700)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc42006a500, 0x15c0460, 0xc420e14ac0)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:42:26 http: panic serving 127.0.0.1:58517: runtime error: index out of range
+goroutine 855 [running]:
+net/http.(*conn).serve.func1(0xc42006a3c0)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc421a206d0, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendDataByMajorHandler(0x15bfba0, 0xc42028a700, 0xc420144400)
+	/Users/Mjae/frontend/handlers.go:83 +0x192
+net/http.HandlerFunc.ServeHTTP(0x142d228, 0x15bfba0, 0xc42028a700, 0xc420144400)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc42028a700, 0xc420144400)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc42028a700, 0xc420144400)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc42006a3c0, 0x15c0460, 0xc42008b080)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:42:26 http: panic serving 127.0.0.1:58516: runtime error: index out of range
+goroutine 854 [running]:
+net/http.(*conn).serve.func1(0xc42006a320)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc420dee5d0, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendSubjectTableHandler(0x15bfba0, 0xc420e12540, 0xc420144100)
+	/Users/Mjae/frontend/handlers.go:113 +0x1c1
+net/http.HandlerFunc.ServeHTTP(0x142d238, 0x15bfba0, 0xc420e12540, 0xc420144100)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc420e12540, 0xc420144100)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc420e12540, 0xc420144100)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc42006a320, 0x15c0460, 0xc42008af80)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:42:26 http: panic serving 127.0.0.1:59211: runtime error: index out of range
+goroutine 1005 [running]:
+net/http.(*conn).serve.func1(0xc42006a1e0)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc420deeec0, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendDataByMajorHandler(0x15bfba0, 0xc420e129a0, 0xc4200e8b00)
+	/Users/Mjae/frontend/handlers.go:83 +0x192
+net/http.HandlerFunc.ServeHTTP(0x142d228, 0x15bfba0, 0xc420e129a0, 0xc4200e8b00)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc420e129a0, 0xc4200e8b00)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc420e129a0, 0xc4200e8b00)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc42006a1e0, 0x15c0460, 0xc420e147c0)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:42:26 http: panic serving 127.0.0.1:59212: runtime error: index out of range
+goroutine 1006 [running]:
+net/http.(*conn).serve.func1(0xc42006a280)
+	/usr/local/go/src/net/http/server.go:1721 +0xd0
+panic(0x13aade0, 0x15e3840)
+	/usr/local/go/src/runtime/panic.go:489 +0x2cf
+main.getDataFromDBByMajor(0xc421a12d90, 0xf, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/Users/Mjae/frontend/dbAccess.go:138 +0x906
+main.sendSubjectTableHandler(0x15bfba0, 0xc42015c700, 0xc4200e8c00)
+	/Users/Mjae/frontend/handlers.go:113 +0x1c1
+net/http.HandlerFunc.ServeHTTP(0x142d238, 0x15bfba0, 0xc42015c700, 0xc4200e8c00)
+	/usr/local/go/src/net/http/server.go:1942 +0x44
+net/http.(*ServeMux).ServeHTTP(0x15f0580, 0x15bfba0, 0xc42015c700, 0xc4200e8c00)
+	/usr/local/go/src/net/http/server.go:2238 +0x130
+net/http.serverHandler.ServeHTTP(0xc4200b5130, 0x15bfba0, 0xc42015c700, 0xc4200e8c00)
+	/usr/local/go/src/net/http/server.go:2568 +0x92
+net/http.(*conn).serve(0xc42006a280, 0x15c0460, 0xc420e14a00)
+	/usr/local/go/src/net/http/server.go:1825 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2668 +0x2ce
+2017/09/05 11:42:27 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:42:27 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:42:38 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:42:38 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:42:45 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:42:45 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:42:55 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:42:56 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:43:00 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:43:01 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:43:03 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 11:43:03 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 11:43:03 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/05 11:43:03 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:43:53 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:43:56 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:43:58 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 11:43:58 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/05 11:43:58 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 11:43:58 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:43:59 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:44:02 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:44:04 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 11:44:04 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/05 11:44:04 (getDataFromDBByMajor) Request Major: STS(과학기술학) 전공, Subjects Count: 10
+2017/09/05 11:44:04 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/05 11:44:05 (rootHandler) Main page access has been occurred.
+2017/09/05 11:44:06 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:44:06 (rootHandler) Main page access has been occurred.
+2017/09/05 11:44:07 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:44:15 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:44:18 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/05 11:44:42 (rootHandler) Vue Main page access has been occurred.
+2017/09/05 11:44:42 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory

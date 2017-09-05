@@ -158,7 +158,7 @@ func drawSubjectTable(subjects []Subject) (string, error) {
 	}
 
 	// templating to draw the table
-	tmpl, err := template.ParseFiles("./webRoot/resources/template/go/subjectTable.html")
+	tmpl, err := template.ParseFiles("./webRoot/resources/template/subjectTable.html")
 	if err != nil {
 		return "", err
 	}

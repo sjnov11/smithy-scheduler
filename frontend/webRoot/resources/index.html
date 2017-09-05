@@ -56,12 +56,9 @@
                   <i class="dropdown icon"></i>
                   <div class="default text">전공을 검색하세요</div>
                   <div id="majorList" class="menu">
-                    <!-- templating -->
-                    {{range .Majors}}
-                    <div class="item" data-value="{{.}}" data-text="{{.}}">
-                      {{ . }}
+                    <div v-for="majorName in majorNames" class="item" :data-value="majorName" :data-text="majorName">
+                      {{ majorName }}
                     </div>
-                    {{end}}
                   </div>
                 </div>
               </div>
@@ -197,8 +194,8 @@
 
 
           </div>
-          <div id="selectedSubjectList" class="selected-subject-list">
-            <p>선택한 과목</p>
+          <div id="selectedLectureList" class="selected-lecture-list">
+            <p>선택한 강의</p>
             <ol>
               <li>데이터베이스시스템및응용</li>
               <li>병렬프로그래밍</li>
@@ -267,9 +264,12 @@
                                                               crossorigin="anonymous" type="text/javascript">
 
     </script>
-    <script src="/vendors/semantic/semantic.min.js" type="text/javascript">
 
-    </script>
+    <script src="/resources/js/majorList.js" type="text/javascript"></script>
+    <script src="/resources/js/subjectTable.js" type="text/javascript"></script>
+    <script src="/resources/js/basket.js" type="text/javascript"></script>
+
+    <script src="/vendors/semantic/semantic.min.js" type="text/javascript"> </script>
     <script src="/resources/js/main.js" type="text/javascript"></script>
   </body>
 
