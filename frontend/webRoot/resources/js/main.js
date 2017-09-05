@@ -36,6 +36,7 @@ new Vue({
 });
 
 var majorIsSelected = true;
+
 var subjects;
 
 var selectedLecture = new Set();
