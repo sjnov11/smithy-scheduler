@@ -1,8 +1,0 @@
-2017/09/05 11:20:22 (main) The Logger has been initialized.
-2017/09/05 11:20:22 (getMajorListFromDB) The subjects list has been generated.
-2017/09/05 11:20:22 (main) The main page source code has been generated.
-2017/09/05 11:20:23 (getMajorListFromDB) The subjects list has been generated.
-2017/09/05 11:20:23 (main) The majorNameList has been generated.
-2017/09/05 11:20:23 (main) Waiting request... 
-2017/09/05 11:20:24 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
-2017/09/05 11:20:25 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
