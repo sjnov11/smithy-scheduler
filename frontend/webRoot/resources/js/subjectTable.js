@@ -1,5 +1,6 @@
-// This varaible is a set of SuupNo2
-var selectedLecture = new Set();
+// This varaible is a map of SuupNo2 and BanSosokNm
+// e.g.) selectedLecture.set("11073","컴퓨터전공")
+var selectedLecture = new Map();
 
 // majorDataMap is a map. A 'key' is a major name a 'value' is subjects.
 // e.g.) subjectData.set("컴퓨터전공", subjectsOfTheMajor)
@@ -108,11 +109,12 @@ function addModal() {
       eachSubject.click(function(){
 
         var selectedLectureNumber = $(this).attr("lecture-number");
+        var selectedLectureMajor = $(this).attr("lecture-major");
 
         if (selectedLecture.has(selectedLectureNumber) == false) {
-          // add
+          // add SuupNo2 and BanSosokNm to selectedLecture
           function addLecture(lecture) {
-            selectedLecture.add(selectedLectureNumber);
+            selectedLecture.set(selectedLectureNumber, selectedLectureMajor);
             $(lecture).addClass("selected");
 
             var lectureName = $(lecture).attr("lecture-name");
@@ -126,6 +128,9 @@ function addModal() {
           for (var i = 0, l = sameLectures.length; i < l; i++) {
             addLecture(sameLectures[i]);
           }
+
+          // add a lecture data to selectedLectureBasketList
+          selectedLectureBasketList.add(selectedLectureNumber, selectedLectureMajor);
 
           showBasket();
 
@@ -153,6 +158,8 @@ function addModal() {
           for (var i = 0, l = sameLectures.length; i < l; i++) {
             deleteLecture(sameLectures[i]);
           }
+
+          selectedLectureBasketList.remove(selectedLectureNumber);
         }
       });
     } else {
@@ -166,8 +173,7 @@ function addModal() {
 
 // This function gives 'selected' class to  already selected lectures 
 function alreadySelectedLecture() {
-  selectedLecture.forEach(function(lectureNumber){
-    console.log(lectureNumber);
+  selectedLecture.forEach(function(majorName, lectureNumber){
 
     var eachLecture = $("div.each-subject.modal-subject-name[lecture-number='"+lectureNumber+"']");
     var lectureName = eachLecture.attr("lecture-name");

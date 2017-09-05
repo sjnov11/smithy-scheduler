@@ -204,13 +204,7 @@ td > a:hover{
   width: calc(1200px * 0.3);
   height: 300px;
   
-  border-style: solid;
-  border-width:3px;
-  background-color: var(--main-color);
-  color:#fff;
-
   text-align:center;
-
   cursor: pointer;
 }
 .time-table-thumbnail > p{
@@ -222,12 +216,12 @@ td > a:hover{
 .selected-lecture-list{
   margin-top:30px;
   width: calc(1200px * 0.3);
-  height: 300px;
-  border-style: solid;
-  border-width:3px;
-  border-color: var(--main-color);
+  min-height: 300px;
+  /* border-style: solid; */
+  /* border-width:3px; */
+  /* border-color: var(--main-color); */
 
-  text-align:center;
+  /* text-align:center; */
 }
 
 
@@ -237,21 +231,23 @@ td > a:hover{
   margin-top: 15px;
 }
 
-
 .selected-lecture-list > ol {
-  padding-left: 25%;
-  padding-right: 20%;
-  margin:0;
-  position:absolute;
+  margin-bottom: 45px;
+}
+
+.selected-lecture-list > ol > li {
+  font-size: 1.5em;
+  font-weight:300;
+  line-height:1.8em;
 }
 
 .c-condition {
-  margin: 170px auto auto 75px;
+  /* margin: 170px auto auto 75px; */
   float: left;
 }
 
 .c-start {
-  margin: 170px auto;
+  /* margin: 170px auto; */
   float: left;
 }
 
@@ -330,4 +326,19 @@ td > a:hover{
 .isu-jehan-yn.popup{
   font-weight:300;
   font-size:0.9em;
+}
+
+.ui.inverted.hanyang.segment {
+    background-color: var(--main-color)!important;
+    color: #fff!important;
+}
+
+
+.table-and-basket {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.combination-buttons {
+  border: none !important
 }

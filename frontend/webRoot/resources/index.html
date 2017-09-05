@@ -39,175 +39,182 @@
         </div>
 
 
-        <div id="chooseMajorOrCultural" class="choose-major-or-cultural">
-          <div id="searchForm" class="search-form main-center">
+        <div id="tableAndBasket" class="table-and-basket ui segment basic">
 
-            <div id="majorOrCultural" class="major-or-cultural">
-              <button id="btn_major" class="huge ui hanyang button">전공</button> &nbsp;
-              <button id="btn_cultural" class="huge ui hanyang basic button">교양</button>
-            </div>
+          <div id="chooseMajorOrCultural" class="choose-major-or-cultural">
+            <div id="searchForm" class="search-form main-center">
 
-            <div id='majorSearchForm' class='major-search-form'>
-              <h4 class="ui dividing header">(전공)다람쥐 헌 쳇바퀴에 타고파</h4>
-              <div class="field">
-                <!-- major -->
-                <div class="ui fluid search selection major dropdown">
-                  <input type="hidden" name="receipt_major">
-                  <i class="dropdown icon"></i>
-                  <div class="default text">전공을 검색하세요</div>
-                  <div id="majorList" class="menu">
-                    <div v-for="majorName in majorNames" class="item" :data-value="majorName" :data-text="majorName">
-                      {{ majorName }}
+              <div id="majorOrCultural" class="major-or-cultural">
+                <button id="btn_major" class="huge ui hanyang button">전공</button> &nbsp;
+                <button id="btn_cultural" class="huge ui hanyang basic button">교양</button>
+              </div>
+
+              <div id='majorSearchForm' class='major-search-form'>
+                <h4 class="ui dividing header">(전공)다람쥐 헌 쳇바퀴에 타고파</h4>
+                <div class="field">
+                  <!-- major -->
+                  <div class="ui fluid search selection major dropdown">
+                    <input type="hidden" name="receipt_major">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">전공을 검색하세요</div>
+                    <div id="majorList" class="menu">
+                      <div v-for="majorName in majorNames" class="item" :data-value="majorName" :data-text="majorName">
+                        {{ majorName }}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div id='culturalSearchForm' class='cultural-search-form' style="display:none">
-              <h4 class="ui dividing header">(교양)다람쥐 헌 쳇바퀴에 타고파</h4>
-              <div class="field">
-                <!-- cultural -->
-                <div class="ui fluid search multiple selection cultural dropdown">
-                  <input type="hidden" name="receipt_cultural">
-                  <i class="dropdown icon"></i>
-                  <div class="default text">교양 검색조건을 선택해주세요</div>
+              <div id='culturalSearchForm' class='cultural-search-form' style="display:none">
+                <h4 class="ui dividing header">(교양)다람쥐 헌 쳇바퀴에 타고파</h4>
+                <div class="field">
+                  <!-- cultural -->
+                  <div class="ui fluid search multiple selection cultural dropdown">
+                    <input type="hidden" name="receipt_cultural">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">교양 검색조건을 선택해주세요</div>
 
-                  <!-- 2차원 for loop으로 해야겠다-->
-                  <div id="culturalList" class="menu">
-                    <!-- below codes should be controlled by VueJS (iteration) -->
-                    <!-- <div class="item" v-for="cultural in culturals" v-bind:data-value="cultural" v-bind:data-text="cultural"> -->
-                    <!--    cultural  -->
-                    <!-- </div> -->
-                    <div class="item" data-value="cultural" data-text="cultural">
-                      cultural1
+                    <!-- 2차원 for loop으로 해야겠다-->
+                    <div id="culturalList" class="menu">
+                      <!-- below codes should be controlled by VueJS (iteration) -->
+                      <!-- <div class="item" v-for="cultural in culturals" v-bind:data-value="cultural" v-bind:data-text="cultural"> -->
+                      <!--    cultural  -->
+                      <!-- </div> -->
+                      <div class="item" data-value="cultural" data-text="cultural">
+                        cultural1
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
 
-            <div id="searchResultSegment" class="search-result-segment ui basic segment">
-              
-              <div id="searchResultLoader" class="search-result-loader">
+              <div id="searchResultSegment" class="search-result-segment ui basic segment">
+
+                <div id="searchResultLoader" class="search-result-loader">
+                </div>
+
+                <div id="searchResult" class="search-result">
+                  <table class="ui fixed single line celled table search-result-table unstackable" style="display:none">
+                    <thead>
+                      <tr>
+                        <th>1학년</th>
+                        <th>2학년</th>
+                        <th>3학년</th>
+                        <th>4학년</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- below data should be controlled by Vue-->
+                      <tr>
+                        <td class="selectable"><a></a></td>
+                        <td lecture-name="시스템프로그래밍" class="selectable"><a>시스템프로그래밍</a>
+                          <div lecture-name="시스템프로그래밍" class="ui lecture-info flowing popup top left transition hidden">
+                            <div class="ui three column divided center aligned grid">
+                              <div class="column">
+                                <p>시스템프로그래밍 <br/>강의 정보1</p>
+                                <button lecture-name="시스템프로그래밍" nth-lecture="1" class="ui hanyang basic mini lecture-select button">선택</button>
+                              </div>
+                              <div class="column">
+                                <p>시스템프로그래밍<br /> 강의 정보2</p>
+                                <button lecture-name="시스템프로그래밍" nth-lecture="2" class="ui hanyang basic mini lecture-select button">선택</button>
+                              </div>
+
+                              <div class="column">
+                                <p>시스템프로그래밍<br /> 강의 정보3</p>
+                                <button lecture-name="시스템프로그래밍" nth-lecture="3" class="ui hanyang basic mini lecture-select button">선택</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </td>
+                        <td lecture-name="소프트웨어공학" class="selectable"><a>소프트웨어공학</a>
+                          <div lecture-name="소프트웨어공학" class="ui lecture-info popup top left transition hidden">
+                            <p>소프트웨어공학 강의 정보</p>
+                          </div>
+                        </td>
+                        <td lecture-name="전공멘토링" class="selectable"><a>전공멘토링</a>
+                          <div lecture-name="전공멘토링" class="ui lecture-info popup top left transition hidden">
+                            <p>전공멘토링 강의 정보</p>
+                          </div>
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
               </div>
 
-              <div id="searchResult" class="search-result">
-              <table class="ui fixed single line celled table search-result-table unstackable" style="display:none">
-                <thead>
-                  <tr>
-                    <th>1학년</th>
-                    <th>2학년</th>
-                    <th>3학년</th>
-                    <th>4학년</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- below data should be controlled by Vue-->
-                  <tr>
-                    <td class="selectable"><a></a></td>
-                    <td lecture-name="시스템프로그래밍" class="selectable"><a>시스템프로그래밍</a>
-                      <div lecture-name="시스템프로그래밍" class="ui lecture-info flowing popup top left transition hidden">
-                        <div class="ui three column divided center aligned grid">
-                          <div class="column">
-                            <p>시스템프로그래밍 <br/>강의 정보1</p>
-                            <button lecture-name="시스템프로그래밍" nth-lecture="1" class="ui hanyang basic mini lecture-select button">선택</button>
-                          </div>
-                          <div class="column">
-                            <p>시스템프로그래밍<br /> 강의 정보2</p>
-                            <button lecture-name="시스템프로그래밍" nth-lecture="2" class="ui hanyang basic mini lecture-select button">선택</button>
-                          </div>
-
-                          <div class="column">
-                            <p>시스템프로그래밍<br /> 강의 정보3</p>
-                            <button lecture-name="시스템프로그래밍" nth-lecture="3" class="ui hanyang basic mini lecture-select button">선택</button>
-                          </div>
-
-                        </div>
-                      </div>
-                    </td>
-                    <td lecture-name="소프트웨어공학" class="selectable"><a>소프트웨어공학</a>
-                      <div lecture-name="소프트웨어공학" class="ui lecture-info popup top left transition hidden">
-                        <p>소프트웨어공학 강의 정보</p>
-                      </div>
-                    </td>
-                    <td lecture-name="전공멘토링" class="selectable"><a>전공멘토링</a>
-                      <div lecture-name="전공멘토링" class="ui lecture-info popup top left transition hidden">
-                        <p>전공멘토링 강의 정보</p>
-                      </div>
-                    </td>
-                  </tr>
-                  
-                </tbody>
-              </table>
+              <div class="center" style="width:100%; margin:50 auto 0 auto">
+                <p> <span style="font-weight:600">(dev)Selected Value:</span> <span id="echoInputValue"></span> </p>
               </div>
+
+
+
+
+
+
             </div>
-
-            <div class="center" style="width:100%; margin:50 auto 0 auto">
-              <p> <span style="font-weight:600">(dev)Selected Value:</span> <span id="echoInputValue"></span> </p>
-            </div>
-
-
-
-
-
-
           </div>
-        </div>
 
 
-        <div id="basket" class="basket" style="display:none">
-          <div id="timeTableThumbnail" class="time-table-thumbnail">
-            <!-- 조합된 시간표가 없으면 Thumbnail이 없다. Thumbnail을 클릭하면 모든 경우의 수의 시간표를 볼 수 있다. -->
-            <!-- 시간표 선택하면 선택한 Thumbnail로 바뀜 -->
-            <p>Time Table<br/>Thumbnail</p>
+          <div id="basket" class="basket" style="display:none">
+            <div id="timeTableThumbnail" class="time-table-thumbnail ui hanyang inverted segment">
+              <!-- 조합된 시간표가 없으면 Thumbnail이 없다. Thumbnail을 클릭하면 모든 경우의 수의 시간표를 볼 수 있다. -->
+              <!-- 시간표 선택하면 선택한 Thumbnail로 바뀜 -->
+              <p>Time Table<br/>Thumbnail</p>
 
 
-            <div class="ui small modal combination-result">
-              <div class="header">시간표 조합 결과</div>
-              <div class="scrolling content">
-                <div class="ui inverted segment time-table">
-                  <p>시간표 1</p>
-                </div>
-                <div class="ui inverted segment time-table">
-                  <p>시간표 2</p>
-                </div>
-                <div class="ui inverted segment time-table">
-                  <p>시간표 3</p>
-                </div>
-                <div class="ui inverted segment time-table">
-                  <p>시간표 4</p>
-                </div>
-                <div class="ui inverted segment time-table">
-                  <p>시간표 5</p>
-                </div>
-                <div class="ui inverted segment time-table">
-                  <p>시간표 6</p>
-                </div>
-                <div class="ui inverted segment time-table">
-                  <p>시간표 7</p>
+              <div class="ui small modal combination-result">
+                <div class="header">시간표 조합 결과</div>
+                <div class="scrolling content">
+                  <div class="ui inverted segment time-table">
+                    <p>시간표 1</p>
+                  </div>
+                  <div class="ui inverted segment time-table">
+                    <p>시간표 2</p>
+                  </div>
+                  <div class="ui inverted segment time-table">
+                    <p>시간표 3</p>
+                  </div>
+                  <div class="ui inverted segment time-table">
+                    <p>시간표 4</p>
+                  </div>
+                  <div class="ui inverted segment time-table">
+                    <p>시간표 5</p>
+                  </div>
+                  <div class="ui inverted segment time-table">
+                    <p>시간표 6</p>
+                  </div>
+                  <div class="ui inverted segment time-table">
+                    <p>시간표 7</p>
+                  </div>
                 </div>
               </div>
+
+
+
             </div>
+            <div id="selectedLectureList" class="ui segment selected-lecture-list">
+              <!-- <a class="ui orange right ribbon label">Specs</a> -->
+              <div class="ui top attached label" style="font-weight:400">선택한 강의</div>
+              <ol>
+                <li v-for="lecture in lectureData">{{lecture.GwamokNm}}</li>
+              </ol>
 
 
+              <div class="ui bottom attached basic label combination-buttons" style="font-weight:400">
 
-          </div>
-          <div id="selectedLectureList" class="selected-lecture-list">
-            <p>선택한 강의</p>
-            <ol>
-              <li>데이터베이스시스템및응용</li>
-              <li>병렬프로그래밍</li>
-              <li>소프트웨어공학</li>
-            </ol>
-            <div id="cCondition" class="c-condition">
-              <button class="ui button"> 조합 조건 설정</button>
-            </div>
-            <div id="cStart" class="c-start">
-              <button class="ui button combiation-start"> 조합!</button>
-              <div class="ui combiation-complete popup transition hidden top left">
-                <p>조합을 완료했습니다.</p>
+                <div id="cCondition" class="c-condition">
+                  <button class="ui button"> 조합 조건 설정</button>
+                </div>
+                <div id="cStart" class="c-start">
+                  <button class="ui button combiation-start"> 조합!</button>
+                  <div class="ui combiation-complete popup transition hidden top left">
+                    <p>조합을 완료했습니다.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
