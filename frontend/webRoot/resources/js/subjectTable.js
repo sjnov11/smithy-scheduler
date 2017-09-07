@@ -120,7 +120,7 @@ function addModal() {
             var lectureName = $(lecture).attr("lecture-name");
             $("td.selectable[lecture-name='" + lectureName + "']").addClass("selected");
 
-            console.log("lecture " +selectedLectureNumber+ " is added to var selectedLecture");
+            // console.log("lecture " +selectedLectureNumber+ " is added to var selectedLecture");
           };
           
           sameLectures = $(this).parent().find(".each-subject.modal-subject-name[lecture-number='"+ selectedLectureNumber +"']");
@@ -150,7 +150,7 @@ function addModal() {
               $("td.selectable[lecture-name='" + lectureName + "']").removeClass("selected");
             }
 
-            console.log("lecture " +selectedLectureNumber+ " is removed from var selectedLecture");
+            // console.log("lecture " +selectedLectureNumber+ " is removed from var selectedLecture");
           };
 
           // when SuupNo2 is same

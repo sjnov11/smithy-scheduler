@@ -60,8 +60,9 @@ $('button.lecture-select').click(function() {
 });
 
 
-$('.combiation-start.button').popup({
+$('.combination-start.button').popup({
   popup : $(".combination-complete.popup"),
+  position : "top center",
   on    : 'click'
 });
 

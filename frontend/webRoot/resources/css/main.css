@@ -36,6 +36,14 @@ div.entry {
     color: var(--main-color);
 }
 
+body, html{
+  height: initial;
+}
+
+.ui.button {
+  font-family: "Spoqa Han Sans", "Apple SD Gothic Neo", "Malgun Gothic", "MalgunGothic";
+}
+
 .main-header-container{
   width:100%;
   min-width:1200px;
@@ -192,12 +200,8 @@ td > a:hover{
   float: left;
 }
 
-
-.basket{
-  width: calc(1200px * 0.34);
-  float: right;
-  margin-left: calc(1200px * 0.66);
-  position: fixed
+.table-and-basket{
+  width: calc(1200px * 0.614);
 }
 
 .time-table-thumbnail{
@@ -206,6 +210,8 @@ td > a:hover{
   
   text-align:center;
   cursor: pointer;
+
+  position:fixed !important;
 }
 .time-table-thumbnail > p{
   font-weight:100;
@@ -214,9 +220,12 @@ td > a:hover{
 }
 
 .selected-lecture-list{
-  margin-top:30px;
+  margin-top:310px !important;
   width: calc(1200px * 0.3);
-  min-height: 300px;
+  height: 40%;
+  position: fixed !important;
+  padding: 10px 0 25px 0 !important;
+
   /* border-style: solid; */
   /* border-width:3px; */
   /* border-color: var(--main-color); */
@@ -224,22 +233,91 @@ td > a:hover{
   /* text-align:center; */
 }
 
+.selected-lecture-list > .ui.top.attached.label {
+  font-weight: 300;
+  text-align: center;
+  font-size: 1em;
+  height: 38px;
+}
 
-.selected-lecture-list > p {
+.selected-lecture-info-list{
+  overflow: auto;
+  height: 87%;
+}
+
+.selected-lecture-info-list > p {
   font-weight:300;
   font-size:1.5em;
   margin-top: 15px;
 }
 
-.selected-lecture-list > ol {
-  margin-bottom: 45px;
+.each-selected-lecture{
+  width: 100%;
+  min-height: calc(100% / 6);
 }
 
-.selected-lecture-list > ol > li {
-  font-size: 1.5em;
-  font-weight:300;
-  line-height:1.8em;
+.each-selected-lecture:hover{
+  cursor: pointer;
+  background-color: #f2f2f2;
 }
+
+.each-selected-lecture > .ui.checkbox {
+  padding: 13px 20px 13px 20px;
+  width: 86%;
+}
+
+
+.each-selected-lecture > .each-lecture-buttons{
+  float:right;
+  width:14%;
+}
+
+.each-selected-lecture > .each-lecture-buttons > .left.button{
+  float: left;
+  width: 50%;
+  height: calc(100% / 6);
+}
+
+
+.each-selected-lecture > .each-lecture-buttons > .left.button > i {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  padding-top: 10px;
+  /* padding-left: 6px; */
+}
+
+.each-selected-lecture > .each-lecture-buttons > .right.top.button{
+  float: right;
+  width: 50%;
+  height: calc(100% / 6 / 2);
+}
+
+.each-selected-lecture > .each-lecture-buttons > .right.top.button > i {
+  margin: auto;
+  width: 100%;
+  height: 50%;
+  padding-top: 2px;
+  padding-right: 6px;
+}
+
+.each-selected-lecture > .each-lecture-buttons > .right.bottom.button{
+  float: right;
+  width: 50%;
+  height: calc(100% / 6 / 2);
+}
+
+.each-selected-lecture > .each-lecture-buttons > .right.bottom.button > i {
+  margin: auto;
+  width: 100%;
+  height: 50%;
+  padding-bottom: 2px;
+  padding-right: 6px;
+}
+
+
+
+
 
 .c-condition {
   /* margin: 170px auto auto 75px; */
@@ -341,4 +419,30 @@ td > a:hover{
 
 .combination-buttons {
   border: none !important
+}
+
+
+
+/* semantic-ui toggle background color */
+.ui.toggle.checkbox input:checked~.box:before, .ui.toggle.checkbox input:checked~label:before{
+    background-color: var(--main-bright-color) !important;
+}
+
+.each-lecture.popup{
+  width:100%;
+  font-weight:300;
+}
+
+.combination-buttons {
+  padding: 0 !important;
+}
+
+
+.combination-buttons > .buttons > .button{
+  font-weight:300;
+}
+
+
+.ui.dimmer{
+  background-color: rgba(0,0,0,.20);
 }

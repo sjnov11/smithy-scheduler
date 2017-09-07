@@ -1,0 +1,327 @@
+2017/09/07 15:21:03 (main) The Logger has been initialized.
+2017/09/07 15:21:03 (getMajorListFromDB) The subjects list has been generated.
+2017/09/07 15:21:03 (main) The majorNameListJSON has been generated.
+2017/09/07 15:21:03 (main) Waiting request... 
+2017/09/07 15:21:05 (rootHandler)  open ./webRoot/gtt.html: no such file or directory
+2017/09/07 15:21:05 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 15:21:07 (rootHandler)  open ./webRoot/gtt.html: no such file or directory
+2017/09/07 15:21:07 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 15:21:15 (rootHandler) The Main page access has been occurred.
+2017/09/07 15:21:16 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 15:21:32 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 15:22:24 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 15:23:31 (rootHandler) The Main page access has been occurred.
+2017/09/07 15:23:31 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 15:23:35 (getDataFromDBByMajor) Request Major: 컴퓨터전공, Subjects Count: 70
+2017/09/07 15:23:35 (getDataFromDBByMajor) Request Major: 컴퓨터전공, Subjects Count: 70
+2017/09/07 15:23:35 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/07 15:23:35 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/07 15:25:53 (getDataFromDBByMajor) Request Major: 서울 대학, Subjects Count: 472
+2017/09/07 15:25:53 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/07 15:25:53 (getDataFromDBByMajor) Request Major: 서울 대학, Subjects Count: 472
+2017/09/07 15:25:53 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/07 15:32:09 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 15:33:14 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 15:33:48 (getDataFromDBByMajor) Request Major: 컴퓨터전공, Subjects Count: 70
+2017/09/07 15:33:48 (getDataFromDBByMajor) Request Major: 컴퓨터전공, Subjects Count: 70
+2017/09/07 15:33:48 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/07 15:33:48 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/07 15:34:33 (getDataFromDBByMajor) Request Major: 서울 대학, Subjects Count: 472
+2017/09/07 15:34:33 (getDataFromDBByMajor) Request Major: 서울 대학, Subjects Count: 472
+2017/09/07 15:34:33 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/07 15:34:33 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/07 15:38:50 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 15:40:49 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 15:41:03 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 15:41:21 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 15:50:59 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 15:51:09 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 15:51:22 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 15:54:07 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 15:56:10 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 15:56:55 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 15:59:54 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:00:21 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:00:24 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:02:03 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:04:21 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:04:38 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:05:10 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:05:32 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:05:56 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:06:08 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:06:09 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:08:53 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:09:01 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:09:15 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:13:28 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:13:46 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:14:39 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:15:22 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:15:35 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:15:57 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:21:12 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:21:26 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:21:47 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:39:47 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:40:10 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:40:40 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:40:52 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:40:56 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:41:09 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:42:05 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:42:38 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:45:01 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:45:20 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:49:36 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:50:49 (rootHandler) The Main page access has been occurred.
+2017/09/07 16:50:50 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 16:50:53 (getDataFromDBByMajor) Request Major: 컴퓨터전공, Subjects Count: 70
+2017/09/07 16:50:53 (getDataFromDBByMajor) Request Major: 컴퓨터전공, Subjects Count: 70
+2017/09/07 16:50:53 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/07 16:50:53 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/07 17:04:36 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 17:04:38 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 17:08:31 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 17:09:09 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 17:56:23 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 17:56:54 (rootHandler) The Main page access has been occurred.
+2017/09/07 17:56:55 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 17:56:57 (getDataFromDBByMajor) Request Major: 공공수행인문학전공, Subjects Count: 20
+2017/09/07 17:56:57 (getDataFromDBByMajor) Request Major: 공공수행인문학전공, Subjects Count: 20
+2017/09/07 17:56:57 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/07 17:56:57 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/07 18:06:07 (rootHandler) The Main page access has been occurred.
+2017/09/07 18:06:08 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 18:06:12 (getDataFromDBByMajor) Request Major: 컴퓨터전공, Subjects Count: 70
+2017/09/07 18:06:12 (getDataFromDBByMajor) Request Major: 컴퓨터전공, Subjects Count: 70
+2017/09/07 18:06:12 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/07 18:06:12 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/07 18:07:05 (rootHandler) The Main page access has been occurred.
+2017/09/07 18:07:06 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 18:07:12 (getDataFromDBByMajor) Request Major: 컴퓨터전공, Subjects Count: 70
+2017/09/07 18:07:12 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/07 18:07:12 (getDataFromDBByMajor) Request Major: 컴퓨터전공, Subjects Count: 70
+2017/09/07 18:07:12 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/07 18:08:27 (rootHandler) The Main page access has been occurred.
+2017/09/07 18:08:29 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 18:08:31 (getDataFromDBByMajor) Request Major: 컴퓨터소프트웨어학부, Subjects Count: 13
+2017/09/07 18:08:31 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/07 18:08:31 (getDataFromDBByMajor) Request Major: 컴퓨터소프트웨어학부, Subjects Count: 13
+2017/09/07 18:08:31 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/07 18:08:36 (getDataFromDBByMajor) Request Major: 컴퓨터전공, Subjects Count: 70
+2017/09/07 18:08:36 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/07 18:08:36 (getDataFromDBByMajor) Request Major: 컴퓨터전공, Subjects Count: 70
+2017/09/07 18:08:36 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/07 18:12:08 (rootHandler) The Main page access has been occurred.
+2017/09/07 18:12:09 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 18:12:11 (getDataFromDBByMajor) Request Major: 경영학부, Subjects Count: 178
+2017/09/07 18:12:11 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/07 18:12:11 (getDataFromDBByMajor) Request Major: 경영학부, Subjects Count: 178
+2017/09/07 18:12:11 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/07 18:27:32 (rootHandler) The Main page access has been occurred.
+2017/09/07 18:27:33 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 18:27:38 (getDataFromDBByMajor) Request Major: 컴퓨터전공, Subjects Count: 70
+2017/09/07 18:27:38 (getDataFromDBByMajor) Request Major: 컴퓨터전공, Subjects Count: 70
+2017/09/07 18:27:38 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/07 18:27:38 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/07 18:45:32 (rootHandler) The Main page access has been occurred.
+2017/09/07 18:45:33 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 18:45:38 (getDataFromDBByMajor) Request Major: 컴퓨터전공, Subjects Count: 70
+2017/09/07 18:45:38 (getDataFromDBByMajor) Request Major: 컴퓨터전공, Subjects Count: 70
+2017/09/07 18:45:38 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/07 18:45:38 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/07 18:46:44 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 18:47:13 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:03:45 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:05:29 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:05:47 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:06:02 (rootHandler) The Main page access has been occurred.
+2017/09/07 19:06:03 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:06:07 (getDataFromDBByMajor) Request Major: 컴퓨터전공, Subjects Count: 70
+2017/09/07 19:06:07 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/07 19:06:07 (getDataFromDBByMajor) Request Major: 컴퓨터전공, Subjects Count: 70
+2017/09/07 19:06:07 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/07 19:07:55 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:08:08 (rootHandler) The Main page access has been occurred.
+2017/09/07 19:08:09 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:08:11 (getDataFromDBByMajor) Request Major: 건축공학부, Subjects Count: 56
+2017/09/07 19:08:11 (getDataFromDBByMajor) Request Major: 건축공학부, Subjects Count: 56
+2017/09/07 19:08:11 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/07 19:08:11 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/07 19:08:40 (rootHandler) The Main page access has been occurred.
+2017/09/07 19:08:41 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:08:43 (getDataFromDBByMajor) Request Major: 건축공학부, Subjects Count: 56
+2017/09/07 19:08:43 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/07 19:08:43 (getDataFromDBByMajor) Request Major: 건축공학부, Subjects Count: 56
+2017/09/07 19:08:43 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/07 19:11:13 (rootHandler) The Main page access has been occurred.
+2017/09/07 19:11:14 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:11:16 (getDataFromDBByMajor) Request Major: 공공수행인문학전공, Subjects Count: 20
+2017/09/07 19:11:16 (sendDataByMajorHandler) The subject data have been sent.
+2017/09/07 19:11:16 (getDataFromDBByMajor) Request Major: 공공수행인문학전공, Subjects Count: 20
+2017/09/07 19:11:16 (sendSubjectTableHandler) The subject table html code has been sent to browser.
+2017/09/07 19:51:30 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:51:41 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:53:04 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:53:11 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:53:29 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:53:30 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:53:44 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:54:51 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:55:04 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:55:05 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:55:10 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:55:37 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:55:43 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:55:49 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:56:19 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:56:19 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:56:28 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:56:36 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:56:40 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 19:56:44 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:07:53 (rootHandler) The Main page access has been occurred.
+2017/09/07 20:07:54 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:08:13 (rootHandler) The Main page access has been occurred.
+2017/09/07 20:08:13 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:08:29 (rootHandler) The Main page access has been occurred.
+2017/09/07 20:08:30 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:08:47 (rootHandler) The Main page access has been occurred.
+2017/09/07 20:08:47 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:09:23 (rootHandler) The Main page access has been occurred.
+2017/09/07 20:09:24 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:09:39 (rootHandler) The Main page access has been occurred.
+2017/09/07 20:09:40 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:09:56 (rootHandler) The Main page access has been occurred.
+2017/09/07 20:09:57 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:11:30 (rootHandler) The Main page access has been occurred.
+2017/09/07 20:11:31 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:11:34 (rootHandler)  open ./webRoot/gtt.html: no such file or directory
+2017/09/07 20:11:35 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:11:40 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:12:03 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:12:35 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:13:09 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:19:14 (rootHandler)  open ./webRoot/resources/gtt.html: no such file or directory
+2017/09/07 20:19:14 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:19:20 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:21:57 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:22:11 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:23:04 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:23:44 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:24:47 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:24:58 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:25:08 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:26:17 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:26:35 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:26:54 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:26:56 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:26:57 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:26:58 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:27:08 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:27:27 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:27:42 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:27:46 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:27:47 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:27:53 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:28:13 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:28:23 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:28:32 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:28:39 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:28:48 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:28:58 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:42:48 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:42:57 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:43:49 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:46:17 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:47:02 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:47:44 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:49:12 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:51:37 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:54:31 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:54:42 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:54:59 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:56:04 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:56:06 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:58:08 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:59:39 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:59:40 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:59:51 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 20:59:52 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:00:09 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:00:10 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:01:21 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:01:22 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:01:53 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:02:15 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:02:47 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:03:18 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:04:15 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:04:45 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:04:57 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:06:03 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:06:54 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:07:46 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:09:09 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:09:26 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:10:13 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:11:42 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:12:57 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:13:18 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:13:24 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:16:21 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:16:34 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:16:57 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:17:17 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:17:24 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:18:01 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:18:35 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:19:17 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:20:18 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:21:34 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:21:59 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:22:09 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:22:26 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:22:28 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:22:41 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:23:35 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:24:03 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:24:32 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:25:13 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:25:49 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:26:17 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:26:37 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:27:14 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:27:48 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:28:14 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:29:04 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:30:11 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:31:24 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:32:12 (rootHandler)  open ./webRoot/gtt/gtt.html: no such file or directory
+2017/09/07 21:32:12 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:32:16 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:33:29 (rootHandler) The Main page access has been occurred.
+2017/09/07 21:33:30 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:33:36 (rootHandler)  open ./webRoot/resources/gtt.html: no such file or directory
+2017/09/07 21:33:36 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:33:39 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:35:43 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:36:44 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:36:50 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:37:18 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:38:23 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:39:23 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:40:08 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:40:17 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:41:57 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:42:18 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:43:11 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:43:36 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:43:53 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:44:05 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:44:28 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:44:52 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:45:14 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:48:31 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
+2017/09/07 21:48:59 (rootHandler)  open ./webRoot/favicon.ico: no such file or directory
