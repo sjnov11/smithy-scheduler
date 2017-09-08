@@ -168,28 +168,14 @@
 
               <div class="ui small modal combination-result">
                 <div class="header">시간표 조합 결과</div>
-                <div class="scrolling content">
-                  <div class="ui inverted segment time-table">
-                    <p>시간표 1</p>
+                <div id='timeTableArea' class="scrolling content time-table-area">
+
+                  <!-- temporary time table results-->
+                  <div v-for='(eachTableData, index) in timeTableData' :table-number="index" class="ui inverted segment time-table">
+                    <!-- data is exist! space has been generated. -->
+                    <p>시간표 {{index}}</p>
                   </div>
-                  <div class="ui inverted segment time-table">
-                    <p>시간표 2</p>
-                  </div>
-                  <div class="ui inverted segment time-table">
-                    <p>시간표 3</p>
-                  </div>
-                  <div class="ui inverted segment time-table">
-                    <p>시간표 4</p>
-                  </div>
-                  <div class="ui inverted segment time-table">
-                    <p>시간표 5</p>
-                  </div>
-                  <div class="ui inverted segment time-table">
-                    <p>시간표 6</p>
-                  </div>
-                  <div class="ui inverted segment time-table">
-                    <p>시간표 7</p>
-                  </div>
+
                 </div>
               </div>
 
@@ -199,84 +185,84 @@
             <div id="selectedLectureList" class="ui segment selected-lecture-list">
               <!-- <a class="ui orange right ribbon label">Specs</a> -->
               <div class="ui top attached label">선택한 강의</div>
-                <div id="selectedLectureInfoWindow" class="selected-lecture-info-list">
+              <div id="selectedLectureInfoWindow" class="selected-lecture-info-list">
 
-                  <div v-for="lecture in lectureData" class="each-selected-lecture" :lecture-number="lecture.SuupNo2" :lecture-name="lecture.GwamokNm">
-                    <div class="ui slider checkbox">
-                      <input type="checkbox" name="public">
-                      <label>{{lecture.GwamokNm}} <span style="color:#aaa; font-size:0.85em">({{lecture.SuupNo2}})</span></label>
+                <div v-for="lecture in lectureData" class="each-selected-lecture" :lecture-number="lecture.SuupNo2" :lecture-name="lecture.GwamokNm">
+                  <div class="ui slider checkbox">
+                    <input type="checkbox" name="public">
+                    <label>{{lecture.GwamokNm}} <span style="color:#aaa; font-size:0.85em">({{lecture.SuupNo2}})</span></label>
+                  </div>
+
+                  <div class="each-lecture-buttons">
+                    <div class="left button">
+                      <i class="trash outline icon"></i>
                     </div>
-
-                    <div class="each-lecture-buttons">
-                      <div class="left button">
-                        <i class="trash outline icon"></i>
-                      </div>
-                      <div class="right top button">
-                        <i class="angle up icon"></i>
-                      </div>
-                      <div class="right bottom button">
-                        <i class="angle down icon"></i>
-                      </div>
+                    <div class="right top button">
+                      <i class="angle up icon"></i>
                     </div>
-
-                    <div class="ui each-lecture popup transition hidden">
-                      <p>
-                      {{lecture.GwamokNm}}
-                      </p>
-                      <p v-if="lecture.DaepyoGangsaNm != ''">
-                        {{lecture.DaepyoGangsaNm}} 교수
-                      </p>
-                      <p v-else>
-                        교수 정보 없음
-                      </p>
-
-                      <p>수업번호: {{lecture.SuupNo2}}</p>
-
-                      <p v-if="lecture.SuupTypeGb != ''">
-                        상세정보: {{lecture.SuupTypeGb}}
-                      </p>
-
-                      <p v-if="lecture.SecondData.TimesAndClass != ''">
-                      <span v-for="TimeAndClass in lecture.SecondData.TimesAndClass">
-                        {{TimeAndClass.Day}}({{TimeAndClass.Start_time}}:{{TimeAndClass.Start_minute}}-{{TimeAndClass.End_time}}:{{TimeAndClass.End_minute}})
-                        <br/>
-                          &nbsp;&nbsp;{{TimeAndClass.Classroom}}
-                        <br/>
-                      </span>
-                      </p>
-
-                      <p v-if="lecture.SuupMsg != ''">
-                        {{lecture.SuupMsg}}
-                      </p>
-
+                    <div class="right bottom button">
+                      <i class="angle down icon"></i>
                     </div>
+                  </div>
+
+                  <div class="ui each-lecture popup transition hidden">
+                    <p>
+                    {{lecture.GwamokNm}}
+                    </p>
+                    <p v-if="lecture.DaepyoGangsaNm != ''">
+                    {{lecture.DaepyoGangsaNm}} 교수
+                    </p>
+                    <p v-else>
+                    교수 정보 없음
+                    </p>
+
+                    <p>수업번호: {{lecture.SuupNo2}}</p>
+
+                    <p v-if="lecture.SuupTypeGb != ''">
+                    상세정보: {{lecture.SuupTypeGb}}
+                    </p>
+
+                    <p v-if="lecture.SecondData.TimesAndClass != ''">
+                    <span v-for="TimeAndClass in lecture.SecondData.TimesAndClass">
+                      {{TimeAndClass.Day}}({{TimeAndClass.Start_time}}:{{TimeAndClass.Start_minute}}-{{TimeAndClass.End_time}}:{{TimeAndClass.End_minute}})
+                      <br/>
+                      &nbsp;&nbsp;{{TimeAndClass.Classroom}}
+                      <br/>
+                    </span>
+                    </p>
+
+                    <p v-if="lecture.SuupMsg != ''">
+                    {{lecture.SuupMsg}}
+                    </p>
 
                   </div>
 
                 </div>
 
+              </div>
 
-                <div class="ui bottom attached basic label combination-buttons">
-                  <div class="ui two bottom attached buttons">
-                    <div class="ui button">조합 조건 설정</div>
-                    <div class="ui combination-start button">조합!</div>
 
-                    <div class="ui combination-complete popup transition hidden top left">
-                      <p>조합을 완료했습니다.</p>
-                    </div>
+              <div class="ui bottom attached basic label combination-buttons">
+                <div class="ui two bottom attached buttons">
+                  <div class="ui button">조합 조건 설정</div>
+                  <div class="ui combination-start button">조합!</div>
+
+                  <div class="ui combination-complete popup transition hidden top left">
+                    <p>조합을 완료했습니다.</p>
                   </div>
-
-
-                  <!-- <div id="cCondition" class="c-condition">
-                    -   <button class="ui button"> 조합 조건 설정</button>
-                    - </div>
-                    - <div id="cStart" class="c-start">
-                    -   <button class="ui button combiation-start"> 조합!</button>
-                    -   <div class="ui combiation-complete popup transition hidden top left">
-                    -     <p>조합을 완료했습니다.</p>
-                    -   </div>
-                    - </div> -->
                 </div>
+
+
+                <!-- <div id="cCondition" class="c-condition">
+                  -   <button class="ui button"> 조합 조건 설정</button>
+                  - </div>
+                  - <div id="cStart" class="c-start">
+                  -   <button class="ui button combiation-start"> 조합!</button>
+                  -   <div class="ui combiation-complete popup transition hidden top left">
+                  -     <p>조합을 완료했습니다.</p>
+                  -   </div>
+                  - </div> -->
+              </div>
 
 
 
@@ -331,7 +317,14 @@
 
           </div>
         </div>
+
+
+
       </div>
+
+
+
+
     </div>
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -347,6 +340,7 @@
     <script src="/resources/js/main.js" type="text/javascript"></script>
 
     <script src="/resources/js/generateTimeTable.js" type="text/javascript"></script>
+    <script src="/resources/js/timeTableArea.js" type="text/javascript"></script>
   </body>
 
 </html>

@@ -8,6 +8,7 @@ var selectedLectureBasketList = new Vue({
   data: {
     lectureData: [],
     checkedLectureData: [],
+
     timeTablesData: []
   },
   mounted: function() {
@@ -19,7 +20,7 @@ var selectedLectureBasketList = new Vue({
 
     // use closure
     var vueObject = this;
-    function generateTimeTablesData() {
+    function generateAndSendTimeTablesData() {
       vueObject.checkedLectureData = [];
 
       // remove lecture that does not have 'checked'
@@ -31,9 +32,12 @@ var selectedLectureBasketList = new Vue({
         }
       }
       vueObject.timeTablesData = vueObject.generatePossibleTimeTableData();
+
+      // send generated data to timeTableArea
+      vueObject.sendDataToTimeTableArea(timeTableArea);
       console.log(vueObject.timeTablesData);
     }
-    combiStartButton.click(generateTimeTablesData);
+    combiStartButton.click(generateAndSendTimeTablesData);
   },
   methods: {
     add: function(SuupNo2, BanSosokNm){
@@ -257,6 +261,10 @@ var selectedLectureBasketList = new Vue({
       }
 
       return resultArray;
+    },
+    sendDataToTimeTableArea : function(timeTableArea) {
+      // argument is a vue object
+      timeTableArea.setTimeTableData(this.timeTablesData);
     }
   },
 
