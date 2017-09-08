@@ -10,10 +10,11 @@
   </head>
 
   <body>
+    <div style="height:100px"></div>
     <div id="timeTable" class="time-table ui grid">
-      <div v-for="time in rowNames" :time="time" class="ui seven column row">
-        <div v-for="day in colNames" :time="time" :day="day" class="column">
-          table created!
+      <div v-for="time in rowNames" :hour="time.hour" :minute="time.minute" class="ui seven column row" style="padding:0">
+        <div v-for="day in colNames" :day="day" class="column" style="width:10%; height:40px;">
+          <!-- dummyText -->
         </div>
       </div>
     </div>

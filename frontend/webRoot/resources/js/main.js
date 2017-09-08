@@ -59,14 +59,6 @@ $('button.lecture-select').click(function() {
   }
 });
 
-
-$('.combination-start.button').popup({
-  popup : $(".combination-complete.popup"),
-  position : "top center",
-  on    : 'click'
-});
-
-
 $('.combination-result.modal')
   .modal('attach events', '.time-table-thumbnail', 'show')
 ;

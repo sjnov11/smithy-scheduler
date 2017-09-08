@@ -1,130 +1,138 @@
-var timeTable = new Vue({
-  el: '#timeTable',
-  data: {
-    tableData : null,
-    lectureDataArray : null,
+var timeTable = createTimeTablePainter();
 
-    rowNames: [], // time
-    colNames: [], // day
-  },
-  created: function() {
-    //init rowNames
-    var time = 900;
-    do {
-      this.rowNames.push(time);
+function createTimeTablePainter() {
+  return new Vue({
+    el: '#timeTable',
+    data: {
+      startHour : 9,
+      endHour : 20,
 
-      if (time % 100 == 0) {
-        time += 30;
-      } else {
-        time += 70;
-      }
+      lectureDataArray : null,
 
-    } while (time <= 2030);
-    
-    //init colNames
-
-    // 0 is sunday. 6 is saturday.
-    var day = 0;
-    do {
-      this.colNames.push(day);
-      day++;
-    } while (day <= 6);
-  },
-
-  methods: {
-    generateTableData: function() {
-      // 2차원 맵으로 시간표 데이터를 만든다.
-
-      //        일(0)  월(1)  화(2)  수(3)  목(4)  금(5)  토(6)
-      // 0700
-      // 0730
-      // 0800
-      // 0830
-      // 0900
-      // 0930
-      // 1000
-      // 1030
-      // .
-      // .
-      // .
-
-
-      this.tableData = new Map();
-
-      for (var idx in this.lectureDataArray) {
-        var lectureData = this.lectureDataArray[idx]
-
-        if (lectureData.SecondData.TimesAndClass.length == 0) {
-          // console.log("no SecondData. continue for loop");
-          continue;
-        }
-
-        // each lecture, iterate all time
-        for (var j in lectureData.SecondData.TimesAndClass) {
-          var classTimeData = lectureData.SecondData.TimesAndClass[j]
-
-          // below three variables are all int.
-          var day;
-          var start;
-          var end;
-
-          switch (classTimeData.Day) {
-            case '일': day = 0; break;
-            case '월': day = 1; break;
-            case '화': day = 2; break;
-            case '수': day = 3; break;
-            case '목': day = 4; break;
-            case '금': day = 5; break;
-            case '토': day = 6; break;
-            default: 
-              console.log("no time data. continue for loop");
-              continue;
-          }
-          // console.log(day);
-          start = parseInt(classTimeData.Start_time + classTimeData.Start_minute);
-
-          end = parseInt(classTimeData.End_time + classTimeData.End_minute);
-
-          // 30으로 끝나면 70을 더하고, 00으로 끝나면 30을 더해서 계속 체크해가자.
-
-          do {
-            // row는 시간, col이 요일이다.
-            if (this.tableData.get(start) == undefined) {
-              this.tableData.set(start, new Map());
-            }
-
-            // check whether time is duplicated
-            var duplicated = this.tableData.get(start).get(day);
-            if (duplicated) {
-              this.tableData = null;
-              return false;
-            } else {
-              // idx is the index of this.lectureDataArray
-              this.tableData.get(start).set(day, idx);
-            }
-
-            // check next time
-            if (start % 100 == 0) {
-              start += 30;
-            } else {
-              start += 70;
-            }
-
-          } while (start != end);
-
-        }
-
-      }
-      return true;
+      rowNames: [], // time
+      colNames: [], // day
     },
-    getLectureIdx: function(time, day) {
-      return this.tableData.get(time).get(day)
+    created: function() {
+      //init rowNames
+      var hh = this.startHour;
+      do {
+        var timeStructure = {
+          hour : null,
+          minute : null
+        };
+
+        var hhStr = hh.toString();
+        if (hh < 10) {
+          hhStr = "0" + hhStr;
+        }
+
+        timeStructure.hour = hhStr;
+        timeStructure.minute = "00";
+
+        this.rowNames.push(timeStructure);
+
+        timeStructure = {
+          hour : null,
+          minute : null
+        };
+
+        timeStructure.hour = hhStr;
+        timeStructure.minute = "30";
+
+        this.rowNames.push(timeStructure);
+
+        hh++;
+      } while (hh <= this.endHour);
+
+      //init colNames
+      // 0 is sunday. 6 is saturday.
+      var day = 0;
+      do {
+        this.colNames.push(day);
+        day++;
+      } while (day <= 6);
+    },
+
+    methods: {
+      drawTimeTable: function() {
+        if (this.lectureDataArray == null) {
+          console.log("(drawTimeTable) failed. There is no lecture data")
+          return false;
+        }
+
+        this.lectureDataArray.forEach(function(lecture) {
+          var Start_time;
+          var Start_minute;
+          var End_time;
+          var End_minute;
+
+
+
+          var timeTable = $("#timeTable");
+          lecture.SecondData.TimesAndClass.forEach(function(timeAndClass) {
+            Start_time   = timeAndClass.Start_time;
+            Start_minute = timeAndClass.Start_minute;
+            End_time   = timeAndClass.End_time;
+            End_minute = timeAndClass.End_minute;
+            Day          = timeAndClass.Day;
+
+            switch (Day) {
+              case '일': Day = 0; break;
+              case '월': Day = 1; break;
+              case '화': Day = 2; break;
+              case '수': Day = 3; break;
+              case '목': Day = 4; break;
+              case '금': Day = 5; break;
+              case '토': Day = 6; break;
+              default:
+                console.log("no day data.");
+                return;
+            }
+
+
+            var first_cell = timeTable.find("div[hour='"+Start_time+"'][minute='"+Start_minute+"']").find("div[day='"+Day+"']");
+            first_cell[0].innerHTML = lecture.GwamokNm;
+
+            var count = 0;
+            do {
+              var cell = timeTable.find("div[hour='"+Start_time+"'][minute='"+Start_minute+"']").find("div[day='"+Day+"']");
+              cell.css('background', '#cee');
+
+              // Increase Strat_time
+              if (Start_minute == "30") {
+                Start_minute = "00";
+
+                Start_time   = parseInt(Start_time);
+                Start_time++;
+                if (Start_time < 10) {
+                  Start_time = "0" + Start_time.toString();
+                } else {
+                  Start_time = Start_time.toString();
+                }
+              } else {
+                Start_minute = "30";
+              }
+
+              var truth_value = !(Start_time == End_time && Start_minute == End_minute);
+
+              // prevent infinite loop
+              count++
+              if (count > 1000) {
+                console.log("infinite loop has been occurred.");
+                console.log(lecture.GwamokNm);
+                break;
+              }
+            } while ( truth_value );
+
+
+          });
+
+
+        })
+      },
     }
-  }
-});
+  });
+};
 
-
-// No support map sturcture in vue.
-// How...?
 timeTable.lectureDataArray = possibleData;
-timeTable.generateTableData();
+timeTable.drawTimeTable();
