@@ -15,5 +15,10 @@ var timeTableArea = new Vue({
     $('.combination-result.modal')
       .modal('attach events', '.time-table', 'hide')
     ;
+
+    var numberOfTables = this.timeTableData.length;
+    var thumbnailText = document.getElementById("howManyTableIsGenerated");
+    thumbnailText.innerHTML = "Possible<br/>Time Table<br/>Count:" + numberOfTables.toString();
+    thumbnailText.style.margin = "44px 0 0 0";
   }
 });

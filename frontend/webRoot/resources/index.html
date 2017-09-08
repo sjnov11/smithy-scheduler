@@ -163,7 +163,7 @@
             <div id="timeTableThumbnail" class="time-table-thumbnail ui hanyang inverted segment">
               <!-- 조합된 시간표가 없으면 Thumbnail이 없다. Thumbnail을 클릭하면 모든 경우의 수의 시간표를 볼 수 있다. -->
               <!-- 시간표 선택하면 선택한 Thumbnail로 바뀜 -->
-              <p>Time Table<br/>Thumbnail</p>
+              <p id="howManyTableIsGenerated">Time Table<br/>Thumbnail</p>
 
 
               <div class="ui small modal combination-result">
@@ -173,7 +173,7 @@
                   <!-- temporary time table results-->
                   <div v-for='(eachTableData, index) in timeTableData' :table-number="index" class="ui inverted segment time-table">
                     <!-- data is exist! space has been generated. -->
-                    <p>시간표 {{index}}</p>
+                    <p>시간표 {{index + 1}}</p>
                   </div>
 
                 </div>

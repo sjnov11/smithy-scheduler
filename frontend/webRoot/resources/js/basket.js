@@ -35,7 +35,6 @@ var selectedLectureBasketList = new Vue({
 
       // send generated data to timeTableArea
       vueObject.sendDataToTimeTableArea(timeTableArea);
-      console.log(vueObject.timeTablesData);
     }
     combiStartButton.click(generateAndSendTimeTablesData);
   },
