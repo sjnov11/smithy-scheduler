@@ -332,10 +332,12 @@ td > a:hover{
 
 .time-table {
   width: 100%;
-  height: 500px;
-  background-color: var(--main-color) !important;
+  /* height: 500px; */
+  /* background-color: var(--main-color) !important; */
   text-align:center;
   cursor: pointer;
+
+  /* color: #fff; */
 }
 
 
@@ -344,6 +346,18 @@ td > a:hover{
   font-size:5em;
   margin-top: 190px;
 }
+
+
+.time-table > .ui.column.row {
+  padding: 0;
+}
+
+.time-table > .ui.column.row > .column{
+  width: 10%;
+  height: 40px;
+  border: 1px solid #f7f7f7;
+}
+
 
 .search-result {
   margin: 14px 0 14px 0;

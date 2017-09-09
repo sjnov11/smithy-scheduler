@@ -166,16 +166,32 @@
               <p id="howManyTableIsGenerated">Time Table<br/>Thumbnail</p>
 
 
-              <div class="ui small modal combination-result">
+              <div class="ui modal combination-result">
                 <div class="header">시간표 조합 결과</div>
-                <div id='timeTableArea' class="scrolling content time-table-area">
+                <div id='timeTableArea' class="content time-table-area">
+                  <template v-for="(lectureData, tableNumber) in timeTableData">
 
-                  <!-- temporary time table results-->
-                  <div v-for='(eachTableData, index) in timeTableData' :table-number="index" class="ui inverted segment time-table">
-                    <!-- data is exist! space has been generated. -->
-                    <p>시간표 {{index + 1}}</p>
-                  </div>
+                    <!-- temporary time table results-->
+                    <div style="text-align:center; font-weight:200; font-size:2.5em">
+                      시간표 {{tableNumber + 1}}
+                    </div>
+                    <div class="time-table ui grid segment" :table-number="tableNumber">
+                      <div class="ui eight column row">
+                        <div v-for="dayName in firstRow" class="column">
+                          {{dayName}}
+                        </div>
+                      </div>
 
+                      <div v-for="time in rowNames" :hour="time.hour" :minute="time.minute" class="ui eight column row">
+                        <div day="-1" class="column">
+                          {{time.hour}}:{{time.minute}}
+                        </div>
+                        <div v-for="day in colNames" :day="day" class="column">
+                          <!-- dummyText -->
+                        </div>
+                      </div>
+                    </div>
+                  </template>
                 </div>
               </div>
 
@@ -251,17 +267,6 @@
                     <p>조합을 완료했습니다.</p>
                   </div>
                 </div>
-
-
-                <!-- <div id="cCondition" class="c-condition">
-                  -   <button class="ui button"> 조합 조건 설정</button>
-                  - </div>
-                  - <div id="cStart" class="c-start">
-                  -   <button class="ui button combiation-start"> 조합!</button>
-                  -   <div class="ui combiation-complete popup transition hidden top left">
-                  -     <p>조합을 완료했습니다.</p>
-                  -   </div>
-                  - </div> -->
               </div>
 
 

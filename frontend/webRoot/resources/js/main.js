@@ -1,3 +1,8 @@
+function sleep (time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
+
+
 var majorIsSelected = true;
 
 $('.ui.dropdown')
@@ -59,14 +64,13 @@ $('button.lecture-select').click(function() {
   }
 });
 
-$('.combination-result.modal')
+$('.ui.combination-result.modal')
   .modal('attach events', '.time-table-thumbnail', 'show')
 ;
 
-$('.combination-result.modal')
-  .modal('attach events', '.time-table', 'hide')
-;
-
+/* $('#timeTableThumbnail').click(function() {
+ *   console.log($('.ui.page.dimmer.combination-result').dimmer('show'));
+ * }); */
 
 $('#btn_request_post').click(function(event) {
   event.preventDefault();

@@ -11,12 +11,25 @@
 
   <body>
     <div style="height:100px"></div>
-    <div id="timeTable" class="time-table ui grid">
-      <div v-for="time in rowNames" :hour="time.hour" :minute="time.minute" class="ui seven column row" style="padding:0">
-        <div v-for="day in colNames" :day="day" class="column" style="width:10%; height:40px;">
-          <!-- dummyText -->
+    <div id="timeTableArea">
+      <template v-for="(lectureData, tableNumber) in timeTableData">
+        <div class="time-table ui grid" :table-number="tableNumber">
+          <div class="ui eight column row" style="padding:0">
+            <div v-for="dayName in firstRow" class="column" style="width:10%; height:40px;">
+              {{dayName}}
+            </div>
+          </div>
+
+          <div v-for="time in rowNames" :hour="time.hour" :minute="time.minute" class="ui eight column row" style="padding:0">
+            <div day="-1" class="column" style="width:10%; height:40px;">
+              {{time.hour}}:{{time.minute}}
+            </div>
+            <div v-for="day in colNames" :day="day" class="column" style="width:10%; height:40px;">
+              <!-- dummyText -->
+            </div>
+          </div>
         </div>
-      </div>
+      </template>
     </div>
 
 

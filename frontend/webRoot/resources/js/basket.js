@@ -12,20 +12,17 @@ var selectedLectureBasketList = new Vue({
     timeTablesData: []
   },
   mounted: function() {
-    combiStartButton = $(this.$el).find('.combination-start.button').popup({
-      popup : $(".combination-complete.popup"),
-      position : "top center",
-      on    : 'click'
-    });
 
     // use closure
     var vueObject = this;
     function generateAndSendTimeTablesData() {
+      $(this).addClass('loading');
+
       vueObject.checkedLectureData = [];
 
       // remove lecture that does not have 'checked'
       var lectures = $(vueObject.$el).find('.each-selected-lecture');
-      for (var i = 0, l = lectures.length; i < l; i++) {
+      for (var i = 0, l = lectures != undefined && lectures.length; i < l; i++) {
         var lecture = lectures[i];
         if( $(lecture).find(".ui.checkbox.checked").length != 0) {
           vueObject.checkedLectureData.push(vueObject.lectureData[i]);
@@ -36,6 +33,7 @@ var selectedLectureBasketList = new Vue({
       // send generated data to timeTableArea
       vueObject.sendDataToTimeTableArea(timeTableArea);
     }
+    var combiStartButton = $(this.$el).find('.combination-start.button'); 
     combiStartButton.click(generateAndSendTimeTablesData);
   },
   methods: {
@@ -259,11 +257,31 @@ var selectedLectureBasketList = new Vue({
         }
       }
 
+
+      // sort before return
+      // TODO: here the user-selected-conditions are needed
+      resultArray.sort(function(a, b) {
+        return b.length - a.length;
+      });
+
       return resultArray;
     },
     sendDataToTimeTableArea : function(timeTableArea) {
-      // argument is a vue object
-      timeTableArea.setTimeTableData(this.timeTablesData);
+      // clear
+      timeTableArea.setTimeTableData([]);
+
+
+
+      // dont't send data if this.timeTablesData is undefined
+      if (this.timeTablesData == undefined) {
+        return;
+      }
+
+      // wait 500ms to html code changing.
+      sleep(500).then(() => {
+        // argument is a vue object
+        timeTableArea.setTimeTableData(this.timeTablesData);
+      });
     }
   },
 
