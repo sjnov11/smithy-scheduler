@@ -64,13 +64,12 @@ $('button.lecture-select').click(function() {
   }
 });
 
-$('.ui.combination-result.modal')
-  .modal('attach events', '.time-table-thumbnail', 'show')
-;
-
-/* $('#timeTableThumbnail').click(function() {
- *   console.log($('.ui.page.dimmer.combination-result').dimmer('show'));
- * }); */
+$('#timeTableThumbnail').click(function() {
+  // don't show result when generated table is zero.
+  if (selectedLectureBasketList.checkedLectureData.length != 0) {
+    $('.ui.page.dimmer.combination-result').dimmer('show');
+  }
+});
 
 $('#btn_request_post').click(function(event) {
   event.preventDefault();

@@ -209,7 +209,7 @@ td > a:hover{
   height: 300px;
   
   text-align:center;
-  cursor: pointer;
+  cursor: default;
 
   position:fixed !important;
 }
@@ -459,4 +459,14 @@ td > a:hover{
 
 .ui.dimmer{
   background-color: rgba(0,0,0,.20);
+}
+
+
+.combination-result.page.dimmer {
+  overflow: auto;
+}
+
+.combination-result.page.dimmer > .ui.segment {
+  width: 90%;
+  margin: 30px auto 30px auto;
 }

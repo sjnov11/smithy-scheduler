@@ -166,37 +166,6 @@
               <p id="howManyTableIsGenerated">Time Table<br/>Thumbnail</p>
 
 
-              <div class="ui modal combination-result">
-                <div class="header">시간표 조합 결과</div>
-                <div id='timeTableArea' class="content time-table-area">
-                  <template v-for="(lectureData, tableNumber) in timeTableData">
-
-                    <!-- temporary time table results-->
-                    <div style="text-align:center; font-weight:200; font-size:2.5em">
-                      시간표 {{tableNumber + 1}}
-                    </div>
-                    <div class="time-table ui grid segment" :table-number="tableNumber">
-                      <div class="ui eight column row">
-                        <div v-for="dayName in firstRow" class="column">
-                          {{dayName}}
-                        </div>
-                      </div>
-
-                      <div v-for="time in rowNames" :hour="time.hour" :minute="time.minute" class="ui eight column row">
-                        <div day="-1" class="column">
-                          {{time.hour}}:{{time.minute}}
-                        </div>
-                        <div v-for="day in colNames" :day="day" class="column">
-                          <!-- dummyText -->
-                        </div>
-                      </div>
-                    </div>
-                  </template>
-                </div>
-              </div>
-
-
-
             </div>
             <div id="selectedLectureList" class="ui segment selected-lecture-list">
               <!-- <a class="ui orange right ribbon label">Specs</a> -->
@@ -284,6 +253,42 @@
           -   <button id="btn_request_post" class="ui button"> Ajax call<br /> POST</button>
           -   <button id="btn_major_selected" class="ui button"> 선택 결과<br /> 임시 버튼</button>
           - </div> -->
+
+
+
+
+        <!-- time table dimmer -->
+        <div class="ui combination-result page dimmer">
+          <div class='ui segment'>
+            <div id='timeTableArea' class="content time-table-area">
+              <template v-for="(lectureData, tableNumber) in timeTableData">
+
+                <!-- temporary time table results-->
+                <div style="text-align:center; font-weight:200; font-size:2.5em">
+                  시간표 {{tableNumber + 1}}
+                </div>
+                <div class="time-table ui grid segment" :table-number="tableNumber">
+                  <div class="ui eight column row">
+                    <div v-for="dayName in firstRow" class="column">
+                      {{dayName}}
+                    </div>
+                  </div>
+
+                  <div v-for="time in rowNames" :hour="time.hour" :minute="time.minute" class="ui eight column row">
+                    <div day="-1" class="column">
+                      {{time.hour}}:{{time.minute}}
+                    </div>
+                    <div v-for="day in colNames" :day="day" class="column">
+                      <!-- dummyText -->
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+        </div>
+
+
 
 
 

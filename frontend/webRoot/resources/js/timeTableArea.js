@@ -4,7 +4,7 @@ var timeTableArea = new Vue({
     startHour : 9,
     endHour : 20,
 
-    timeTableData: null, // array of each time table data
+    timeTableData: [], // array of each time table data
 
     rowNames: [], // time
     colNames: [], // day
@@ -13,6 +13,7 @@ var timeTableArea = new Vue({
     firstCol: [], // time name
 
     startButtonOfBasket : $('.combination-start.button'),
+    timeTableThumbnail : $('#timeTableThumbnail'),
   },
 
   created: function() {
@@ -62,6 +63,12 @@ var timeTableArea = new Vue({
       this.timeTableData = data;
 
       var vueObject = this;
+
+
+      // remove popup if it is shown
+      this.startButtonOfBasket.popup('hide');
+      this.startButtonOfBasket.popup('destroy');
+
       // wait 500ms to html code changing.
       sleep(500).then(() => {
         vueObject.drawTimeTable();
@@ -73,8 +80,13 @@ var timeTableArea = new Vue({
           on    : 'click'
         });
 
+        this.startButtonOfBasket.removeClass('loading');
         if (data.length != 0) {
-          this.startButtonOfBasket.popup('show').removeClass('loading');
+          this.startButtonOfBasket.popup('show');
+          this.timeTableThumbnail.css('cursor', 'pointer');
+        } else {
+          this.startButtonOfBasket.popup('hide');
+          this.timeTableThumbnail.css('cursor', 'default');
         }
 
         sleep(2000).then(() => {
@@ -171,10 +183,12 @@ var timeTableArea = new Vue({
   updated: function() {
     // modal is closed when a time table is clicked.
 
-    if (this.timeTableData != null && this.timeTableData.length != 0) {
-      $('.combination-result.modal')
-        .modal('attach events', '.time-table', 'hide')
-      ;
+    if (this.timeTableData.length != 0) {
+
+      $('.time-table').click(function() {
+        $('.ui.page.dimmer.combination-result').dimmer('hide');
+      });
+
     }
 
     var numberOfTables = this.timeTableData.length;
