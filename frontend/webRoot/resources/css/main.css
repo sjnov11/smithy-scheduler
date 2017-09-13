@@ -1,0 +1,488 @@
+/* spoqa han sans */
+@import  "../fonts/spoqa-han-sans/SpoqaHanSans-kr.css";
+
+* {
+  font-family: "Spoqa Han Sans", "Apple SD Gothic Neo", "Malgun Gothic", "MalgunGothic";
+	/* font-family: "Apple SD Gothic Neo", "Malgun Gothic", "MalgunGothic"; */
+	font-weight: 300;
+}
+
+/* for windows user */
+html {
+	-webkit-text-size-adjust: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+div.entry {
+	transform: rotate(-0.0000000001deg);
+	text-shadow: 0 0 1px rgba(0,0,0,0.3);
+}
+/* for windows user end */
+
+/* css variable */
+:root {
+    --main-bright-color:#005fb7;
+    --main-color:#004483; /* Hanyang blue */
+    --main-dark-color:#003c73;
+
+    --selected:#f4ffdd;
+    --selected-hover:#eeffcb;
+    --selected-text:#29672a;
+}
+
+
+/* variable usage */
+#foo {
+    color: var(--main-color);
+}
+
+body, html{
+  height: initial;
+}
+
+.ui.button {
+  font-family: "Spoqa Han Sans", "Apple SD Gothic Neo", "Malgun Gothic", "MalgunGothic";
+}
+
+.main-header-container{
+  width:100%;
+  min-width:1200px;
+  height:70px;
+  background-color:#fff;
+  position:fixed;
+  z-index:100;
+  top:0
+}
+
+.main-contents-container{
+  width:100%;
+  top:80;
+  margin:0 auto;
+  position:relative
+}
+
+.main-contents{
+  max-width:1200px;
+  margin: 0 auto
+}
+
+.main-header-contents {
+  height:90%; /* 10% for shadow */
+  max-width:1200px;
+  margin: 0 auto
+}
+
+.main-header-logo {
+  float: left;
+  width: 50%;
+}
+
+.main-header-menu {
+  float: left;
+  width: 50%;
+}
+
+.menu-buttons {
+  padding: 10px 10px 10px 10px;
+  float: right;
+}
+
+
+hr.main-header-shadow {
+	height: 10px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+#logoImage {
+  height: 60px
+}
+
+.main-center{
+  margin-left: calc(1200px * 0.2);
+  margin-right: calc(1200px * 0.2);
+  width:calc(1200px * 0.6);
+}
+
+#whiteSpaceBetweenHeaderAndContent {
+  margin-top:20px;
+}
+
+.main-intro{
+  height: 250px;
+  padding-top: 60px;
+  text-align:justify
+}
+
+.main-intro-text{
+  font-size: 3em;
+  font-weight:100;
+  text-indent: 15px;
+  /* text-align: justify */
+}
+
+
+.major-or-cultural {
+  text-align: center;
+}
+
+
+.login-box {
+  width: calc(1200px * 0.4);
+  margin: auto !important;
+  color: #000;
+  /* background-color: #eee !important; */
+}
+
+.login-box-text {
+  font-size: 2.5em;
+  font-weight: 100;
+}
+
+.ui.hanyang.button{
+  background-color: var(--main-color);
+  color: #fff;
+  text-shadow: none;
+  background-image: none;
+  box-shadow: 0 0 0 0 rgba(34, 36, 38, .15) inset
+}
+
+
+.ui.hanyang.basic.button {
+  box-shadow: 0 0 0 1px var(--main-color) inset !important;
+  color: var(--main-color) !important
+}
+
+
+.ui.hanyang.basic.transparent.button {
+  box-shadow: 0 0 0 0px var(--main-color) inset !important;
+  color: var(--main-color) !important;
+  font-weight:600;
+}
+
+
+
+.login.button {
+  width: 130px;
+}
+
+table.search-result-table > thead > tr > th {
+  background-color: var(--main-color) !important;
+  color: #fff !important;
+  border-left: 1px solid rgba(255, 255, 255, .2) !important;
+}
+
+table.search-result-table > thead > tr > th:nth-child(1) {
+  border-left: 1px solid rgba(35, 35, 35, .1) !important;
+}
+
+
+.search-result-segment.ui.basic.segment{
+  padding:0 !important;
+}
+
+td.selectable.selected > a{
+  background-color: var(--selected) !important;
+  color:var(--selected-text) !important;
+}
+
+td.selectable.selected > a:hover{
+  background-color: var(--selected-hover) !important;
+}
+
+td > a:hover{
+  cursor: pointer;
+}
+
+
+.subject-selected {
+  margin-left: calc(1200px * 0.04) !important;
+  float: left;
+}
+
+.table-and-basket{
+  width: calc(1200px * 0.614);
+}
+
+.time-table-thumbnail{
+  width: calc(1200px * 0.3);
+  height: 300px;
+  
+  text-align:center;
+  cursor: default;
+
+  position:fixed !important;
+}
+.time-table-thumbnail > p{
+  font-weight:100;
+  font-size:3em;
+  margin-top: 85px;
+}
+
+.selected-lecture-list{
+  margin-top:310px !important;
+  width: calc(1200px * 0.3);
+  height: 40%;
+  position: fixed !important;
+  padding: 10px 0 25px 0 !important;
+
+  /* border-style: solid; */
+  /* border-width:3px; */
+  /* border-color: var(--main-color); */
+
+  /* text-align:center; */
+}
+
+.selected-lecture-list > .ui.top.attached.label {
+  font-weight: 300;
+  text-align: center;
+  font-size: 1em;
+  height: 38px;
+}
+
+.selected-lecture-info-list{
+  overflow: auto;
+  height: 87%;
+}
+
+.selected-lecture-info-list > p {
+  font-weight:300;
+  font-size:1.5em;
+  margin-top: 15px;
+}
+
+.each-selected-lecture{
+  width: 100%;
+  min-height: calc(100% / 6);
+}
+
+.each-selected-lecture:hover{
+  cursor: pointer;
+  background-color: #f2f2f2;
+}
+
+.each-selected-lecture > .ui.checkbox {
+  padding: 13px 20px 13px 20px;
+  width: 86%;
+}
+
+
+.each-selected-lecture > .each-lecture-buttons{
+  float:right;
+  width:14%;
+}
+
+.each-selected-lecture > .each-lecture-buttons > .left.button{
+  float: left;
+  width: 50%;
+  height: calc(100% / 6);
+}
+
+
+.each-selected-lecture > .each-lecture-buttons > .left.button > i {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  padding-top: 10px;
+  /* padding-left: 6px; */
+}
+
+.each-selected-lecture > .each-lecture-buttons > .right.top.button{
+  float: right;
+  width: 50%;
+  height: calc(100% / 6 / 2);
+}
+
+.each-selected-lecture > .each-lecture-buttons > .right.top.button > i {
+  margin: auto;
+  width: 100%;
+  height: 50%;
+  padding-top: 2px;
+  padding-right: 6px;
+}
+
+.each-selected-lecture > .each-lecture-buttons > .right.bottom.button{
+  float: right;
+  width: 50%;
+  height: calc(100% / 6 / 2);
+}
+
+.each-selected-lecture > .each-lecture-buttons > .right.bottom.button > i {
+  margin: auto;
+  width: 100%;
+  height: 50%;
+  padding-bottom: 2px;
+  padding-right: 6px;
+}
+
+
+
+
+
+.c-condition {
+  /* margin: 170px auto auto 75px; */
+  float: left;
+}
+
+.c-start {
+  /* margin: 170px auto; */
+  float: left;
+}
+
+
+.time-table {
+  width: 100%;
+  /* height: 500px; */
+  /* background-color: var(--main-color) !important; */
+  text-align:center;
+  cursor: pointer;
+
+  /* color: #fff; */
+}
+
+
+.time-table > p{
+  font-weight:100;
+  font-size:5em;
+  margin-top: 190px;
+}
+
+
+.time-table > .ui.column.row {
+  padding: 0;
+}
+
+.time-table > .ui.column.row > .column{
+  width: 10%;
+  height: 40px;
+  border: 1px solid #f7f7f7;
+}
+
+
+.search-result {
+  margin: 14px 0 14px 0;
+}
+
+.ui.hanyang.ribbon.label {
+  border-color: var(--main-dark-color);
+}
+
+.ui.hanyang.label, .ui.hanyang.labels .label {
+    background-color: var(--main-bright-color);
+    border-color: var(--main-bright-color);
+    color: #fff!important;
+}
+
+.ui.modal-subject-name.label{
+  font-weight: 100;
+  font-size: 1.5em;
+}
+
+
+.ui.modal-subject-name.segment{
+  margin-bottom: 0;
+}
+
+.hanyang.basic.modal-subject.button:hover{
+  background-color: var(--main-bright-color) !important;
+  color: #fff !important;
+  text-shadow: none !important;
+  background-image: none !important;
+  box-shadow: 0 0 0 0 rgba(34, 36, 38, .15) inset !important
+}
+
+.content.modal-subject-name{
+  padding: 0 !important
+}
+
+.each-subject.modal-subject-name{
+  padding: 0.1rem 1rem 0.1rem 1rem
+}
+
+.each-subject.modal-subject-name:hover{
+  background-color: #eee;
+  cursor: pointer;
+}
+
+.each-subject.modal-subject-name.selected{
+  background-color: var(--selected)
+}
+
+
+.each-subject.modal-subject-name.selected:hover{
+  background-color: var(--selected-hover)
+}
+
+
+
+.isu-jehan-yn.popup{
+  font-weight:300;
+  font-size:0.9em;
+}
+
+.ui.inverted.hanyang.segment {
+    background-color: var(--main-color)!important;
+    color: #fff!important;
+}
+
+
+.table-and-basket {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.combination-buttons {
+  border: none !important
+}
+
+
+
+/* semantic-ui toggle background color */
+.ui.toggle.checkbox input:checked~.box:before, .ui.toggle.checkbox input:checked~label:before{
+    background-color: var(--main-bright-color) !important;
+}
+
+.each-lecture.popup{
+  width:100%;
+  font-weight:300;
+}
+
+.combination-buttons {
+  padding: 0 !important;
+}
+
+
+.combination-buttons > .buttons > .button{
+  font-weight:300;
+}
+
+
+.ui.dimmer{
+  background-color: rgba(0,0,0,.20);
+}
+
+
+.combination-result.page.dimmer {
+  overflow: auto;
+}
+
+.combination-result.page.dimmer > .ui.segment {
+  width: 90%;
+  margin: 30px auto 30px auto;
+}
+
+
+.combination-condition.page.dimmer > .ui.conditions.segment {
+  width: 350px;
+  height: 350px;
+  margin: 190px auto ;
+}
+
+.combination-condition.page.dimmer > .ui.conditions.segment > .ui.header {
+  font-weight: 200;
+  font-size:1.5em;
+}
+
+.combination-condition.page.dimmer >.ui.conditions.segment > .ui.condition.segment > .dropdown > .text{ 
+  font-weight: initial;
+}

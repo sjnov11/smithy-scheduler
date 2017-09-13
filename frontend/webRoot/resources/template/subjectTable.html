@@ -1,0 +1,107 @@
+<table class="ui fixed single line celled table search-result-table unstackable">
+  <thead>
+    <tr>
+      {{range .GradeNames}}
+      {{if .}}
+      <th>{{.}}</th>
+      {{end}}
+      {{end}}
+    </tr>
+  </thead>
+  <tbody>
+    {{range .SubjectsOrderedForTable}}
+    <tr>
+      {{range .}}
+        {{if .Name}} <!-- dummy subject has a space bar. If .Name is empty, entire column(grade) has no data -->
+        <td lecture-name="{{.Name}}" grade="{{.IsuGrade}}" class="selectable">
+
+          {{if .HaksuNo}} <!-- If there is no HaksuNo data, tooltip is disabled. -->
+          <a>{{.Name}}</a>
+
+          <div lecture-name="{{.Name}}" grade="{{.IsuGrade}}" class="ui mini longer modal">
+            <!-- <div class="header"></div> -->
+            <div class="ui segment modal-subject-name">
+
+              <div class="ui hanyang ribbon label modal-subject-name">
+                <i class="leanpub icon"></i> {{.Name}} ({{.HaksuNo}})
+              </div>
+
+                <div class="ui basic segment" style="padding:0">
+                <a class="ui tag label" style="font-weight:400">{{.IsuGbNm}}</a>
+                {{if .IsuJehanYn}}
+                <a class="ui tag label isu-jehan-yes" style="font-weight:400" data-position="bottom left">이수제한있음</a>
+                {{else}}
+                <a class="ui tag label" style="font-weight:400">이수제한없음</a>
+                {{end}}
+              </div>
+
+            </div>
+            <div class="scrolling content modal-subject-name"> 
+
+              {{range .Subjects}}
+              <div lecture-name="{{.GwamokNm}}" lecture-number="{{.SuupNo2}}" lecture-major="{{.BanSosokNm}}" grade="{{.IsuGrade}}" class="each-subject modal-subject-name">
+                 <div lecture-number="{{.SuupNo2}}" class="ui horizontal basic segments each-subject-info">
+                    <div class="ui center aligned basic segment" style="width:50%">
+                      <p>
+                      {{range .SuupTimes}}
+                        {{.}}<br>
+                      {{end}}
+                      </p>
+                    </div>
+
+                    <div class="ui center aligned basic segment" style="width:50%">
+                      <p>
+                      {{if .DaepyoGangsaNm}}
+                        {{.DaepyoGangsaNm}} 교수 {{if .Best_teacher}}🏅{{end}}
+                      {{else}}
+                        교수 정보 없음
+                      {{end}}
+                      </p>
+                    </div>
+                 </div>
+              </div>
+
+              <!-- popup -->
+              <div lecture-number="{{.SuupNo2}}" class="ui each-subject popup" style="width: 100%">
+                <p>{{.GwamokNm}}<br/>
+                {{if .DaepyoGangsaNm}}
+                  <p>{{.DaepyoGangsaNm}} 교수 {{if .Best_teacher}}🏅{{end}}</p>
+                {{else}}
+                  교수 정보 없음
+                {{end}}
+                </p>
+
+                <p>수업번호: {{.SuupNo2}}</p>
+                {{if .SuupTypeGb}}
+                <p>상세정보: {{.SuupTypeGb}}</p>
+                {{end}}
+
+                {{if .SecondData.TimesAndClass}}
+                  <p>
+                  {{range .SecondData.TimesAndClass}}
+                    {{.Day}}({{.Start_time}}:{{.Start_minute}}-{{.End_time}}:{{.End_minute}})
+                    <br/>
+                    &nbsp;&nbsp;{{.Classroom}}
+                    <br/>
+                  {{end}}
+                  </p>
+                {{end}}
+
+                {{if .SuupMsg}}
+                <p>{{.SuupMsg}}</p>
+                {{end}}
+
+              </div>
+              {{end}}
+
+            </div>
+          </div>
+          {{end}}
+
+        </td>
+        {{end}}
+      {{end}}
+    </tr>
+    {{end}}
+  </tbody>
+</table>
