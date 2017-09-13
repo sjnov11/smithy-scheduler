@@ -9,7 +9,10 @@ var selectedLectureBasketList = new Vue({
     lectureData: [],
     checkedLectureData: [],
 
-    timeTablesData: []
+    timeTablesData: [],
+
+    minLectureNumber: 2,
+    maxLectureNumber: 100,
   },
   mounted: function() {
 
@@ -28,13 +31,20 @@ var selectedLectureBasketList = new Vue({
           vueObject.checkedLectureData.push(vueObject.lectureData[i]);
         }
       }
-      vueObject.timeTablesData = vueObject.generatePossibleTimeTableData();
+
+      vueObject.timeTablesData = vueObject.generatePossibleTimeTableData(vueObject.minLectureNumber, vueObject.maxLectureNumber);
 
       // send generated data to timeTableArea
       vueObject.sendDataToTimeTableArea(timeTableArea);
     }
     var combiStartButton = $(this.$el).find('.combination-start.button'); 
     combiStartButton.click(generateAndSendTimeTablesData);
+
+    var combiConditionButton = $(this.$el).find('.combination-condition.button'); 
+
+    combiConditionButton.click(function(){
+      $('.combination-condition.page.dimmer').dimmer('show');
+    });
   },
   methods: {
     add: function(SuupNo2, BanSosokNm){
@@ -206,6 +216,7 @@ var selectedLectureBasketList = new Vue({
       return true;
     },
     generatePossibleTimeTableData: function(minLectureNumber, maxLectureNumber) {
+
       if (this.checkedLectureData.length == 0) {
         console.log("there is no checked lecture");
         return
@@ -247,7 +258,29 @@ var selectedLectureBasketList = new Vue({
         return set;
       };
 
-      var allSets = powerSet(this.checkedLectureData, minLectureNumber, maxLectureNumber);
+      // remove all of SuupTimes is 시간미지정강좌
+      var lecturesThatHaveTimes = [];
+      for (var idx in this.checkedLectureData) {
+
+        // check how many no time class is exist
+        var noTimeClass = 0;
+        for (var timeNumber in this.checkedLectureData[idx].SuupTimes) {
+          if (this.checkedLectureData[idx].SuupTimes[timeNumber] == "시간미지정강좌") {
+            noTimeClass++;
+          }
+        }
+
+        if (noTimeClass == this.checkedLectureData[idx].SuupTimes.length) {
+          // every class does not have time
+          // don't push
+          
+          // console.log("there is no time lecture");
+        } else {
+          lecturesThatHaveTimes.push(this.checkedLectureData[idx]);
+        }
+      }
+
+      var allSets = powerSet(lecturesThatHaveTimes, minLectureNumber, maxLectureNumber);
 
       var resultArray = [];
 
@@ -366,18 +399,19 @@ var selectedLectureBasketList = new Vue({
       click: function() {
         var number = $(this).parent().parent().attr('lecture-number');
         var name = $(this).parent().parent().attr('lecture-name');
+        var grade = $(this).parent().parent().attr('grade');
 
 
         selectedLecture.delete(number);
 
         //fucking dirty code... shit
-        var modal_lecture = $("div.ui.dimmer.modals.page.transition.hidden").find(".each-subject.modal-subject-name[lecture-number='"+ number  +"']");
+        var modal_lecture = $("div.ui.dimmer.modals.page.transition.hidden").find(".each-subject.modal-subject-name[lecture-number='"+ number  +"'][grade='"+grade+"']");
         modal_lecture.removeClass("selected");
 
 
         sameNameLectures = modal_lecture.parent().find(".selected");
         if (sameNameLectures.length == 0){
-          $("td.selectable[lecture-name='" + name + "']").removeClass("selected");
+          $("td.selectable[lecture-name='" + name + "'][grade='"+grade+"']").removeClass("selected");
         }
 
 

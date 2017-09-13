@@ -470,3 +470,19 @@ td > a:hover{
   width: 90%;
   margin: 30px auto 30px auto;
 }
+
+
+.combination-condition.page.dimmer > .ui.conditions.segment {
+  width: 350px;
+  height: 350px;
+  margin: 190px auto ;
+}
+
+.combination-condition.page.dimmer > .ui.conditions.segment > .ui.header {
+  font-weight: 200;
+  font-size:1.5em;
+}
+
+.combination-condition.page.dimmer >.ui.conditions.segment > .ui.condition.segment > .dropdown > .text{ 
+  font-weight: initial;
+}

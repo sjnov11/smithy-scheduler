@@ -96,10 +96,11 @@ function addModal() {
     var cell = lectureCells[i];
 
     var lectureName = cell.getAttribute('lecture-name');
+    var grade = cell.getAttribute('grade');
     if (lectureName != null) {
 
-      var jqueryCell = $(cell).find("div.modal[lecture-name='" + lectureName + "']")
-        .modal('attach events', "td.selectable[lecture-name='" + lectureName + "']", 'show');
+      var jqueryCell = $(cell).find("div.modal[lecture-name='" + lectureName + "'][grade='"+grade+"']")
+        .modal('attach events', "td.selectable[lecture-name='" + lectureName + "'][grade='"+grade+"']", 'show');
         // .modal('attach events', "div.each-subject.modal-subject-name[lecture-name='" + lectureName + "']", 'hide')
       addIsuJehanPopup(jqueryCell);
 
@@ -118,7 +119,8 @@ function addModal() {
             $(lecture).addClass("selected");
 
             var lectureName = $(lecture).attr("lecture-name");
-            $("td.selectable[lecture-name='" + lectureName + "']").addClass("selected");
+            var grade = $(lecture).attr("grade");
+            $("td.selectable[lecture-name='" + lectureName + "'][grade='"+ grade +"']").addClass("selected");
 
             // console.log("lecture " +selectedLectureNumber+ " is added to var selectedLecture");
           };

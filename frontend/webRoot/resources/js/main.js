@@ -13,11 +13,6 @@ $('#btn_login').click(function() {
   $('.login.page').dimmer('show');
 });
 
-$('#cCondition').click(function() {
-  $('.config-c-condition.page').dimmer('show');
-});
-
-
 $('#btn_major').click(function() {
   $(this).removeClass("basic");
   $('#btn_cultural').addClass("basic");

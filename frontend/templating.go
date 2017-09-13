@@ -18,6 +18,7 @@ type BindedSubject struct {
 	HaksuNo    string
 	IsuGbNm    string
 	IsuJehanYn string
+	IsuGrade   string
 }
 
 func (bindedSubject BindedSubject) String() string {
@@ -54,7 +55,6 @@ func drawSubjectTable(subjects []Subject) (string, error) {
 		IsGradeEmpty            []bool
 	}
 	// divide subjects by grade
-
 	var err error
 	data.SubjectsDividedByGrade, err = divideSubjectsByGrade(subjects)
 	if err != nil {
@@ -213,6 +213,7 @@ func bindSameSubject(subjects []Subject) ([]BindedSubject, error) {
 		buffer.HaksuNo = buffer.Subjects[0].HaksuNo
 		buffer.IsuGbNm = buffer.Subjects[0].IsuGbNm
 		buffer.IsuJehanYn = buffer.Subjects[0].IsuJehanYn
+		buffer.IsuGrade = buffer.Subjects[0].IsuGrade
 		sort.Sort(ByProfessorName(buffer.Subjects))
 		result = append(result, buffer)
 	}
